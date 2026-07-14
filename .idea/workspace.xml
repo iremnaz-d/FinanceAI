@@ -4,14 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="66dc89d2-3075-41cb-8c59-e8ce2a2db463" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/data/Transaction_History.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/domain/entities.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/domain/interfaces.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/infrastructure/data/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/infrastructure/data/excel_parser.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/FinanceAI.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/FinanceAI.iml" afterDir="false" />
+    <list default="true" id="66dc89d2-3075-41cb-8c59-e8ce2a2db463" name="Changes" comment="Downloaded the data as xlsx file (Transaction_History)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/Transaction_History.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/Transaction_History.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/infrastructure/data/data_pipeline.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/infrastructure/data/data_pipeline.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/infrastructure/data/excel_parser.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/infrastructure/data/excel_parser.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,6 +48,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Python.excel_parser.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "master",
@@ -77,6 +75,19 @@
       <option name="presentableId" value="Default" />
       <updated>1783460452394</updated>
     </task>
+    <task id="LOCAL-00001" summary="Downloaded the data as xlsx file (Transaction_History)">
+      <option name="closed" value="true" />
+      <created>1783544926160</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1783544926160</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Downloaded the data as xlsx file (Transaction_History)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Downloaded the data as xlsx file (Transaction_History)" />
   </component>
 </project>
