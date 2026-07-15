@@ -15,14 +15,14 @@ class ExcellReader:
     def read(self):
         df = pd.read_excel(self.path)
         df.drop(index=df.index[:11], inplace=True)
-        df.columns = ['Date', 'Transaction ID', 'Description', 'Amount', 'Balance']
+        df.columns = ['Date', 'ID', 'Description', 'Amount', 'Balance']
 
         cleaner = DataCleaner(df=df)
         cleaner.arrange_dates()
         cleaner.fill_null_values()
         return cleaner.df
 
-reader = ExcellReader(r"C:\Users\irem naz\Desktop\FinanceAI\src\data\Transaction_History.xlsx")
+"""reader = ExcellReader(r"C:\Users\irem naz\Desktop\FinanceAI\src\data\Transaction_History.xlsx")
 df = reader.read()
 with pd.option_context('display.max_columns', None):
- print(df.head(15))
+ print(df.head(15))"""

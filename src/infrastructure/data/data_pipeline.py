@@ -6,9 +6,8 @@ import pandas as pd
 
 class DataCleaner:
     """
-    Pandas kullanarak eksik verileri dolduran,
-     tarih formatlarını düzenleyen ve
-      mükerrer kayıtları temizleyen veri mühendisliği sınıfı.
+    This class format dates and fill null values
+    (categories with 'Unknown', numerics with median())
     """
 
     def __init__ (self, df):
