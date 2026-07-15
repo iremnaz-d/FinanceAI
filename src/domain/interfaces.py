@@ -7,6 +7,10 @@ class TransactionRepository(ABC):
     bağımsız şekilde tanımlandığı soyut sınıf (Interface).
     """
 
+    @abstractmethod
+    def get_all_transactions(self):
+        pass
+
 class PredictiveModel(ABC):
     """
     PredictiveModel(ABC): ML modellerinin uyması gereken

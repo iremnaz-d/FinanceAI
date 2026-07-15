@@ -1,19 +1,25 @@
 from dataclasses import dataclass
 from datetime import datetime
+from typing import Optional
+
 
 @dataclass(slots = True) #sonradan attribute eklemek istersem slotsu silicem
 class Transaction:
     """
-    Transaction: Benzersiz ID, tarih, açıklama, miktar ve
-    kategori bilgilerini tutan saf Python veri sınıfı (dataclass)
+    Dataclass, holding bank account transactions' basic features
     """
     date: datetime
     id: str
     description: str
     amount: float
     balance: float
+    category : Optional[Category]  = None
 
+@dataclass
 class Category:
     """
-    Category: Kategorilerin adlarını ve bütçe limitlerini tanımlayan temel nesne sınıfı.
+    Holds Transaction's category names and/or budget limits (basically category features)
     """
+    name : str
+    budget_limit = Optional[float] = None
+

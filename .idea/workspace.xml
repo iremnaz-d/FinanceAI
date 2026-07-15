@@ -4,16 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="66dc89d2-3075-41cb-8c59-e8ce2a2db463" name="Changes" comment="Still annoying">
-      <change afterPath="$PROJECT_DIR$/src/infrastructure/database/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/infrastructure/database/db_connection.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/infrastructure/database/db_models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/infrastructure/database/repository.py" afterDir="false" />
+    <list default="true" id="66dc89d2-3075-41cb-8c59-e8ce2a2db463" name="Changes" comment="Started to entities before infrastructure/database">
+      <change afterPath="$PROJECT_DIR$/src/config/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/config/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/domain/entities.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/entities.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/domain/interfaces.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/interfaces.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/infrastructure/data/data_pipeline.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/infrastructure/data/data_pipeline.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/infrastructure/data/excel_parser.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/infrastructure/data/excel_parser.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/infrastructure/database/db_connection.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/infrastructure/database/db_connection.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/infrastructure/database/db_models.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/infrastructure/database/db_models.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,18 +48,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "Python.data_pipeline.executor": "Run",
-    "Python.excel_parser.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/Users/irem naz/Desktop/FinanceAI/src/data",
-    "settings.editor.selected.configurable": "reference.settingsdialog.project.grazie"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;Python.data_pipeline.executor&quot;: &quot;Run&quot;,
+    &quot;Python.excel_parser.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/irem naz/Desktop/FinanceAI/src/data&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.project.grazie&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\irem naz\Desktop\FinanceAI\src\data" />
@@ -114,13 +112,22 @@
       <option name="project" value="LOCAL" />
       <updated>1784073900036</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Started to entities before infrastructure/database">
+      <option name="closed" value="true" />
+      <created>1784111662109</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1784111662109</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Downloaded the data as xlsx file (Transaction_History)" />
     <MESSAGE value="Data Cleaning is annoying" />
     <MESSAGE value="Still annoying" />
-    <option name="LAST_COMMIT_MESSAGE" value="Still annoying" />
+    <MESSAGE value="Started to entities before infrastructure/database" />
+    <option name="LAST_COMMIT_MESSAGE" value="Started to entities before infrastructure/database" />
   </component>
 </project>
