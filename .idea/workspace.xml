@@ -4,14 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="66dc89d2-3075-41cb-8c59-e8ce2a2db463" name="Changes" comment="Started to entities before infrastructure/database">
-      <change afterPath="$PROJECT_DIR$/src/config/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/config/settings.py" afterDir="false" />
+    <list default="true" id="66dc89d2-3075-41cb-8c59-e8ce2a2db463" name="Changes" comment="infrastructure/database db_models, db_connection with SQLALchemy and SQLite through config/settings">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/domain/entities.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/entities.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/domain/interfaces.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/interfaces.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/infrastructure/database/db_connection.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/infrastructure/database/db_connection.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/infrastructure/database/db_models.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/infrastructure/database/db_models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/infrastructure/database/repository.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/infrastructure/database/repository.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,6 +38,12 @@
     &quot;accountId&quot;: &quot;8b654bb6-1331-42db-a471-0851a3df3799&quot;
   }
 }</component>
+  <component name="NamedScopeManager">
+    <scope name="Infrastructure" pattern="file[FinanceAI]:src/infrastructure//*" />
+    <scope name="Domain" pattern="file[FinanceAI]:src/domain//*" />
+    <scope name="Application" pattern="file[FinanceAI]:src/application//*" />
+    <scope name="Presentation" pattern="file[FinanceAI]:src/presentation//*" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 3
 }</component>
@@ -57,7 +61,7 @@
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/irem naz/Desktop/FinanceAI/src/data&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.project.grazie&quot;
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.ide.settings.file-colors&quot;
   }
 }</component>
   <component name="RecentsManager">
@@ -120,7 +124,15 @@
       <option name="project" value="LOCAL" />
       <updated>1784111662109</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="infrastructure/database db_models, db_connection with SQLALchemy and SQLite through config/settings">
+      <option name="closed" value="true" />
+      <created>1784120889988</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1784120889988</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -128,6 +140,7 @@
     <MESSAGE value="Data Cleaning is annoying" />
     <MESSAGE value="Still annoying" />
     <MESSAGE value="Started to entities before infrastructure/database" />
-    <option name="LAST_COMMIT_MESSAGE" value="Started to entities before infrastructure/database" />
+    <MESSAGE value="infrastructure/database db_models, db_connection with SQLALchemy and SQLite through config/settings" />
+    <option name="LAST_COMMIT_MESSAGE" value="infrastructure/database db_models, db_connection with SQLALchemy and SQLite through config/settings" />
   </component>
 </project>

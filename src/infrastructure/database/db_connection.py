@@ -10,14 +10,14 @@ class DataBaseSession:
  manages database (in this project it's SQLite) connection sessions
  """
 
- engine = create_engine(Settings.DATABASE_URL, echo = False) #gets the database_url from config/settings
- Session = sessionmaker(bind = engine)
- session = Session()
+ def __init__(self):
+  self.engine = create_engine(Settings.DATABASE_URL, echo = False) #gets the database_url from config/settings
+  self.Session = sessionmaker(bind = self.engine)
 
  def get_session(self):
-  return self.session
+  return self.Session()
 
- def close_session(self):
-  self.session.close()
+ # def close_session(self):
+ #  self.session.close()
 
  #session.commit(), session.close(), session.rollback()

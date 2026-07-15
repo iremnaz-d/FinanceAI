@@ -1,4 +1,5 @@
 from abc import ABC, abstractmethod
+from datetime import datetime
 
 
 class TransactionRepository(ABC):
@@ -9,6 +10,12 @@ class TransactionRepository(ABC):
 
     @abstractmethod
     def get_all_transactions(self):
+        pass
+
+    def get_transactions_by_date(self, date: datetime):
+        pass
+
+    def get_transaction_by_id(self, id: str):
         pass
 
 class PredictiveModel(ABC):
