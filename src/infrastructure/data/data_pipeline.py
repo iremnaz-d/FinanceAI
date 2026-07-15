@@ -15,7 +15,7 @@ class DataCleaner:
         self.df = df
 
     def arrange_dates(self):
-        self.df['Date'] = pd.to_datetime(self.df['Date'], format = '%d.%m.%Y')
+        self.df['Date'] = pd.to_datetime(self.df['Date'], format = '%d.%m.%Y', errors = 'coerce')
 
     def fill_null_values(self):
         numerical_cols = self.df.select_dtypes(include = 'number').columns

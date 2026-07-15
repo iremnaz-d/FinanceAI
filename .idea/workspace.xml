@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="66dc89d2-3075-41cb-8c59-e8ce2a2db463" name="Changes" comment="Downloaded the data as xlsx file (Transaction_History)">
+    <list default="true" id="66dc89d2-3075-41cb-8c59-e8ce2a2db463" name="Changes" comment="Data Cleaning is annoying">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/Transaction_History.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/Transaction_History.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/infrastructure/data/data_pipeline.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/infrastructure/data/data_pipeline.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/infrastructure/data/excel_parser.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/infrastructure/data/excel_parser.py" afterDir="false" />
     </list>
@@ -48,6 +47,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Python.data_pipeline.executor": "Run",
     "Python.excel_parser.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
@@ -83,11 +83,28 @@
       <option name="project" value="LOCAL" />
       <updated>1783544926160</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Downloaded the data as xlsx file (Transaction_History)">
+      <option name="closed" value="true" />
+      <created>1784071528685</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1784071528685</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Data Cleaning is annoying">
+      <option name="closed" value="true" />
+      <created>1784071620879</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1784071620879</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Downloaded the data as xlsx file (Transaction_History)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Downloaded the data as xlsx file (Transaction_History)" />
+    <MESSAGE value="Data Cleaning is annoying" />
+    <option name="LAST_COMMIT_MESSAGE" value="Data Cleaning is annoying" />
   </component>
 </project>
