@@ -21,6 +21,7 @@ class SQLAlchemyTransaction(Base):
         self.description = description
         self.amount = amount
         self.balance = balance
+        self.category = category
 
     __tablename__ = "transactions"
 

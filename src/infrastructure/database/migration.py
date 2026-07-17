@@ -19,7 +19,7 @@ class DataBaseMigrator:
                 self.repo.add_transaction(transaction)
                 count += 1
 
-        print(f"Migration is complete. {count} new transaction is added.")
+        print(f"Migration is complete. {count} new transaction is added to the database.")
 
 
 

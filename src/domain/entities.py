@@ -23,6 +23,7 @@ class Transaction:
         self.description = description
         self.amount = amount
         self.balance = balance
+        self.category = category
 
 
     @classmethod
@@ -42,7 +43,7 @@ class Transaction:
         )
 
     @classmethod
-    def from_db_model_plural(cls, db_model_list: list[SQLAlchemyTransaction]):
+    def from_db_model_plural(cls, db_model_list): #: list[SQLAlchemyTransaction]
         """
         :param db_model_list: SQLAlchemyTransaction list
         :return: Transaction list

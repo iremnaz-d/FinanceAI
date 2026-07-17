@@ -17,8 +17,8 @@ class FinancialVisualizer:
     def __init__(self, df):
         self.df = df
 
-    def plot_daily_trend(self,df):
-        df1 = df.groupby('date')['amount'].sum()
+    def plot_daily_trend(self):
+        df1 = self.df.groupby('date')['amount'].sum().reset_index()
         figure = px.line(df1, x='date', y='amount')
         figure.show()
 

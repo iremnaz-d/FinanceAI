@@ -15,7 +15,7 @@ class ExcellReader:
     def read(self):
         df = pd.read_excel(self.path)
         df.drop(index=df.index[:11], inplace=True)
-        df.columns = ['Date', 'ID', 'Description', 'Amount', 'Balance']
+        df.columns = ['date', 'id', 'description', 'amount', 'balance']
 
         cleaner = DataCleaner(df=df)
         cleaner.arrange_dates()
@@ -30,7 +30,6 @@ class ExcellReader:
         ) for index, row in df1.iterrows()]
         return transaction_list
 
-"""reader = ExcellReader(r"C:\Users\irem naz\Desktop\FinanceAI\src\data\Transaction_History.xlsx")
-df = reader.read()
+"""
 with pd.option_context('display.max_columns', None):
  print(df.head(15))"""

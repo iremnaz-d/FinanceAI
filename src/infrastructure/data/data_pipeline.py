@@ -14,9 +14,13 @@ class DataCleaner:
         self.df = df
 
     def arrange_dates(self):
-        self.df['Date'] = pd.to_datetime(self.df['Date'], format = '%d.%m.%Y', errors = 'coerce')
+        self.df['date'] = pd.to_datetime(self.df['date'], format = '%d.%m.%Y', errors = 'coerce')
+        self.df.dropna(subset=['date'], inplace=True)
 
     def fill_null_values(self):
+        self.df['amount'] = pd.to_numeric(self.df['amount'], errors='coerce')
+        self.df['balance'] = pd.to_numeric(self.df['balance'], errors='coerce')
+
         numerical_cols = self.df.select_dtypes(include = 'number').columns
         categorical_cols = self.df.select_dtypes(include = ['object', 'category']).columns
 
