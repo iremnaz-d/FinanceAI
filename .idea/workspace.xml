@@ -4,11 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="66dc89d2-3075-41cb-8c59-e8ce2a2db463" name="Changes" comment="infrastructure/database db_models, db_connection with SQLALchemy and SQLite through config/settings">
+    <list default="true" id="66dc89d2-3075-41cb-8c59-e8ce2a2db463" name="Changes" comment="infrastructure/database is done. planning to dig into visualization with Plotly Express and Streamlit">
+      <change afterPath="$PROJECT_DIR$/src/infrastructure/database/migration.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/presentation/app.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/presentation/components/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/presentation/components/charts.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/presentation/components/chat_interface.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/presentation/components/dashboard.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/config/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/config/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/domain/entities.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/entities.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/domain/interfaces.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/interfaces.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/infrastructure/data/excel_parser.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/infrastructure/data/excel_parser.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/infrastructure/database/db_connection.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/infrastructure/database/db_connection.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/infrastructure/database/db_models.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/infrastructure/database/db_models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/infrastructure/database/repository.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/infrastructure/database/repository.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -52,18 +60,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;Python.data_pipeline.executor&quot;: &quot;Run&quot;,
-    &quot;Python.excel_parser.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/irem naz/Desktop/FinanceAI/src/data&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.ide.settings.file-colors&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Python.charts.executor": "Run",
+    "Python.data_pipeline.executor": "Run",
+    "Python.excel_parser.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "C:/Users/irem naz/Desktop/FinanceAI/src/data",
+    "settings.editor.selected.configurable": "reference.settings.ide.settings.file-colors"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\irem naz\Desktop\FinanceAI\src\data" />
@@ -132,7 +141,15 @@
       <option name="project" value="LOCAL" />
       <updated>1784120889988</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="infrastructure/database is done. planning to dig into visualization with Plotly Express and Streamlit">
+      <option name="closed" value="true" />
+      <created>1784152104399</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1784152104399</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -141,6 +158,7 @@
     <MESSAGE value="Still annoying" />
     <MESSAGE value="Started to entities before infrastructure/database" />
     <MESSAGE value="infrastructure/database db_models, db_connection with SQLALchemy and SQLite through config/settings" />
-    <option name="LAST_COMMIT_MESSAGE" value="infrastructure/database db_models, db_connection with SQLALchemy and SQLite through config/settings" />
+    <MESSAGE value="infrastructure/database is done. planning to dig into visualization with Plotly Express and Streamlit" />
+    <option name="LAST_COMMIT_MESSAGE" value="infrastructure/database is done. planning to dig into visualization with Plotly Express and Streamlit" />
   </component>
 </project>

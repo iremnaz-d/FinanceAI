@@ -15,13 +15,20 @@ class SQLAlchemyTransaction(Base):
     defines schemas and corresponders of SQLite table of transactions
     """
 
+    def __init__(self, date:datetime, _id:str,description:str, amount:float, balance:float, category:Category = None):
+        self.date  = date
+        self.id = _id
+        self.description = description
+        self.amount = amount
+        self.balance = balance
+
     __tablename__ = "transactions"
 
-    date = Mapped[datetime]
-    id = Mapped[str] = mapped_column(primary_key = True) #Transaction ID as primary key
-    description = Mapped[str] = mapped_column(String(150)) #varchar(50)
-    amount = Mapped[float]
-    balance = Mapped[float]
-    category = Mapped[Optional[Category]]
+    date : Mapped[datetime]
+    id : Mapped[str] = mapped_column(primary_key = True) #Transaction ID as primary key
+    description : Mapped[str] = mapped_column(String(150)) #varchar(50)
+    amount : Mapped[float]
+    balance : Mapped[float]
+    category : Mapped[Optional[str]] = mapped_column(String(100))
 
 

@@ -2,7 +2,7 @@ from dataclasses import dataclass
 from datetime import datetime
 from typing import Optional
 
-from src.infrastructure.database.db_models import SQLAlchemyTransaction
+#from src.infrastructure.database.db_models import SQLAlchemyTransaction
 
 
 @dataclass(slots = True) #sonradan attribute eklemek istersem slotsu silicem
@@ -26,7 +26,7 @@ class Transaction:
 
 
     @classmethod
-    def from_db_model(cls, db_model: SQLAlchemyTransaction):
+    def from_db_model(cls, db_model):
         """
         converts SQLAlchemyTransaction to corresponding domain Transaction
         :param db_model: SQLAlchemyTransaction
@@ -62,5 +62,5 @@ class Category:
     Holds Transaction's category names and/or budget limits (basically category features)
     """
     name : str
-    budget_limit = Optional[float] = None
+    budget_limit : Optional[float] = None
 

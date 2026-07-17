@@ -1,6 +1,6 @@
 import pandas as pd
-
 from src.infrastructure.data.data_pipeline import DataCleaner
+from src.domain.entities import Transaction
 
 
 class ExcellReader:
@@ -20,7 +20,15 @@ class ExcellReader:
         cleaner = DataCleaner(df=df)
         cleaner.arrange_dates()
         cleaner.fill_null_values()
-        return cleaner.df
+        df1 =  cleaner.df
+        transaction_list = [Transaction(
+            date = row['date'],
+            _id = row['id'],
+            amount = row['amount'],
+            description = row['description'],
+            balance = row['balance']
+        ) for index, row in df1.iterrows()]
+        return transaction_list
 
 """reader = ExcellReader(r"C:\Users\irem naz\Desktop\FinanceAI\src\data\Transaction_History.xlsx")
 df = reader.read()

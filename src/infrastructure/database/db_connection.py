@@ -1,7 +1,7 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from src.config.settings import Settings
-
+from src.infrastructure.database.db_models import Base
 
 class DataBaseSession:
 
@@ -12,6 +12,7 @@ class DataBaseSession:
 
  def __init__(self):
   self.engine = create_engine(Settings.DATABASE_URL, echo = False) #gets the database_url from config/settings
+  Base.metadata.create_all(bind=self.engine)
   self.Session = sessionmaker(bind = self.engine)
 
  def get_session(self):
