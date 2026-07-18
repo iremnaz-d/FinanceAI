@@ -2,6 +2,8 @@ from dataclasses import asdict
 
 import plotly.express as px
 import pandas as pd
+
+from src.application.transaction_service import TransactionService
 from src.infrastructure.database.db_connection import DataBaseSession
 from src.infrastructure.database.repository import SQLiteTransactionRepository
 
@@ -14,12 +16,36 @@ class FinancialVisualizer:
     FinancialVisualizer: Plotly veya Matplotlib kullanarak pasta grafikleri,
     harcama trend çizgileri ve kategori dağılımlarını çizen arayüz sınıfı.
     """
-    def __init__(self, df):
-        self.df = df
+    def __init__(self):
+        self.repo = SQLiteTransactionRepository(db=DataBaseSession())
+        self.service = TransactionService(self.repo)
 
-    def plot_daily_trend(self):
-        df1 = self.df.groupby('date')['amount'].sum().reset_index()
+    def line_daily_trend(self):
+        """
+        :return: Line Chart of all the transactions in account (date/profit)
+        """
+        df = self.service.get_all_transactions()
+        df1 = df.groupby('date')['amount'].sum().reset_index()
         figure = px.line(df1, x='date', y='amount')
+        return figure
+
+    def line_daily_trend_expense(self):
+        """
+        :return: Line Chart of expenses (date/amount)
+        """
+        df = self.service.get_expenses()
+        df1 = df.groupby('date')['amount'].sum().reset_index()
+        figure = px.line(df1, x = 'date', y = 'amount')
+        figure.update_yaxes(autorange="reversed") #to show negative values above x-axes
+        return figure
+
+    def line_daily_trend_income(self):
+        """
+        :return: Line Chart of incomes (date/amount)
+        """
+        df = self.service.get_incomes()
+        df1 = df.groupby('date')['amount'].sum().reset_index()
+        figure = px.line(df1, x = 'date', y = 'amount')
         return figure
 
 

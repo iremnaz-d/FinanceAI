@@ -4,13 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="66dc89d2-3075-41cb-8c59-e8ce2a2db463" name="Changes" comment="thanks to my universal spirit fairies something goes right">
-      <change afterPath="$PROJECT_DIR$/src/presentation/pages/1__My_Transactions.py" afterPathEscaped="$PROJECT_DIR$/src/presentation/pages/1_💳_My_Transactions.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/presentation/pages/2__Chart_Analysis.py" afterPathEscaped="$PROJECT_DIR$/src/presentation/pages/2_📊_Chart_Analysis.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/presentation/pages/3__AI_Assistant.py" afterPathEscaped="$PROJECT_DIR$/src/presentation/pages/3_🤖_AI_Assistant.py" afterDir="false" />
+    <list default="true" id="66dc89d2-3075-41cb-8c59-e8ce2a2db463" name="Changes" comment="Streamlit and Plotly works now. I CAN SEE THINGS">
+      <change afterPath="$PROJECT_DIR$/src/application/transaction_service.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/presentation/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/app.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/presentation/components/charts.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/components/charts.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/presentation/pages/2__Chart_Analysis.py" beforePathEscaped="$PROJECT_DIR$/src/presentation/pages/2_📊_Chart_Analysis.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/pages/2__Chart_Analysis.py" afterPathEscaped="$PROJECT_DIR$/src/presentation/pages/2_📊_Chart_Analysis.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -160,7 +158,15 @@
       <option name="project" value="LOCAL" />
       <updated>1784316852610</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Streamlit and Plotly works now. I CAN SEE THINGS">
+      <option name="closed" value="true" />
+      <created>1784390829361</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1784390829361</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -172,6 +178,7 @@
     <MESSAGE value="infrastructure/database is done. planning to dig into visualization with Plotly Express and Streamlit" />
     <MESSAGE value="Visuals will have to wait, i had to add and change 282497897 features first" />
     <MESSAGE value="thanks to my universal spirit fairies something goes right" />
-    <option name="LAST_COMMIT_MESSAGE" value="thanks to my universal spirit fairies something goes right" />
+    <MESSAGE value="Streamlit and Plotly works now. I CAN SEE THINGS" />
+    <option name="LAST_COMMIT_MESSAGE" value="Streamlit and Plotly works now. I CAN SEE THINGS" />
   </component>
 </project>
