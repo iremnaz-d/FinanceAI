@@ -5,7 +5,7 @@ from typing import Optional
 #from src.infrastructure.database.db_models import SQLAlchemyTransaction
 
 
-@dataclass(slots = True) #sonradan attribute eklemek istersem slotsu silicem
+@dataclass
 class Transaction:
     """
     Dataclass, holding bank account transactions' basic features
@@ -15,9 +15,9 @@ class Transaction:
     description: str
     amount: float
     balance: float
-    category : Optional[Category]  = None
+    category : Optional[str]  = None
 
-    def __init__(self, date:datetime, _id:str,description:str, amount:float, balance:float, category:Category = None):
+    def __init__(self, date:datetime, _id:str,description:str, amount:float, balance:float, category:str):
         self.date  = date
         self.id = _id
         self.description = description
@@ -39,7 +39,8 @@ class Transaction:
             _id = db_model.id,
             description = db_model.description,
             amount = db_model.amount,
-            balance = db_model.balance
+            balance = db_model.balance,
+            category = db_model.category
         )
 
     @classmethod
@@ -57,11 +58,11 @@ class Transaction:
 
 
 
-@dataclass
+"""@dataclass
 class Category:
-    """
+    
     Holds Transaction's category names and/or budget limits (basically category features)
-    """
+    
     name : str
-    budget_limit : Optional[float] = None
+    budget_limit : Optional[float] = None"""
 

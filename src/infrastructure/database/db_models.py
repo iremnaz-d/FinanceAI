@@ -2,7 +2,7 @@ from typing import Optional
 from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column
 from datetime import datetime
 from sqlalchemy import String
-from src.domain.entities import Category
+
 
 
 class Base(DeclarativeBase):
@@ -15,7 +15,7 @@ class SQLAlchemyTransaction(Base):
     defines schemas and corresponders of SQLite table of transactions
     """
 
-    def __init__(self, date:datetime, _id:str,description:str, amount:float, balance:float, category:Category = None):
+    def __init__(self, date:datetime, _id:str,description:str, amount:float, balance:float, category:str):
         self.date  = date
         self.id = _id
         self.description = description

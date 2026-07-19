@@ -23,7 +23,8 @@ class SQLiteTransactionRepository(TransactionRepository):
                 date=transaction.date,
                 description=transaction.description,
                 amount=transaction.amount,
-                balance=transaction.balance
+                balance=transaction.balance,
+                category = transaction.category
             )
             session.add(db_transaction)
             session.commit()

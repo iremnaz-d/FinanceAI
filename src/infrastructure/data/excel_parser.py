@@ -27,7 +27,8 @@ class ExcellReader:
             _id = row['id'],
             amount = row['amount'],
             description = row['description'],
-            balance = row['balance']
+            balance = row['balance'],
+            category = ""
         ) for index, row in df1.iterrows()]
         return transaction_list
 
