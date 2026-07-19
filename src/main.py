@@ -14,7 +14,6 @@ if __name__ == '__main__':
     transaction_list = repo.get_all_transactions()
     df = pd.DataFrame([asdict(data) for data in transaction_list])
 
-    vis = FinancialVisualizer(df)
-
-    vis.plot_daily_trend()
+    with pd.option_context('display.max_columns', None):
+        print(df.head(15))
 

@@ -1,7 +1,7 @@
 import pandas as pd
+import re
 
-
-
+from src.config.settings import Settings
 
 
 class DataCleaner:
@@ -26,6 +26,15 @@ class DataCleaner:
 
         self.df[numerical_cols] = self.df[numerical_cols].fillna(self.df[numerical_cols].median()) #fill numerics with median
         self.df[categorical_cols] = self.df[categorical_cols].fillna('Unknown') #fill strings with 'Unknown'
+
+    def clean_descriptions(self):
+      #  df1 = self.df['description'].str.lower()
+        regex_list = Settings.REGEX_DESCRIPTION
+        regex_description = '|'.join(regex_list)
+
+        self.df['description'] = self.df['description'].str.replace(regex_description, "", case = False, regex = True)
+        self.df['description'] = self.df['description'].str.replace(r'\s+',' ', regex = True).str.strip()
+
 
 
 

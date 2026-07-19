@@ -20,6 +20,7 @@ class ExcellReader:
         cleaner = DataCleaner(df=df)
         cleaner.arrange_dates()
         cleaner.fill_null_values()
+        cleaner.clean_descriptions()
         df1 =  cleaner.df
         transaction_list = [Transaction(
             date = row['date'],
