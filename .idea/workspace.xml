@@ -4,16 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="66dc89d2-3075-41cb-8c59-e8ce2a2db463" name="Changes" comment="cleaned descriptions to be interpreted in categorizer">
-      <change afterPath="$PROJECT_DIR$/src/application/categorization_service.py" afterDir="false" />
+    <list default="true" id="66dc89d2-3075-41cb-8c59-e8ce2a2db463" name="Changes" comment="they are categorized now. i can not do anything else before i visualize them. yeah, ziraat bankası don't have these kinda features">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/config/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/config/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/domain/entities.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/entities.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/infrastructure/data/data_pipeline.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/infrastructure/data/data_pipeline.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/infrastructure/data/excel_parser.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/infrastructure/data/excel_parser.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/infrastructure/database/db_models.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/infrastructure/database/db_models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/infrastructure/database/migration.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/infrastructure/database/migration.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/infrastructure/database/repository.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/infrastructure/database/repository.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/presentation/components/charts.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/components/charts.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/presentation/pages/2__Chart_Analysis.py" beforePathEscaped="$PROJECT_DIR$/src/presentation/pages/2_📊_Chart_Analysis.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/pages/2__Chart_Analysis.py" afterPathEscaped="$PROJECT_DIR$/src/presentation/pages/2_📊_Chart_Analysis.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -188,7 +182,15 @@
       <option name="project" value="LOCAL" />
       <updated>1784486882781</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="they are categorized now. i can not do anything else before i visualize them. yeah, ziraat bankası don't have these kinda features">
+      <option name="closed" value="true" />
+      <created>1784493600973</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1784493600973</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -203,6 +205,7 @@
     <MESSAGE value="Streamlit and Plotly works now. I CAN SEE THINGS" />
     <MESSAGE value="added transaction_service and a couple of things to streamlit" />
     <MESSAGE value="cleaned descriptions to be interpreted in categorizer" />
-    <option name="LAST_COMMIT_MESSAGE" value="cleaned descriptions to be interpreted in categorizer" />
+    <MESSAGE value="they are categorized now. i can not do anything else before i visualize them. yeah, ziraat bankası don't have these kinda features" />
+    <option name="LAST_COMMIT_MESSAGE" value="they are categorized now. i can not do anything else before i visualize them. yeah, ziraat bankası don't have these kinda features" />
   </component>
 </project>

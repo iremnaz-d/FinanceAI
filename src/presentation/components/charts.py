@@ -48,6 +48,13 @@ class FinancialVisualizer:
         figure = px.line(df1, x = 'date', y = 'amount')
         return figure
 
+    def pie_category_expense(self):
+        df = self.service.get_expenses()
+        df1 = df.groupby('category')['amount'].sum().abs().reset_index()
+        figure = px.pie(df1,values = 'amount', names = 'category')
+        return figure
+
+
 
 
 
