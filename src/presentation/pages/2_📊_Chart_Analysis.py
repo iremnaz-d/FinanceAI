@@ -23,7 +23,6 @@ def choice_data():
     data_type = st.radio("I want to see: ", ['All Transactions', 'Only Expenses', 'Only Incomes'])
     return data_type
 
-
 def main():
 
     vis = FinancialVisualizer() # Plotly visualizer on charts.py
@@ -44,7 +43,10 @@ def main():
 
     elif chart_type == 'Pie Chart':
         st.markdown("## My Spendings")
-        fig = vis.pie_category_expense()
+        if st.checkbox('Predict uncategorized payments'):
+            fig = vis.pie_category_expense_with_predictions()
+        else:
+            fig = vis.pie_category_expense()
         st.plotly_chart(fig)
 
 

@@ -50,9 +50,19 @@ class FinancialVisualizer:
 
     def pie_category_expense(self):
         df = self.service.get_expenses()
+        df['category'] = df['category'].replace(r'.*\(Predicted\)$', 'Other', regex=True)
         df1 = df.groupby('category')['amount'].sum().abs().reset_index()
         figure = px.pie(df1,values = 'amount', names = 'category')
         return figure
+
+    def pie_category_expense_with_predictions(self):
+        df = self.service.get_expenses()
+        df['category'] = df['category'].str.replace(' (Predicted)', '', regex = False)
+        df = df[df['category'] != 'Income']
+        df1 = df.groupby('category')['amount'].sum().abs().reset_index()
+        figure = px.pie(df1, values = 'amount', names = 'category')
+        return figure
+
 
 
 
