@@ -1,6 +1,7 @@
 from dataclasses import dataclass
 from datetime import datetime
 from typing import Optional
+import pandas as pd
 
 #from src.infrastructure.database.db_models import SQLAlchemyTransaction
 
@@ -55,6 +56,8 @@ class Transaction:
         for model in db_model_list:
             _list.append(cls.from_db_model(db_model = model))
         return _list
+
+
 
 
 

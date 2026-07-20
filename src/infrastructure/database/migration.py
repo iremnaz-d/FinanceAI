@@ -1,4 +1,5 @@
 from src.application.categorization_service import Categorizer
+from src.application.ml_services import TransactionPredictor
 from src.config.settings import Settings
 from src.infrastructure.data.excel_parser import ExcellReader
 from src.infrastructure.database.db_connection import DataBaseSession
@@ -13,11 +14,15 @@ class DataBaseMigrator:
 
     def run_migration(self):
         transaction_list = self.excell_reader.read()
+
         categorizer = Categorizer(transaction_list)
         new_transaction_list = categorizer.categorize()
+
+        predictor = TransactionPredictor(new_transaction_list)
+        brand_new_transaction_list = predictor.predict_category()
         count = 0
 
-        for transaction in new_transaction_list:
+        for transaction in brand_new_transaction_list:
             if not self.repo.check_if_exists(transaction.id):
                 self.repo.add_transaction(transaction)
                 count += 1
