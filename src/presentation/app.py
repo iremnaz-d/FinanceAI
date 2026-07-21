@@ -1,6 +1,9 @@
 import sys
 import os
 
+from src.application.financial_services import DashboardService
+from src.presentation.components.dashboard import DashboardFeatures
+
 project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), '../../'))
 sys.path.insert(0, project_root)
 
@@ -26,7 +29,9 @@ def init_database():
 
 def main():
     st.title("FinanceAI")
-    #init_database()
+
+    dashboard = DashboardFeatures()
+    dashboard.monthly_difference()
 
 
 

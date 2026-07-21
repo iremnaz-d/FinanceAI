@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="66dc89d2-3075-41cb-8c59-e8ce2a2db463" name="Changes" comment="category prediction is finished but thinking of switching to another model. MultinomialNB does not evaluate negative values">
+    <list default="true" id="66dc89d2-3075-41cb-8c59-e8ce2a2db463" name="Changes" comment="Now I can see the pie chart with and without predictions">
+      <change afterPath="$PROJECT_DIR$/src/application/financial_services.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/presentation/components/charts.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/components/charts.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/presentation/pages/2__Chart_Analysis.py" beforePathEscaped="$PROJECT_DIR$/src/presentation/pages/2_📊_Chart_Analysis.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/pages/2__Chart_Analysis.py" afterPathEscaped="$PROJECT_DIR$/src/presentation/pages/2_📊_Chart_Analysis.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/presentation/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/presentation/components/dashboard.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/components/dashboard.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -206,7 +207,15 @@
       <option name="project" value="LOCAL" />
       <updated>1784581975889</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Now I can see the pie chart with and without predictions">
+      <option name="closed" value="true" />
+      <created>1784588821710</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1784588821710</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -224,7 +233,8 @@
     <MESSAGE value="they are categorized now. i can not do anything else before i visualize them. yeah, ziraat bankası don't have these kinda features" />
     <MESSAGE value="seems like I spend %27.8 of my money in markets. time to categorize the &quot;others&quot;. I am saying NLP guys" />
     <MESSAGE value="category prediction is finished but thinking of switching to another model. MultinomialNB does not evaluate negative values" />
-    <option name="LAST_COMMIT_MESSAGE" value="category prediction is finished but thinking of switching to another model. MultinomialNB does not evaluate negative values" />
+    <MESSAGE value="Now I can see the pie chart with and without predictions" />
+    <option name="LAST_COMMIT_MESSAGE" value="Now I can see the pie chart with and without predictions" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
