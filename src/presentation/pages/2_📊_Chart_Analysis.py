@@ -16,7 +16,7 @@ import pandas as pd
 st.set_page_config(page_title="Chart Analysis", page_icon="📊", layout="wide")
 
 def choice_chart():
-   chart_type =  st.selectbox('Select a chart: ', ['Line Chart', 'Pie Chart'])
+   chart_type =  st.selectbox('See my: ', ['Transaction flow over year', 'Expenses over categories'])
    return chart_type
 
 def choice_data():
@@ -29,7 +29,7 @@ def main():
 
     chart_type= choice_chart()
 
-    if chart_type == 'Line Chart':
+    if chart_type == 'Transaction flow over year':
         data_type = choice_data()
         fig = None
         match data_type:
@@ -41,7 +41,7 @@ def main():
                 fig = vis.line_daily_trend_income()
         st.plotly_chart(fig)
 
-    elif chart_type == 'Pie Chart':
+    elif chart_type == 'Expenses over categories':
         st.markdown("## My Spendings")
         if st.checkbox('Predict uncategorized payments'):
             fig = vis.pie_category_expense_with_predictions()

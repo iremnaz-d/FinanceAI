@@ -68,6 +68,7 @@ class FinancialVisualizer:
         dService = DashboardService()
         df= dService.get_burn_rate_data(month,year)
         figure = px.line(df, x = 'day', y = 'cumulative_amount', color = 'month')
+        figure.update_layout(xaxis_title = 'Days', yaxis_title = 'Expense (Cumulative)')
         return figure
 
 

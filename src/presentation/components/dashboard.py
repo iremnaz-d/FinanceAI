@@ -9,7 +9,7 @@ class DashboardFeatures:
     def __init__(self):
         self.service = DashboardService()
 
-    def monthly_difference(self):
+    def monthly_view(self):
         today = datetime.date.today()
 
         months = []
@@ -21,7 +21,7 @@ class DashboardFeatures:
 
 
         with st.container(border = True):
-            col1,col2 = st.columns([1,4])
+            col1,col2 = st.columns([2,3])
             with col1:
                 period = st.selectbox('Choose month: ', months)
                 current_month, current_year = period.split()
@@ -41,14 +41,26 @@ class DashboardFeatures:
 
                 """st.markdown(f":gray-background[### {label_str}\n## {value_str}]")
                 st.metric(label="", value="", delta=delta_dif)"""
-                with st.container(border=False):
+                with st.container(border=True):
                     st.text(label_str)
                     st.subheader(value_str)
 
             with col2:
-                vis = FinancialVisualizer()
-                fig = vis.line_burn_rate(current_month, current_year)
-                st.plotly_chart(fig, use_container_width=True)
+                st.text("")
+                st.subheader(f"Top 5 Expenses in {current_month} {current_year}", text_alignment='center')
+
+                with st.container(border=True):
+
+                    df = self.service.get_top_expenses(current_month, current_year)
+                    st.dataframe(df, hide_index = True, use_container_width = True, column_config = {
+                        'description': 'Description',
+                        'amount': st.column_config.NumberColumn('Amount Spent (TL)', format="%.2f ₺"),
+                        'category': 'Category'
+                    })
+
+            vis = FinancialVisualizer()
+            fig = vis.line_burn_rate(current_month, current_year)
+            st.plotly_chart(fig, use_container_width=True)
 
 
 

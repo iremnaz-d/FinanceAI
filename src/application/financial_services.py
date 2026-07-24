@@ -54,8 +54,25 @@ class DashboardService:
         df1['cumulative_amount'] = df1.groupby('month')['amount'].cumsum()
 
         df2 = df1[df1['month'].isin([current_month,last_month])]
-
         return df2
+
+    def get_top_expenses(self, month, year):
+        df = self.service.get_expenses()
+        date = pd.to_datetime(f"{year}-{month}", format='%Y-%B')
+        month = date.strftime('%B %Y')
+
+        df['month'] = df['date'].dt.strftime('%B %Y')
+        df1 = df[df['month'] == month]
+        df1['amount'] = df1['amount'].abs()
+        df2 = df1.nlargest(5,'amount')
+
+        df3 = df2.loc[:,['amount', 'description', 'category']]
+
+        return df3
+
+
+
+
 
 
 
