@@ -62,6 +62,15 @@ class DashboardFeatures:
             fig = vis.line_burn_rate(current_month, current_year)
             st.plotly_chart(fig, use_container_width=True)
 
+        with st.container(border = True):
+            df = self.service.get_predicted_expenses(current_month, current_year)
+            st.subheader(f"AI automatically categorized {len(df)} transactions this month", text_alignment='center')
+            st.dataframe(df, hide_index=True, column_config={
+                'description': 'Description',
+                'amount': st.column_config.NumberColumn('Amount Spent (TL)', format="%.2f ₺"),
+                'category': 'Category'
+            })
+
 
 
 

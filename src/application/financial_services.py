@@ -70,6 +70,22 @@ class DashboardService:
 
         return df3
 
+    def get_predicted_expenses(self, month, year):
+        df = self.service.get_expenses()
+        date = pd.to_datetime(f"{year}-{month}", format='%Y-%B')
+        month = date.strftime('%B %Y')
+
+        df['month'] = df['date'].dt.strftime('%B %Y')
+        df1 = df[df['month'] == month]
+        df1['amount'] = df1['amount'].abs()
+
+        df2 = df1[df1['category'].str.endswith('(Predicted)')]
+        df3 = df2.loc[:, ['amount', 'description', 'category']]
+        df3.sort_values(by = 'amount', ascending = False, inplace = True)
+        return df3
+
+
+
 
 
 
