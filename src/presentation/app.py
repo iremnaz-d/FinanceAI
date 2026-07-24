@@ -30,6 +30,8 @@ def init_database():
 def main():
     st.title("FinanceAI")
 
+    init_database()
+
     dashboard = DashboardFeatures()
     dashboard.monthly_difference()
 

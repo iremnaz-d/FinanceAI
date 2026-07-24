@@ -3,6 +3,7 @@ from dataclasses import asdict
 import plotly.express as px
 import pandas as pd
 
+from src.application.financial_services import DashboardService
 from src.application.transaction_service import TransactionService
 from src.infrastructure.database.db_connection import DataBaseSession
 from src.infrastructure.database.repository import SQLiteTransactionRepository
@@ -62,6 +63,13 @@ class FinancialVisualizer:
         df1 = df.groupby('category')['amount'].sum().abs().reset_index()
         figure = px.pie(df1, values = 'amount', names = 'category')
         return figure
+
+    def line_burn_rate(self, month, year):
+        dService = DashboardService()
+        df= dService.get_burn_rate_data(month,year)
+        figure = px.line(df, x = 'day', y = 'cumulative_amount', color = 'month')
+        return figure
+
 
 
 
