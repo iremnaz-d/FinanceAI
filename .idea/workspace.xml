@@ -4,9 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="66dc89d2-3075-41cb-8c59-e8ce2a2db463" name="Changes" comment="Top 5 expenses and a few fixes on dashboard">
-      <change beforePath="$PROJECT_DIR$/src/application/financial_services.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/financial_services.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/presentation/components/dashboard.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/components/dashboard.py" afterDir="false" />
+    <list default="true" id="66dc89d2-3075-41cb-8c59-e8ce2a2db463" name="Changes" comment="AI Predictions on dashboard">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/application/ai_services.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/infrastructure/llm/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/infrastructure/llm/client.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -237,7 +240,15 @@
       <option name="project" value="LOCAL" />
       <updated>1784931701163</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="AI Predictions on dashboard">
+      <option name="closed" value="true" />
+      <created>1784933927157</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1784933927157</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -259,7 +270,8 @@
     <MESSAGE value="they said kpi card is great. NO IT IS NOT" />
     <MESSAGE value="I love containers. Monthly comparison and burn rate is in my HomePage now!" />
     <MESSAGE value="Top 5 expenses and a few fixes on dashboard" />
-    <option name="LAST_COMMIT_MESSAGE" value="Top 5 expenses and a few fixes on dashboard" />
+    <MESSAGE value="AI Predictions on dashboard" />
+    <option name="LAST_COMMIT_MESSAGE" value="AI Predictions on dashboard" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
