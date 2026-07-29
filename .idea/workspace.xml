@@ -4,12 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="66dc89d2-3075-41cb-8c59-e8ce2a2db463" name="Changes" comment="AI Predictions on dashboard">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/application/ai_services.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/infrastructure/llm/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/infrastructure/llm/client.py" afterDir="false" />
+    <list default="true" id="66dc89d2-3075-41cb-8c59-e8ce2a2db463" name="Changes" comment="damn. LLM HAS BEGUN!">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/application/ai_services.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/ai_services.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/application/financial_services.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/financial_services.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -248,7 +246,15 @@
       <option name="project" value="LOCAL" />
       <updated>1784933927157</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="damn. LLM HAS BEGUN!">
+      <option name="closed" value="true" />
+      <created>1785105699632</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1785105699632</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -271,7 +277,8 @@
     <MESSAGE value="I love containers. Monthly comparison and burn rate is in my HomePage now!" />
     <MESSAGE value="Top 5 expenses and a few fixes on dashboard" />
     <MESSAGE value="AI Predictions on dashboard" />
-    <option name="LAST_COMMIT_MESSAGE" value="AI Predictions on dashboard" />
+    <MESSAGE value="damn. LLM HAS BEGUN!" />
+    <option name="LAST_COMMIT_MESSAGE" value="damn. LLM HAS BEGUN!" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

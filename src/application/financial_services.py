@@ -84,6 +84,20 @@ class DashboardService:
         df3.sort_values(by = 'amount', ascending = False, inplace = True)
         return df3
 
+class FinancialService:
+        def __init__(self):
+            self.repo = SQLiteTransactionRepository(db=DataBaseSession())
+            self.service = TransactionService(self.repo)
+
+        def get_expenses_by_month(self, month, year):
+            df = self.service.get_expenses()
+            current_date = pd.to_datetime(f"{year}-{month}", format='%Y-%B')
+
+            df1 = df.groupby('date')['amount'].sum().abs().reset_index()
+            return df1
+
+
+
 
 
 
