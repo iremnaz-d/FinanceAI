@@ -7,10 +7,14 @@ from src.presentation.components.chat_interface import ChatVisualizer
 project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), '../../../'))
 sys.path.insert(0, project_root)
 import streamlit as st
+from google.genai.errors import ServerError, ClientError
 
 def main():
     ai_service = AIService()
     chat_vis = ChatVisualizer()
+
+    if 'timeframe' not in st.session_state:
+        st.session_state.timeframe = 'ALL'
 
     if 'messages' not in st.session_state:
         st.session_state.messages = []
@@ -22,10 +26,35 @@ def main():
         with st.chat_message('user'):
             st.markdown(user_query)
 
-        response = ai_service.get_financial_insight(user_query,'March', '2026')
-        st.session_state.messages.append({'role': 'assistant', 'content': response})
-        with st.chat_message('assistant'):
-            st.markdown(response)
+        try:
+            response, timeframe = ai_service.get_financial_insight(user_query, st.session_state.timeframe)
+            st.session_state.timeframe = timeframe
+            st.session_state.messages.append({'role': 'assistant', 'content': response})
+            with st.chat_message('assistant'):
+                st.markdown(response)
+        except ServerError:
+            error_message = "AI Assistant is not available at this moment. Please try again a few minutes later."
+            st.session_state.messages.append({'role': 'assistant', 'content': error_message})
+            with st.chat_message('assistant'):
+                st.markdown(error_message)
+
+        except ClientError as e:
+            error_str = str(e).lower()
+            if "429" in error_str:
+                if 'minute' in error_str:
+                    error_message = "You hit the speed limit per minute. Please try again 1 minute later."
+                elif 'day' in error_str or 'daily' in error_str:
+                    error_message = "You have reached daily AI Assistant chat limit. Please try again tomorrow."
+                else:
+                    error_message = "Too many request! This Assistant is tired. Please wait a while and try again later."
+
+            else:
+                error_message = "Unexpected client error."
+            st.session_state.messages.append({'role': 'assistant', 'content': error_message})
+            with st.chat_message('assistant'):
+                st.markdown(error_message)
+
+
 
 if __name__ == '__main__':
    main()
