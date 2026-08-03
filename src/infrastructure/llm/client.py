@@ -11,7 +11,7 @@ class Client:
 
     def generate_response(self, text):
         response = self.client.models.generate_content(
-            model = 'gemini-2.5-flash',
+            model = 'gemini-3.6-flash',
             contents = text
         )
         return response.text

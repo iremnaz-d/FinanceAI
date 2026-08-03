@@ -4,10 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="66dc89d2-3075-41cb-8c59-e8ce2a2db463" name="Changes" comment="damn. LLM HAS BEGUN!">
+    <list default="true" id="66dc89d2-3075-41cb-8c59-e8ce2a2db463" name="Changes" comment="AI Service">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/application/ai_services.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/ai_services.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/application/financial_services.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/financial_services.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/infrastructure/llm/client.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/infrastructure/llm/client.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/presentation/components/chat_interface.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/components/chat_interface.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/presentation/pages/3__AI_Assistant.py" beforePathEscaped="$PROJECT_DIR$/src/presentation/pages/3_🤖_AI_Assistant.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/pages/3__AI_Assistant.py" afterPathEscaped="$PROJECT_DIR$/src/presentation/pages/3_🤖_AI_Assistant.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -254,7 +256,15 @@
       <option name="project" value="LOCAL" />
       <updated>1785105699632</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="AI Service">
+      <option name="closed" value="true" />
+      <created>1785351378147</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1785351378147</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -278,7 +288,8 @@
     <MESSAGE value="Top 5 expenses and a few fixes on dashboard" />
     <MESSAGE value="AI Predictions on dashboard" />
     <MESSAGE value="damn. LLM HAS BEGUN!" />
-    <option name="LAST_COMMIT_MESSAGE" value="damn. LLM HAS BEGUN!" />
+    <MESSAGE value="AI Service" />
+    <option name="LAST_COMMIT_MESSAGE" value="AI Service" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

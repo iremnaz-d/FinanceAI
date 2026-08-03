@@ -91,10 +91,10 @@ class FinancialService:
 
         def get_expenses_by_month(self, month, year):
             df = self.service.get_expenses()
-            current_date = pd.to_datetime(f"{year}-{month}", format='%Y-%B')
+            current_month = f"{month} {year}"
+            df['month'] = df['date'].dt.strftime('%B %Y')
 
-            df1 = df.groupby('date')['amount'].sum().abs().reset_index()
-            return df1
+            return df[df['month'] == current_month]
 
 
 
