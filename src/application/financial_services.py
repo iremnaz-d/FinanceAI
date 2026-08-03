@@ -2,6 +2,7 @@ from src.application.transaction_service import TransactionService
 from src.infrastructure.database.db_connection import DataBaseSession
 from src.infrastructure.database.repository import SQLiteTransactionRepository
 import pandas as pd
+from dateutil.relativedelta import relativedelta
 
 
 class DashboardService:
@@ -96,15 +97,23 @@ class FinancialService:
 
             return df[df['month'] == current_month]
 
+        def get_expenses_by_month_interval(self, first_month, first_year, second_month, second_year):
+            df = self.service.get_expenses()
+            df['month'] = df['date'].dt.strftime('%B %Y')
 
+            first_date = pd.to_datetime(f"{first_month} {first_year}", format = '%B %Y')
+            second_date = pd.to_datetime(f"{second_month} {second_year}", format = '%B %Y')
+            if first_date < second_date:
+                temp = first_date
+                first_date = second_date
+                second_date = temp
 
+            current_date = first_date
 
+            months_list = []
+            while current_date <= second_date:
+                months_list.append(current_date)
+                current_date = current_date + relativedelta(months = 1)
 
-
-
-
-
-
-
-
-
+            df1 = df[df['month'] in months_list]
+            return df1

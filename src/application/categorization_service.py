@@ -14,11 +14,14 @@ class Categorizer:
         self.transaction_list = transaction_list
 
     def determine_category(self, description):
+        max_match_length = 0
+        best_category = 'Other'
         for category, list_value in self.dict.items():
            for value in list_value:
-               if value.lower() in description.lower():
-                   return category
-        return 'Other'
+               if value.lower() in description.lower() and len(value) > max_match_length:
+                   best_category = category
+                   max_match_length = len(value)
+        return best_category
 
     def categorize(self):
         for transaction in self.transaction_list:

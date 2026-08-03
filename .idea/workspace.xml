@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="66dc89d2-3075-41cb-8c59-e8ce2a2db463" name="Changes" comment="I have an alive talking funny chatbot now. But it needs improvements of course">
+    <list default="true" id="66dc89d2-3075-41cb-8c59-e8ce2a2db463" name="Changes" comment="Data is sent through the router now but im gonna add 'month intervals' later. Also added exceptions for different kinds of errors">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/application/ai_services.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/ai_services.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/presentation/pages/3__AI_Assistant.py" beforePathEscaped="$PROJECT_DIR$/src/presentation/pages/3_🤖_AI_Assistant.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/pages/3__AI_Assistant.py" afterPathEscaped="$PROJECT_DIR$/src/presentation/pages/3_🤖_AI_Assistant.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/application/categorization_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/categorization_service.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/application/financial_services.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/financial_services.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -269,7 +271,15 @@
       <option name="project" value="LOCAL" />
       <updated>1785767544700</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Data is sent through the router now but im gonna add 'month intervals' later. Also added exceptions for different kinds of errors">
+      <option name="closed" value="true" />
+      <created>1785773529440</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1785773529440</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -295,7 +305,8 @@
     <MESSAGE value="damn. LLM HAS BEGUN!" />
     <MESSAGE value="AI Service" />
     <MESSAGE value="I have an alive talking funny chatbot now. But it needs improvements of course" />
-    <option name="LAST_COMMIT_MESSAGE" value="I have an alive talking funny chatbot now. But it needs improvements of course" />
+    <MESSAGE value="Data is sent through the router now but im gonna add 'month intervals' later. Also added exceptions for different kinds of errors" />
+    <option name="LAST_COMMIT_MESSAGE" value="Data is sent through the router now but im gonna add 'month intervals' later. Also added exceptions for different kinds of errors" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

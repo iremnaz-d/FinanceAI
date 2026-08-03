@@ -20,8 +20,14 @@ class AIService:
             df = self.transaction_service.get_expenses()
         else:
             try:
-                month, year = timeframe.split(" ")
-                df = self.financial_service.get_expenses_by_month(month, year)
+                args = timeframe.split()
+                if len(args) == 2:
+                    month, year = timeframe.split(" ")
+                    df = self.financial_service.get_expenses_by_month(month, year)
+                else:
+                    first_month, first_year, second_month, second_year = timeframe.split(" ")
+                    df = self.financial_service.get_expenses_by_month_interval(first_month, first_year, second_month, second_year)
+
             except ValueError:
                 df = self.transaction_service.get_expenses()
 
@@ -48,7 +54,8 @@ class AIService:
         1. If the user asks about a specific month, output it in 'Month YYYY' format (e.g., 'March 2026').
         2. If the user asks about 'this month', output '{current_date}'.
         3. If the user asks about all their data, output 'ALL'.
-        4. If the user doesn't specify a time, output {init_timeframe}
+        4. If the user doesn't specify a time, output {init_timeframe}.
+        5. If the user wants a time interval, output the interval in 'Month YYYY Month YYYY' format (e.g., 'January 2026 March 2026').
         6. Output ONLY the timeframe or 'ALL'. Do not write any other words or punctuation.
         
         User Question: {user_query}
