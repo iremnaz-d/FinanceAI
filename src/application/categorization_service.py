@@ -28,3 +28,6 @@ class Categorizer:
             category = self.determine_category(transaction.description)
             transaction.category = category
         return self.transaction_list
+
+    def get_category_list(self):
+        return list(self.dict.keys())
