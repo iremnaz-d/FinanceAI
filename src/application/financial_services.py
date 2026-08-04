@@ -87,7 +87,7 @@ class DashboardService:
         df1['amount'] = df1['amount'].abs()
 
         df2 = df1[df1['category'].str.endswith('(Predicted)')]
-        df3 = df2.loc[:, ['amount', 'description', 'category']]
+        df3 = df2.loc[:, ['amount', 'description', 'category', 'id']]
         df3.sort_values(by = 'amount', ascending = False, inplace = True)
         return df3
 
@@ -141,8 +141,11 @@ class FinancialService:
             :param category: Wanted category
             :return:
             """
-            df1 = _df[_df['category'] == category]
-            return df1
+            if category == 'ALL':
+                return _df
+            else:
+                df1 = _df[_df['category'] == category]
+                return df1
 
         def get_all_transactions(_self):
             return _self.service.get_all_transactions()
@@ -154,3 +157,10 @@ class FinancialService:
             df['month'] = df['date'].dt.strftime('%B %Y')
 
             return df[df['month'] == current_month]
+
+        def update_transaction_category(self, edited_df):
+            for index, row in edited_df.iterrows():
+                _id = row['id']
+                new_category = row['category']
+                self.repo.update_transaction_category(_id, new_category)
+

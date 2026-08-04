@@ -10,7 +10,9 @@ class TransactionPredictor:
 
     def list_to_dataframe(self):
         column_names = ['date', 'id', 'description', 'amount', 'balance', 'category']
-        return pd.DataFrame(self.transaction_list, columns = column_names)
+        df = pd.DataFrame(self.transaction_list, columns = column_names)
+        df1 = df[df['category'] != 'Income'] #dropping incomes, no need prediction
+        return df1
 
     def split_data(self):
         df = self.list_to_dataframe()

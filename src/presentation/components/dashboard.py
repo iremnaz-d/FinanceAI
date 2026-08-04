@@ -1,5 +1,7 @@
+import os
+
 import streamlit as st
-from src.application.financial_services import DashboardService
+from src.application.financial_services import DashboardService, FinancialService
 import datetime
 
 from src.presentation.components.charts import FinancialVisualizer
@@ -8,6 +10,7 @@ from src.presentation.components.charts import FinancialVisualizer
 class DashboardFeatures:
     def __init__(self):
         self.service = DashboardService()
+        self.financial_service = FinancialService()
 
     def monthly_view(self):
         today = datetime.date.today()
@@ -29,7 +32,7 @@ class DashboardFeatures:
 
                 delta_dif = ""
                 value_str = ""
-                label_str = f"This month's spending: \n{current_amount} TL"
+                label_str = f"💸 This month's spending: \n{current_amount} TL"
 
                 if dif >= 0:
                     delta_dif = "-" + str(dif) + "%"
@@ -42,7 +45,7 @@ class DashboardFeatures:
                 """st.markdown(f":gray-background[### {label_str}\n## {value_str}]")
                 st.metric(label="", value="", delta=delta_dif)"""
                 with st.container(border=True):
-                    st.text(label_str)
+                    st.info(label_str)
                     st.subheader(value_str)
 
             with col2:
@@ -64,12 +67,45 @@ class DashboardFeatures:
 
         with st.container(border = True):
             df = self.service.get_predicted_expenses(current_month, current_year)
+            df['category'] = df['category'].str.removesuffix(" (Predicted)")
             st.subheader(f"AI automatically categorized {len(df)} transactions this month", text_alignment='center')
-            st.dataframe(df, hide_index=True, column_config={
-                'description': 'Description',
+            st.divider()
+
+            col3, col4 ,col5, col6= st.columns([1,1,3,1])
+            with col4:
+                current_dir = os.path.dirname(__file__)
+                image_path = os.path.join(current_dir, "computer_image.png")
+                st.image(image_path, width = 100)
+            with col5:
+                st.write("")
+                st.warning("💡 You can help me improve my prediction skills by correcting my mistakes in the category column below!")
+
+            # st.dataframe(df, hide_index=True, column_config={
+            #     'description': 'Description',
+            #     'amount': st.column_config.NumberColumn('Amount Spent (TL)', format="%.2f ₺"),
+            #     'category': 'Category'
+            # })
+            category_list = self.financial_service.get_category_list()
+            edited_df = st.data_editor(df, hide_index = True, disabled = ['amount', 'description'], column_config = {
+                'id':None,
+                'description':'Description',
                 'amount': st.column_config.NumberColumn('Amount Spent (TL)', format="%.2f ₺"),
-                'category': 'Category'
+                'category': st.column_config.SelectboxColumn(
+                    'Category',
+                    options = category_list,
+                    required = True
+                )
             })
+
+            col7, col8 = st.columns([5,1])
+            with col8:
+                if st.button("Approve Changes", type = 'primary', use_container_width = True):
+                    changed_df = edited_df[df['category'] != edited_df['category']]
+
+                    if not changed_df.empty:
+                        self.financial_service.update_transaction_category(changed_df)
+                        st.cache_data.clear()
+                        st.rerun()
 
 
 

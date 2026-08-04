@@ -14,6 +14,9 @@ from src.infrastructure.database.migration import DataBaseMigrator
 from src.infrastructure.database.repository import SQLiteTransactionRepository
 
 st.set_page_config(page_title="Homepage", page_icon="🏠", layout="wide")
+homepage = st.Page("app.py", title="Homepage", icon="🏠")
+pg = st.navigation([homepage])
+pg.run()
 
 
 def init_database():

@@ -42,6 +42,7 @@ def main():
 
     with col2:
         category_list = financial_service.get_category_list()
+        category_list.insert(0, 'ALL')
         category = st.selectbox('Choose category:', category_list)
         df1 = financial_service.get_transactions_by_category(df,category)
 

@@ -4,11 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="66dc89d2-3075-41cb-8c59-e8ce2a2db463" name="Changes" comment="AI can take timeframe interval and little categorization fix">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/application/categorization_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/categorization_service.py" afterDir="false" />
+    <list default="true" id="66dc89d2-3075-41cb-8c59-e8ce2a2db463" name="Changes" comment="Improvements on My Transactions tab, played a little with the services">
+      <change afterPath="$PROJECT_DIR$/src/presentation/components/computer_image.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/presentation/run_app.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/application/financial_services.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/financial_services.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/application/transaction_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/transaction_service.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/application/ml_services.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/ml_services.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/config/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/config/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/infrastructure/database/repository.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/infrastructure/database/repository.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/presentation/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/presentation/components/dashboard.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/components/dashboard.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/presentation/pages/1__My_Transactions.py" beforePathEscaped="$PROJECT_DIR$/src/presentation/pages/1_💳_My_Transactions.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/pages/1__My_Transactions.py" afterPathEscaped="$PROJECT_DIR$/src/presentation/pages/1_💳_My_Transactions.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -52,24 +56,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;Python.app.executor&quot;: &quot;Run&quot;,
-    &quot;Python.charts.executor&quot;: &quot;Run&quot;,
-    &quot;Python.data_pipeline.executor&quot;: &quot;Run&quot;,
-    &quot;Python.excel_parser.executor&quot;: &quot;Run&quot;,
-    &quot;Python.main.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/irem naz/Desktop/FinanceAI/src/data&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.ide.settings.file-colors&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Python.app.executor": "Run",
+    "Python.charts.executor": "Run",
+    "Python.data_pipeline.executor": "Run",
+    "Python.excel_parser.executor": "Run",
+    "Python.main.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "C:/Users/irem naz/Desktop/FinanceAI/src/presentation/components",
+    "settings.editor.selected.configurable": "reference.settings.ide.settings.file-colors"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\irem naz\Desktop\FinanceAI\src\presentation\components" />
       <recent name="C:\Users\irem naz\Desktop\FinanceAI\src\data" />
     </key>
   </component>
@@ -288,7 +293,15 @@
       <option name="project" value="LOCAL" />
       <updated>1785783175441</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="Improvements on My Transactions tab, played a little with the services">
+      <option name="closed" value="true" />
+      <created>1785846910844</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1785846910844</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -316,7 +329,8 @@
     <MESSAGE value="I have an alive talking funny chatbot now. But it needs improvements of course" />
     <MESSAGE value="Data is sent through the router now but im gonna add 'month intervals' later. Also added exceptions for different kinds of errors" />
     <MESSAGE value="AI can take timeframe interval and little categorization fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="AI can take timeframe interval and little categorization fix" />
+    <MESSAGE value="Improvements on My Transactions tab, played a little with the services" />
+    <option name="LAST_COMMIT_MESSAGE" value="Improvements on My Transactions tab, played a little with the services" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

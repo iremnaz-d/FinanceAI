@@ -81,3 +81,23 @@ class SQLiteTransactionRepository(TransactionRepository):
             
     def check_if_exists(self, _id: str):
         return self.get_transaction_by_id(_id) is not None
+
+    def update_transaction_category(self, _id, new_category):
+        session = self.db.get_session()
+
+        try:
+            db_transaction = session.get(SQLAlchemyTransaction, _id)
+            if db_transaction:
+                db_transaction.category = new_category
+                session.commit()
+                return True
+            return False
+
+        except Exception as e:
+            session.rollback()
+            raise e
+        finally:
+            session.close()
+
+
+
