@@ -121,12 +121,57 @@ src/
 ### Clean Architecture
 
 ```mermaid
-graph TD;
-    A[Start] --> B(Process Data)
-    B --> C{Is Data Valid?}
-    C -- Yes --> D[Save to Database]
-    C -- No --> E[Return Error]
+flowchart TD
 
+U[User]
+
+P[Presentation Layer]
+
+A[Application Layer]
+
+D[Domain Layer]
+
+I[Infrastructure Layer]
+
+DB[(SQLite)]
+
+AI[Gemini API]
+
+ML[ML Classifier]
+
+U --> P
+P --> A
+A --> D
+D --> I
+
+I --> DB
+I --> AI
+I --> ML
+
+```
+
+### AI Assistant Flow
+
+This diagram illustrates the end-to-end workflow of the AI Assistant. When a user submits a question, the request is processed by the application layer, which retrieves the necessary financial data from the database before sending a structured prompt to the Gemini API. The generated response is then returned to the Streamlit interface and presented to the user.
+
+```mermaid
+flowchart LR
+
+User --> AssistantPage
+
+AssistantPage --> AIService
+
+AIService --> FinancialService
+
+FinancialService --> Database
+
+Database --> AIService
+
+AIService --> Gemini
+
+Gemini --> Response
+
+Response --> User
 ```
 
 ## HOW IT WORKS
