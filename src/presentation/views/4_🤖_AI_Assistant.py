@@ -1,13 +1,15 @@
 import sys
 import os
 
-from src.application.ai_services import AIService
-from src.presentation.components.chat_interface import ChatVisualizer
-
 project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), '../../../'))
 sys.path.insert(0, project_root)
+
+from src.application.ai_services import AIService
+from src.presentation.components.chat_interface import ChatVisualizer
 import streamlit as st
 from google.genai.errors import ServerError, ClientError
+
+st.set_page_config(page_title="AI Assistant", page_icon="🤖", layout="wide")
 
 def main():
     ai_service = AIService()
@@ -56,5 +58,4 @@ def main():
 
 
 
-if __name__ == '__main__':
-   main()
+main()

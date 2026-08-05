@@ -6,14 +6,6 @@ project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), '../../..
 sys.path.insert(0, project_root)
 
 from src.application.financial_services import FinancialService
-from src.application.transaction_service import TransactionService
-from dataclasses import asdict
-from src.infrastructure.database.db_connection import DataBaseSession
-from src.infrastructure.database.migration import DataBaseMigrator
-from src.infrastructure.database.repository import SQLiteTransactionRepository
-from src.application.categorization_service import Categorizer
-
-import pandas as pd
 import streamlit as st
 import datetime
 
@@ -48,5 +40,4 @@ def main():
 
     st.dataframe(df1, height = 700)
 
-if __name__ == '__main__':
-    main()
+main()

@@ -1,17 +1,11 @@
 import sys
 import os
-from dataclasses import asdict
-
-from src.application.transaction_service import TransactionService
-from src.infrastructure.database.db_connection import DataBaseSession
-from src.infrastructure.database.repository import SQLiteTransactionRepository
-from src.presentation.components.charts import FinancialVisualizer
 
 project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), '../../../'))
 sys.path.insert(0, project_root)
 
+from src.presentation.components.charts import FinancialVisualizer
 import streamlit as st
-import pandas as pd
 
 st.set_page_config(page_title="Chart Analysis", page_icon="📊", layout="wide")
 
@@ -50,8 +44,7 @@ def main():
         st.plotly_chart(fig)
 
 
-if __name__ == '__main__':
-    main()
+main()
 
 
 
