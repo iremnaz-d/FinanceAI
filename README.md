@@ -1,4 +1,12 @@
-# FinanceAI
+<p align="center">
+  <img src="assets/logo.png" alt="FinanceAI Logo" width="180">
+</p>
+
+<h1 align="center">FinanceAI</h1>
+
+<p align="center">
+  AI-powered financial analysis assistant.
+</p>
 
 ## DEMO
 
