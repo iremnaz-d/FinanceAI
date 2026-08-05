@@ -4,13 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="66dc89d2-3075-41cb-8c59-e8ce2a2db463" name="Changes" comment="Took user feedback about ML predictions and a lot of other stuff. THAT WAS HARD">
+    <list default="true" id="66dc89d2-3075-41cb-8c59-e8ce2a2db463" name="Changes" comment="changed some folders on presentation layer. Tabs are prettier">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/presentation/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/views/1__Homepage.py" afterPathEscaped="$PROJECT_DIR$/src/presentation/views/1_🏠_Homepage.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/presentation/pages/1__My_Transactions.py" beforePathEscaped="$PROJECT_DIR$/src/presentation/pages/1_💳_My_Transactions.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/views/2__My_Transactions.py" afterPathEscaped="$PROJECT_DIR$/src/presentation/views/2_💳_My_Transactions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/presentation/pages/2__Chart_Analysis.py" beforePathEscaped="$PROJECT_DIR$/src/presentation/pages/2_📊_Chart_Analysis.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/views/3__Chart_Analysis.py" afterPathEscaped="$PROJECT_DIR$/src/presentation/views/3_📊_Chart_Analysis.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/presentation/pages/3__AI_Assistant.py" beforePathEscaped="$PROJECT_DIR$/src/presentation/pages/3_🤖_AI_Assistant.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/views/4__AI_Assistant.py" afterPathEscaped="$PROJECT_DIR$/src/presentation/views/4_🤖_AI_Assistant.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/presentation/run_app.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/run_app.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -306,11 +301,18 @@
       <option name="project" value="LOCAL" />
       <updated>1785859064614</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="changed some folders on presentation layer. Tabs are prettier">
+      <option name="closed" value="true" />
+      <created>1785927515617</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1785927515617</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Data Cleaning is annoying" />
     <MESSAGE value="Still annoying" />
     <MESSAGE value="Started to entities before infrastructure/database" />
     <MESSAGE value="infrastructure/database db_models, db_connection with SQLALchemy and SQLite through config/settings" />
@@ -335,7 +337,8 @@
     <MESSAGE value="AI can take timeframe interval and little categorization fix" />
     <MESSAGE value="Improvements on My Transactions tab, played a little with the services" />
     <MESSAGE value="Took user feedback about ML predictions and a lot of other stuff. THAT WAS HARD" />
-    <option name="LAST_COMMIT_MESSAGE" value="Took user feedback about ML predictions and a lot of other stuff. THAT WAS HARD" />
+    <MESSAGE value="changed some folders on presentation layer. Tabs are prettier" />
+    <option name="LAST_COMMIT_MESSAGE" value="changed some folders on presentation layer. Tabs are prettier" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
