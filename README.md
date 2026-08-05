@@ -116,6 +116,17 @@ src/
 
 ## ARCHITECTURE
 
+### Clean Architecture
+
+```mermaid
+graph TD;
+    A[Start] --> B(Process Data)
+    B --> C{Is Data Valid?}
+    C -- Yes --> D[Save to Database]
+    C -- No --> E[Return Error]
+
+```
+
 ## HOW IT WORKS
 
 ## INSTALLATION

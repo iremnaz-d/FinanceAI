@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="66dc89d2-3075-41cb-8c59-e8ce2a2db463" name="Changes" comment="logo in readme">
+    <list default="true" id="66dc89d2-3075-41cb-8c59-e8ce2a2db463" name="Changes" comment="update readme">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
@@ -62,7 +62,7 @@
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "master",
     "last_opened_file_path": "C:/Users/irem naz/Desktop/FinanceAI/assets",
-    "settings.editor.selected.configurable": "reference.settings.ide.settings.file-colors"
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -336,11 +336,18 @@
       <option name="project" value="LOCAL" />
       <updated>1785953190950</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="update readme">
+      <option name="closed" value="true" />
+      <created>1785965240705</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1785965240705</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="infrastructure/database db_models, db_connection with SQLALchemy and SQLite through config/settings" />
     <MESSAGE value="infrastructure/database is done. planning to dig into visualization with Plotly Express and Streamlit" />
     <MESSAGE value="Visuals will have to wait, i had to add and change 282497897 features first" />
     <MESSAGE value="thanks to my universal spirit fairies something goes right" />
@@ -365,7 +372,8 @@
     <MESSAGE value="changed some folders on presentation layer. Tabs are prettier" />
     <MESSAGE value="logo" />
     <MESSAGE value="logo in readme" />
-    <option name="LAST_COMMIT_MESSAGE" value="logo in readme" />
+    <MESSAGE value="update readme" />
+    <option name="LAST_COMMIT_MESSAGE" value="update readme" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
