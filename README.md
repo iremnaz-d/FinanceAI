@@ -12,19 +12,20 @@
 
 ## DEMO
 
+
 ## CONTENTS
-1. About the Project
-2. Features
-3. Tech Stack
-4. Project Structure
-5. Architecture
-6. How It Works
-7. Installation
-8. Configuration
-9. Usage
-10. Example Queries for Chatbot
-11. Known Limitations
-12. Author
+
+1. [About The Project](#about-the-project)
+2. [Features](#features)
+3. [Tech Stack](#tech-stack)
+4. [Project Structure](#project-structure)
+5. [Architecture](#architecture)
+6. [How It Works](#how-it-works)
+7. [Installation](#installation)
+8. [Configuration](#configuration)
+9. [Usage](#usage)
+10. [Known Limitations](#known-limitations)
+11. [Author](#author)
 
 ## ABOUT THE PROJECT
 This project began entirely for my own personal interests,
@@ -40,7 +41,7 @@ I really enjoyed working on this project. Since I started it to meet my own need
 I believe I designed its features entirely from the user’s perspective,
 and I still enjoy using it today.
 
-## 🚀 FEATURES
+## FEATURES
 
 - 📈 View the trend of your annual expenses in a single chart.
 - 📊 See where you spend the most money based on the automatic categorizations created for you.
