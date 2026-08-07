@@ -4,14 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="66dc89d2-3075-41cb-8c59-e8ce2a2db463" name="Changes" comment="wrote tool descriptions for function calling, added methods in financial services">
-      <change afterPath="$PROJECT_DIR$/src/application/ai_services/prompts/function_call.txt" afterDir="false" />
+    <list default="true" id="66dc89d2-3075-41cb-8c59-e8ce2a2db463" name="Changes" comment="llm can call functions now. but lost the timeframe memory through messages">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/application/ai_services/ai_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/ai_services/ai_service.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/application/ai_services/prompts/system_prompt.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/ai_services/prompts/system_prompt.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/application/ai_services/prompts/tools.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/ai_services/prompts/tools.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/application/financial_services.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/financial_services.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/infrastructure/llm/client.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/infrastructure/llm/client.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -392,11 +388,18 @@
       <option name="project" value="LOCAL" />
       <updated>1786123932187</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="llm can call functions now. but lost the timeframe memory through messages">
+      <option name="closed" value="true" />
+      <created>1786135901647</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1786135901647</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="thanks to my universal spirit fairies something goes right" />
     <MESSAGE value="Streamlit and Plotly works now. I CAN SEE THINGS" />
     <MESSAGE value="added transaction_service and a couple of things to streamlit" />
     <MESSAGE value="cleaned descriptions to be interpreted in categorizer" />
@@ -421,7 +424,8 @@
     <MESSAGE value="update readme" />
     <MESSAGE value="separated the string prompts" />
     <MESSAGE value="wrote tool descriptions for function calling, added methods in financial services" />
-    <option name="LAST_COMMIT_MESSAGE" value="wrote tool descriptions for function calling, added methods in financial services" />
+    <MESSAGE value="llm can call functions now. but lost the timeframe memory through messages" />
+    <option name="LAST_COMMIT_MESSAGE" value="llm can call functions now. but lost the timeframe memory through messages" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

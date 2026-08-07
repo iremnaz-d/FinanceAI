@@ -17,13 +17,16 @@ class AIService:
         self.transaction_service = TransactionService(self.repo)
 
     def get_financial_insight(self, user_question, init_timeframe):
-        timeframe = self._get_timeframe(user_question, init_timeframe)
+        current_date = datetime.now().strftime('%B %Y')
+
 
         with open("src/application/ai_services/prompts/system_prompt.txt", "r", encoding = "utf-8") as f: #system prompt
             raw_system_prompt = f.read()
 
         system_prompt = raw_system_prompt.format(
-            user_query = user_question
+            current_date = current_date,
+            user_query = user_question,
+            timeframe = init_timeframe
         )
 
         with open("src/application/ai_services/prompts/tools.json", "r", encoding = "utf-8") as f: #tool descriptions
@@ -33,18 +36,30 @@ class AIService:
 
         response = self.client.generate_response(tools, system_prompt)
 
+        new_timeframe = init_timeframe
+
         if response.function_calls:
             f_call = response.function_calls[0]
             f_name = f_call.name
+            args = f_call.args if f_call.args else {}
             result = ""
 
             if f_name == "get_expenses_by_month_markdown":
+                month = args.get("month", "")
+                year = args.get("year", "")
+                new_timeframe = f"{month} {year}".strip()
                 result = self.financial_service.get_expenses_by_month_markdown(**f_call.args)
 
             elif f_name == "get_expenses_by_month_interval_markdown":
+                fm = args.get("first_month", "")
+                fy = args.get("first_year", "")
+                sm = args.get("second_month", "")
+                sy = args.get("second_year", "")
+                new_timeframe = f"{fm} {fy} {sm} {sy}".strip()
                 result = self.financial_service.get_expenses_by_month_interval_markdown(**f_call.args)
 
             elif f_name == "get_expenses_markdown":
+                new_timeframe = 'ALL'
                 result = self.financial_service.get_expenses_markdown()
 
             with open("src/application/ai_services/prompts/function_call.txt", "r", encoding="utf-8") as f: #function call response
@@ -53,9 +68,9 @@ class AIService:
             conversation_history = [system_prompt]
 
             response = self.client.generate_response(tools, function_response, conversation_history)
-            return response.text, timeframe
+            return response.text, new_timeframe
 
-        return response.text ,timeframe
+        return response.text ,new_timeframe
 
 
     def _get_timeframe(self, user_query, init_timeframe): #router for timeframe
