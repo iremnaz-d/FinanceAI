@@ -1,6 +1,6 @@
-import os
 from dotenv import load_dotenv
 from google import genai
+from google.genai import types
 
 
 class Client:
@@ -9,11 +9,14 @@ class Client:
         load_dotenv()
         self.client = genai.Client()
 
-    def generate_response(self, text):
+    def generate_response(self, tools,text):
         response = self.client.models.generate_content(
             model = 'gemini-3.6-flash',
-            contents = text
+            contents = text,
+            config = types.GenerateContentConfig(
+                tools = tools
+            )
         )
-        return response.text
+        return response
 
 

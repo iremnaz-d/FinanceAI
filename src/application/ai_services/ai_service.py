@@ -33,7 +33,7 @@ class AIService:
 
         markdown_df = df.to_markdown(index = False)
 
-        with open("prompts/system_prompt.txt", "r", encoding = "utf-8") as f:
+        with open("src/application/ai_services/prompts/system_prompt.txt", "r", encoding = "utf-8") as f:
             raw_system_prompt = f.read()
 
         system_prompt = raw_system_prompt.format(
@@ -44,23 +44,17 @@ class AIService:
         response = self.client.generate_response(system_prompt)
         return response, timeframe
 
-    def _get_timeframe(self, user_query, init_timeframe):
+    def _get_timeframe(self, user_query, init_timeframe): #router for timeframe
         current_date = datetime.now().strftime('%B %Y')
 
-        router_prompt = f"""
-        You are a router that extracts the requested timeframe from a user's financial question.
-        The current date is {current_date}.
-        
-        Rules:
-        1. If the user asks about a specific month, output it in 'Month YYYY' format (e.g., 'March 2026').
-        2. If the user asks about 'this month', output '{current_date}'.
-        3. If the user asks about all their data, output 'ALL'.
-        4. If the user doesn't specify a time, output {init_timeframe}.
-        5. If the user wants a time interval, output the interval in 'Month YYYY Month YYYY' format (e.g., 'January 2026 March 2026').
-        6. Output ONLY the timeframe or 'ALL'. Do not write any other words or punctuation.
-        
-        User Question: {user_query}
-        """
+        with open("src/application/ai_services/prompts/router_prompt.txt", "r", encoding = "utf-8") as f:
+            raw_router_prompt = f.read()
+
+        router_prompt = raw_router_prompt.format(
+            current_date = current_date,
+            init_timeframe = init_timeframe,
+            user_query = user_query
+        )
 
         response = self.client.generate_response(router_prompt)
         return response

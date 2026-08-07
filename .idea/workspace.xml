@@ -4,10 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="66dc89d2-3075-41cb-8c59-e8ce2a2db463" name="Changes" comment="update readme">
-      <change afterPath="$PROJECT_DIR$/src/application/prompts/system_prompt.txt" afterDir="false" />
+    <list default="true" id="66dc89d2-3075-41cb-8c59-e8ce2a2db463" name="Changes" comment="separated the string prompts">
+      <change afterPath="$PROJECT_DIR$/src/application/ai_services/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/application/ai_services/prompts/router_prompt.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/application/ai_services/prompts/tools.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/application/ai_services.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/ai_services.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/application/ai_services.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/ai_services/ai_service.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/application/financial_services.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/financial_services.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/application/prompts/system_prompt.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/ai_services/prompts/system_prompt.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/infrastructure/llm/client.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/infrastructure/llm/client.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/presentation/views/4__AI_Assistant.py" beforePathEscaped="$PROJECT_DIR$/src/presentation/views/4_🤖_AI_Assistant.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/views/4__AI_Assistant.py" afterPathEscaped="$PROJECT_DIR$/src/presentation/views/4_🤖_AI_Assistant.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,6 +78,9 @@
       <recent name="C:\Users\irem naz\Desktop\FinanceAI\src\assets" />
       <recent name="C:\Users\irem naz\Desktop\FinanceAI\src\presentation\components" />
       <recent name="C:\Users\irem naz\Desktop\FinanceAI\src\data" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\irem naz\Desktop\FinanceAI\src\application\ai_services" />
     </key>
   </component>
   <component name="SharedIndexes">
@@ -369,11 +378,18 @@
       <option name="project" value="LOCAL" />
       <updated>1785969456951</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="separated the string prompts">
+      <option name="closed" value="true" />
+      <created>1786119149974</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1786119149974</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="infrastructure/database is done. planning to dig into visualization with Plotly Express and Streamlit" />
     <MESSAGE value="Visuals will have to wait, i had to add and change 282497897 features first" />
     <MESSAGE value="thanks to my universal spirit fairies something goes right" />
     <MESSAGE value="Streamlit and Plotly works now. I CAN SEE THINGS" />
@@ -398,7 +414,8 @@
     <MESSAGE value="logo" />
     <MESSAGE value="logo in readme" />
     <MESSAGE value="update readme" />
-    <option name="LAST_COMMIT_MESSAGE" value="update readme" />
+    <MESSAGE value="separated the string prompts" />
+    <option name="LAST_COMMIT_MESSAGE" value="separated the string prompts" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

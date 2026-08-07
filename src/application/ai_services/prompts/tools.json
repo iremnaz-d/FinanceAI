@@ -1,0 +1,34 @@
+[
+  {
+    "function": {
+      "name": "get_expenses_by_month_markdown",
+      "description": "Returns the pandas dataframe in markdown format for wanted timeframe. Returns only expenses, not incomes.",
+      "parameters": {
+        "month": {"type": "string" , "description":  "wanted month in %B format (e.g., 'March')."},
+        "year": {"type":  "string", "description":  "wanted year in %Y format (e.g., '2026')."}
+      }
+    }
+  },
+
+  {
+    "function": {
+      "name": "get_expenses_by_month_interval_markdown",
+      "description": "Returns the pandas dataframe in markdown format for wanted time interval. Returns only expenses, not incomes.",
+      "parameters": {
+        "first_month": {"type": "string" , "description":  "wanted first month of the interval in %B format (e.g., 'March')."},
+        "first_year": {"type":  "string", "description":  "wanted first year of the interval in %Y format (e.g., '2026')."},
+        "second_month": {"type": "string" , "description":  "wanted second month of the interval in %B format (e.g., 'June')."},
+        "second_year": {"type":  "string", "description":  "wanted second year of the interval in %Y format (e.g., '2026')."}
+      }
+    }
+  },
+
+  {
+    "function": {
+      "name": "get_expenses_markdown",
+      "description": "Returns the pandas dataframe in markdown format for all times.",
+      "parameters": "No parameter needed."
+    }
+  }
+
+]
