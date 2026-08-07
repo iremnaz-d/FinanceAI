@@ -33,14 +33,15 @@ class AIService:
 
         markdown_df = df.to_markdown(index = False)
 
-        system_prompt = ("You are an expert Finance Assistant who has a nice humor. "
-                         "While you analyze the financial tables you are given, you will follow these rules:"
-                         "1. You stay loyal to the given information in the supplied table, no outside made-up information."
-                         )
-        table_info = f"User's expense data in this month is {markdown_df}."
-        whole_prompt = f"{system_prompt} {table_info} According to these information, answer the user's question: {user_question}"
+        with open("prompts/system_prompt.txt", "r", encoding = "utf-8") as f:
+            raw_system_prompt = f.read()
 
-        response = self.client.generate_response(whole_prompt)
+        system_prompt = raw_system_prompt.format(
+            dataframe = markdown_df,
+            user_query = user_question
+        )
+
+        response = self.client.generate_response(system_prompt)
         return response, timeframe
 
     def _get_timeframe(self, user_query, init_timeframe):
