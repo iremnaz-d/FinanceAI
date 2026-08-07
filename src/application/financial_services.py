@@ -166,11 +166,16 @@ class FinancialService:
 
         @st.cache_data
         def get_expenses_by_month_markdown(_self, month, year):
-            df = _self.get_expenses_by_month()
+            df = _self.get_expenses_by_month(month, year)
             return df.to_markdown(index = False)
 
         @st.cache_data
         def get_expenses_by_month_interval_markdown(_self, first_month, first_year, second_month, second_year):
             df = _self.get_expenses_by_month_interval(first_month, first_year, second_month, second_year)
+            return df.to_markdown(index = False)
+
+        @st.cache_data
+        def get_expenses_markdown(_self):
+            df = _self.get_expenses()
             return df.to_markdown(index = False)
 

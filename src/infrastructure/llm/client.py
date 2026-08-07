@@ -9,10 +9,17 @@ class Client:
         load_dotenv()
         self.client = genai.Client()
 
-    def generate_response(self, tools,text):
+    def generate_response(self, tools, text, history = None):
+        if history is None:
+            history = [text]
+        else:
+            history.append(text)
+
+
+
         response = self.client.models.generate_content(
             model = 'gemini-3.6-flash',
-            contents = text,
+            contents = history,
             config = types.GenerateContentConfig(
                 tools = tools
             )
