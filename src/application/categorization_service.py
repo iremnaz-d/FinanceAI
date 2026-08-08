@@ -9,6 +9,7 @@ class Categorizer:
                      'Drink Outside': ['coffee', 'kafe','cafe', 'kafeterya', 'kahveci' ],
                      'Entertainment': ['bubilet',],
                      'Health': ['eczanesi', 'eczane'],
+                     'Personal Payment': ['fast', 'havale'],
                      'Income': ['gönd']
                      }
         self.transaction_list = transaction_list
@@ -26,6 +27,8 @@ class Categorizer:
     def categorize(self):
         for transaction in self.transaction_list:
             category = self.determine_category(transaction.description)
+            if transaction.amount > 0:
+                category = 'Income'
             transaction.category = category
         return self.transaction_list
 

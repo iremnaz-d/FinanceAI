@@ -26,6 +26,9 @@ class Transaction:
         self.balance = balance
         self.category = category
 
+    def set_id(self,_id):
+        self.id = _id
+
 
     @classmethod
     def from_db_model(cls, db_model):

@@ -3,7 +3,7 @@ from src.infrastructure.data.data_pipeline import DataCleaner
 from src.domain.entities import Transaction
 
 
-class ExcellReader:
+class ExcelReader:
     """
     Bankalardan gelen farklı CSV formatlarını okuyan ve
      ham veriyi standart veri sözlüklerine dönüştüren yardımcı sınıf.
