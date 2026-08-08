@@ -18,6 +18,7 @@ def choice_data():
     return data_type
 
 def main():
+    st.title("Chart Analysis 📊")
 
     vis = FinancialVisualizer() # Plotly visualizer on charts.py
 

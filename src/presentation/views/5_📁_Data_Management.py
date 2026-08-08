@@ -11,7 +11,7 @@ import streamlit as st
 st.title("Data Management 📁")
 
 with st.container(border = True):
-    st.write("You can upload your bank account transactions in here. (Must be an .xlsx file)")
+    st.write("You can upload your bank account transactions in here. (Must be an :green[.xlsx] file)")
 
     uploaded_file = st.file_uploader("Transaction History (Excel)", type=["xlsx"])
 

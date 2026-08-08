@@ -12,6 +12,7 @@ from google.genai.errors import ServerError, ClientError
 st.set_page_config(page_title="AI Assistant", page_icon="🤖", layout="wide")
 
 def main():
+    st.title("AI Finance Assistant 🤖")
     ai_service = AIService()
     chat_vis = ChatVisualizer()
 

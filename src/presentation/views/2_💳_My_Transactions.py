@@ -12,6 +12,7 @@ import datetime
 st.set_page_config(page_title="My Transaction History", page_icon="💳", layout="wide")
 
 def main():
+    st.title("My Transactions 💳")
     financial_service = FinancialService()
 
     today = datetime.date.today()

@@ -24,7 +24,12 @@ def init_database():
     df = pd.DataFrame([asdict(data) for data in transaction_list])
 
 def main():
-    st.title("FinanceAI")
+
+    # current_dir = os.path.dirname(__file__)
+    # image_path = os.path.join(current_dir, "logo_text.png")
+    image_path = "src/presentation/components/logo_text.png"
+    st.image(image_path, width=400)
+    st.write("")
 
     init_database()
 
