@@ -31,12 +31,12 @@ class DataBaseMigrator:
                count += 1
 
 
-            else:
-                if other_transaction.amount != transaction.amount:
-                    random_id = self.generate_random_id()
-                    transaction.set_id(random_id)
-                    self.repo.add_transaction(transaction)
-                    count += 1
+            # else:
+            #     if other_transaction.amount != transaction.amount:
+            #         random_id = self.generate_random_id()
+            #         transaction.set_id(random_id)
+            #         self.repo.add_transaction(transaction)
+            #         count += 1
 
 
 

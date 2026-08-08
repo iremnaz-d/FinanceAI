@@ -39,6 +39,26 @@ def main():
         category = st.selectbox('Choose category:', category_list)
         df1 = financial_service.get_transactions_by_category(df,category)
 
-    st.dataframe(df1, height = 700)
+    event = st.dataframe(df1,
+                         on_select = "rerun",
+                         selection_mode = "single-row",
+                         height = 700)
+
+
+    selected_rows = event.selection.rows
+
+    if len(selected_rows)>0:
+        index = selected_rows[0]
+        _id = df1.iloc[index]['id']
+
+        col3,col4 = st.columns([5,1])
+        with col4:
+            if st.button("🗑️ Delete Selected Transaction", type = "primary"):
+                financial_service.delete_transaction(_id)
+                st.cache_data.clear()
+                st.success("Transaction Removed!")
+                st.rerun()
+
+
 
 main()

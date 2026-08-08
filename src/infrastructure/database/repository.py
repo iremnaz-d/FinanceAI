@@ -35,7 +35,19 @@ class SQLiteTransactionRepository(TransactionRepository):
         finally:
             session.close()
 
+    def delete_transaction(self, _id):
+        session = self.db.get_session()
+        try:
+            transaction = session.get(SQLAlchemyTransaction, _id)
+            if transaction is not None:
+                session.delete(transaction)
+                session.commit()
 
+        except Exception as e:
+            session.rollback()
+            raise e
+        finally:
+            session.close()
 
     def get_all_transactions(self):
         """

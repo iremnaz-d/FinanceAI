@@ -3,6 +3,7 @@ from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column
 from datetime import datetime
 from sqlalchemy import String
 
+from src.domain.entities import Transaction
 
 
 class Base(DeclarativeBase):
@@ -31,5 +32,21 @@ class SQLAlchemyTransaction(Base):
     amount : Mapped[float]
     balance : Mapped[float]
     category : Mapped[Optional[str]] = mapped_column(String(100))
+
+    @classmethod
+    def from_entity(cls, entity: Transaction):
+        """
+        Converts domain Transaction to corresponding SQLAlchemyTransaction
+        :param entity: Transaction
+        :return: SQLAlchemyTransaction
+        """
+        return cls(
+            date=entity.date,
+            _id=entity.id,
+            description=entity.description,
+            amount=entity.amount,
+            balance=entity.balance,
+            category=entity.category
+        )
 
 

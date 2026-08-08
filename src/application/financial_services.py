@@ -179,3 +179,6 @@ class FinancialService:
             df = _self.get_expenses()
             return df.to_markdown(index = False)
 
+        def delete_transaction(self,_id):
+            self.repo.delete_transaction(_id)
+
