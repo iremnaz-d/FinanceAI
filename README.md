@@ -153,26 +153,34 @@ I --> ML
 
 ### AI Assistant Flow
 
-This diagram illustrates the end-to-end workflow of the AI Assistant. When a user submits a question, the request is processed by the application layer, which retrieves the necessary financial data from the database before sending a structured prompt to the Gemini API. The generated response is then returned to the Streamlit interface and presented to the user.
+This diagram illustrates the end-to-end workflow of the AI Assistant. When a user submits a question, the request is processed by the application layer, which retrieves the necessary financial data from the database according to the function call collected from Gemini API. When Gemini API creates the final response after making the call, the generated response is returned to the Streamlit interface and presented to the user.
 
 ```mermaid
-flowchart LR
+flowchart TD
 
-User --> AssistantPage
+U[User] --> UI[AI Assistant]
+    UI --> AI[AI Service]
 
-AssistantPage --> AIService
+    AI --> LLM[Gemini API]
 
-AIService --> FinancialService
+    LLM -->|Function Call| F{Select Function}
 
-FinancialService --> Database
+    F --> FS[Financial Service]
 
-Database --> AIService
+    FS --> TS[Transaction Service]
+    TS --> R[Transaction Repository]
+    R --> DB[(SQLite Database)]
 
-AIService --> Gemini
+    DB --> R
+    R --> TS
+    TS --> FS
+    FS --> F
 
-Gemini --> Response
+    FS -->|Function Result| LLM
 
-Response --> User
+    LLM -->|Final Response| AI
+    AI --> UI
+    UI --> U
 ```
 
 ## HOW IT WORKS
