@@ -27,5 +27,11 @@ assistant = st.Page(
     icon="🤖"
 )
 
-pg = st.navigation({"": [homepage, transactions, charts, assistant]})
+data = st.Page(
+    "views/5_📁_Data_Management.py",
+    title = "Data Management",
+    icon = "📁"
+)
+
+pg = st.navigation({"": [homepage, transactions, charts, assistant, data]})
 pg.run()

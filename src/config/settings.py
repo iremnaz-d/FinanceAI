@@ -10,7 +10,7 @@ class Settings:
     DATABASE_URL = f"sqlite:///{db_path}"
     FILE_PATH = r"C:\Users\irem naz\Desktop\FinanceAI\src\data\Transaction_History.xlsx"
 
-    REGEX_DESCRIPTION = [r'\d+',
+    REGEX_DESCRIPTION = [r'\d+',  #these words are cut from descriptions
                          r'\bsanal\b',
                          r'\bPOS\b',
                          r'\balışveriş\b',
