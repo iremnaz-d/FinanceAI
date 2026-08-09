@@ -1,17 +1,10 @@
+from src.infrastructure.database.category_repository import CategoryRepository
 
 class Categorizer:
 
     def __init__(self, transaction_list):
-        self.dict = {'Shopping': ['defacto', 'trendyol', 'victorias secret', 'shopier' ],
-                     'Market': ['carrefour','sok', 'market','tekel', 'migros', 'carrefoursa','gida'],
-                     'Transportation': ['izmirim','scooter', 'abonman', 'yandex', 'obilet'],
-                     'Food Outside': ['trendyol yemek','getir', 'yemek', 'sepet', 'mcdonalds', 'kantin', 'kebap'],
-                     'Drink Outside': ['coffee', 'kafe','cafe', 'kafeterya', 'kahveci' ],
-                     'Entertainment': ['bubilet',],
-                     'Health': ['eczanesi', 'eczane'],
-                     'Personal Payment': ['fast', 'havale'],
-                     'Income': ['gönd']
-                     }
+        self.repo = CategoryRepository()
+        self.dict = self.repo.get_category_dict()
         self.transaction_list = transaction_list
 
     def determine_category(self, description):
@@ -32,5 +25,18 @@ class Categorizer:
             transaction.category = category
         return self.transaction_list
 
+class CategoryService:
+
+    def __init__(self):
+        self.repo = CategoryRepository()
+        self.dict = self.repo.get_category_dict()
+
+
     def get_category_list(self):
         return list(self.dict.keys())
+
+    def add_new_category(self, category):
+        return self.repo.add_new_category(category)
+
+    def delete_category(self, category):
+        return self.repo.delete_category(category)

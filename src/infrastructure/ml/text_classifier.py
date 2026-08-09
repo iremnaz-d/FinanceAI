@@ -11,6 +11,9 @@ class TextClassifier:
         self.model_pipeline = None
 
     def fit(self, train_x, train_y):
+        if train_x is None or len(train_x) == 0:
+            return
+
         train_x = train_x.copy()
         train_x['amount'] = train_x['amount'].abs()
 
@@ -29,6 +32,10 @@ class TextClassifier:
         self.model_pipeline.fit(train_x, train_y)
 
     def predict(self, test_x):
+        if self.model_pipeline is None:
+            return ['Other'] * len(test_x)
+        if test_x is None or len(test_x) == 0:
+            return []
         test_x = test_x.copy()
         test_x['amount'] = test_x['amount'].abs()
         return self.model_pipeline.predict(test_x)

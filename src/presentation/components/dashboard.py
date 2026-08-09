@@ -1,6 +1,8 @@
 import os
 
 import streamlit as st
+
+from src.application.categorization_service import Categorizer, CategoryService
 from src.application.financial_services import DashboardService, FinancialService
 import datetime
 
@@ -11,6 +13,7 @@ class DashboardFeatures:
     def __init__(self):
         self.service = DashboardService()
         self.financial_service = FinancialService()
+        self.category_service = CategoryService()
 
     def monthly_view(self):
         today = datetime.date.today()
@@ -85,7 +88,7 @@ class DashboardFeatures:
             #     'amount': st.column_config.NumberColumn('Amount Spent (TL)', format="%.2f ₺"),
             #     'category': 'Category'
             # })
-            category_list = self.financial_service.get_category_list()
+            category_list = self.category_service.get_category_list()
             edited_df = st.data_editor(df, hide_index = True, disabled = ['amount', 'description'], column_config = {
                 'id':None,
                 'description':'Description',
@@ -97,15 +100,44 @@ class DashboardFeatures:
                 )
             })
 
-            col7, col8 = st.columns([5,1])
-            with col8:
-                if st.button("Approve Changes", type = 'primary', use_container_width = True):
+            col7, col8, col9 = st.columns([2,3,1])
+            with col9:
+                if st.button("Approve corrections", type = 'primary', use_container_width = True):
                     changed_df = edited_df[df['category'] != edited_df['category']]
 
                     if not changed_df.empty:
                         self.financial_service.update_transaction_category(changed_df)
                         st.cache_data.clear()
                         st.rerun()
+
+            col10, col11, col12 = st.columns([2,3,1])
+
+            with col10:
+                category = st.text_input("Create a new Category name:")
+                if st.button("➕ Add Category", type="secondary"):
+                    if category.strip():
+                        if self.category_service.add_new_category(category):
+                            st.success("✅ Category is created successfully.")
+                            st.cache_data.clear()
+                            st.rerun()
+                        else:
+                            st.error("This category already exists.")
+                    else:
+                        st.error("Please enter a category name.")
+
+            with col11:
+                category_list = self.category_service.get_category_list()
+                category = st.selectbox("Delete a Category: ", category_list)
+
+                if st.button("🗑️ Delete", type="secondary"):
+                    if self.category_service.delete_category(category):
+                        st.success("✅ Category is deleted successfully.")
+                        st.cache_data.clear()
+                        st.rerun()
+                    else:
+                        st.error("This category does not exist.")
+
+
 
 
 

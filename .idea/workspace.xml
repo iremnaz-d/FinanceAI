@@ -4,9 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="66dc89d2-3075-41cb-8c59-e8ce2a2db463" name="Changes" comment="Transactions are deletable. Fixes #3 . But turns out i couldn't put transactions with same id's. Need to work on it. Last thing to do:)">
+    <list default="true" id="66dc89d2-3075-41cb-8c59-e8ce2a2db463" name="Changes" comment="update readme">
+      <change afterPath="$PROJECT_DIR$/src/config/category_mappings.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/infrastructure/database/category_repository.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/application/categorization_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/categorization_service.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/infrastructure/ml/text_classifier.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/infrastructure/ml/text_classifier.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/presentation/components/dashboard.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/components/dashboard.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -435,7 +439,15 @@
       <option name="project" value="LOCAL" />
       <updated>1786216223954</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="update readme">
+      <option name="closed" value="true" />
+      <created>1786301883622</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1786301883622</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -455,7 +467,6 @@
     <MESSAGE value="changed some folders on presentation layer. Tabs are prettier" />
     <MESSAGE value="logo" />
     <MESSAGE value="logo in readme" />
-    <MESSAGE value="update readme" />
     <MESSAGE value="separated the string prompts" />
     <MESSAGE value="wrote tool descriptions for function calling, added methods in financial services" />
     <MESSAGE value="llm can call functions now. but lost the timeframe memory through messages" />
@@ -464,6 +475,7 @@
     <MESSAGE value="logo and presentation updates" />
     <MESSAGE value="Transactions with the same ID's are in the database with different generated ID's." />
     <MESSAGE value="Transactions are deletable. Fixes #3 . But turns out i couldn't put transactions with same id's. Need to work on it. Last thing to do:)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Transactions are deletable. Fixes #3 . But turns out i couldn't put transactions with same id's. Need to work on it. Last thing to do:)" />
+    <MESSAGE value="update readme" />
+    <option name="LAST_COMMIT_MESSAGE" value="update readme" />
   </component>
 </project>

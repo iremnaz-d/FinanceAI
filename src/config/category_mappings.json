@@ -1,0 +1,54 @@
+{
+    "Shopping": [
+        "defacto",
+        "trendyol",
+        "victorias secret",
+        "shopier"
+    ],
+    "Market": [
+        "carrefour",
+        "sok",
+        "market",
+        "tekel",
+        "migros",
+        "carrefoursa",
+        "gida"
+    ],
+    "Transportation": [
+        "izmirim",
+        "scooter",
+        "abonman",
+        "yandex",
+        "obilet"
+    ],
+    "Food Outside": [
+        "trendyol yemek",
+        "getir",
+        "yemek",
+        "sepet",
+        "mcdonalds",
+        "kantin",
+        "kebap"
+    ],
+    "Drink Outside": [
+        "coffee",
+        "kafe",
+        "cafe",
+        "kafeterya",
+        "kahveci"
+    ],
+    "Entertainment": [
+        "bubilet"
+    ],
+    "Health": [
+        "eczanesi",
+        "eczane"
+    ],
+    "Personal Payment": [
+        "fast",
+        "havale"
+    ],
+    "Income": [
+        "gönd"
+    ]
+}
