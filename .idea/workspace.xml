@@ -4,13 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="66dc89d2-3075-41cb-8c59-e8ce2a2db463" name="Changes" comment="Transactions with the same ID's are in the database with different generated ID's.">
+    <list default="true" id="66dc89d2-3075-41cb-8c59-e8ce2a2db463" name="Changes" comment="Transactions are deletable. Fixes #3 . But turns out i couldn't put transactions with same id's. Need to work on it. Last thing to do:)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/application/financial_services.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/financial_services.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/infrastructure/database/db_models.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/infrastructure/database/db_models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/infrastructure/database/migration.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/infrastructure/database/migration.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/infrastructure/database/repository.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/infrastructure/database/repository.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/presentation/views/2__My_Transactions.py" beforePathEscaped="$PROJECT_DIR$/src/presentation/views/2_💳_My_Transactions.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/views/2__My_Transactions.py" afterPathEscaped="$PROJECT_DIR$/src/presentation/views/2_💳_My_Transactions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -431,11 +427,18 @@
       <option name="project" value="LOCAL" />
       <updated>1786201238157</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL-00043" summary="Transactions are deletable. Fixes #3 . But turns out i couldn't put transactions with same id's. Need to work on it. Last thing to do:)">
+      <option name="closed" value="true" />
+      <created>1786216223954</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1786216223954</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="seems like I spend %27.8 of my money in markets. time to categorize the &quot;others&quot;. I am saying NLP guys" />
     <MESSAGE value="category prediction is finished but thinking of switching to another model. MultinomialNB does not evaluate negative values" />
     <MESSAGE value="Now I can see the pie chart with and without predictions" />
     <MESSAGE value="they said kpi card is great. NO IT IS NOT" />
@@ -460,6 +463,7 @@
     <MESSAGE value="Data Management tab is added. User can upload their transaction history .xlsx file" />
     <MESSAGE value="logo and presentation updates" />
     <MESSAGE value="Transactions with the same ID's are in the database with different generated ID's." />
-    <option name="LAST_COMMIT_MESSAGE" value="Transactions with the same ID's are in the database with different generated ID's." />
+    <MESSAGE value="Transactions are deletable. Fixes #3 . But turns out i couldn't put transactions with same id's. Need to work on it. Last thing to do:)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Transactions are deletable. Fixes #3 . But turns out i couldn't put transactions with same id's. Need to work on it. Last thing to do:)" />
   </component>
 </project>

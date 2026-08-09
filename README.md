@@ -197,5 +197,9 @@ U[User] --> UI[AI Assistant]
 
 ## KNOWN LIMITATIONS
 
+## FUTURE IMPROVEMENTS
+login 
+search bar for my transactions descriptions
+
 ## AUTHOR
 
