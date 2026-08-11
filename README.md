@@ -193,6 +193,8 @@ environment without dealing with any Python dependencies.
 ### Step 1: Clone the Project
 ```bash
 git clone https://github.com/iremnaz-d/FinanceAI.git
+```
+```bash
 cd FinanceAI
 ```
 

@@ -20,12 +20,13 @@ def main():
     else:
         col1, col2 = st.columns(2)
         with col1:
-            st.info("You are running this app on a local environment. Please enter your Gemini API Key.")
-            current_api_key = st.text_input("Gemini API Key: ", type = "password")
+            st.info("You are running this app on a local environment."
+                    " Please enter your Gemini API Key.")
+            current_api_key = st.text_input("Your Gemini API Key: ", type = "password")
 
         with col2:
-            st.write("If you don't have an API Key, you can get one for free from the link below:")
-            st.link_button("Get Gemini API Key", "https://aistudio.google.com/app/api-keys")
+            st.warning("If you don't have an API Key, you can get one for free from the link below:")
+            st.link_button("Get Gemini API Key", "https://aistudio.google.com/app/api-keys", align)
 
             if not current_api_key:
                 st.stop()

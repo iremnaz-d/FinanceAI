@@ -14,7 +14,7 @@ class Client:
         if not api_key:
             self.client = None
         else:
-             self.client = genai.Client()
+             self.client = genai.Client(api_key = api_key)
 
     def generate_response(self, tools, text, history = None):
 
