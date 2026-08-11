@@ -26,7 +26,7 @@ def main():
 
         with col2:
             st.warning("If you don't have an API Key, you can get one for free from the link below:")
-            st.link_button("Get Gemini API Key", "https://aistudio.google.com/app/api-keys", align)
+            st.link_button("Get Gemini API Key", "https://aistudio.google.com/app/api-keys")
 
             if not current_api_key:
                 st.stop()
