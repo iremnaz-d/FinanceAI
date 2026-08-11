@@ -197,6 +197,10 @@ cd FinanceAI
 ```
 
 ### Step 2: Build The Docker Image
+
+Build the application's Docker image by running the following command in the project's 
+root directory(where the Dockerfile is located). 
+(This process may take 1-2 minutes depending on your computer's speed)
 ```bash
 docker build -t finance_ai .
 ```

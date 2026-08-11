@@ -10,7 +10,7 @@ class ExcelReader:
     """
 
     def __init__ (self, path):
-        self.path = path # r"C:\Users\irem naz\Desktop\FinanceAI\src\data\Transaction_History.xlsx"
+        self.path = path # r"src\data\Transaction_History.xlsx"
 
     def read(self):
         df = pd.read_excel(self.path)
