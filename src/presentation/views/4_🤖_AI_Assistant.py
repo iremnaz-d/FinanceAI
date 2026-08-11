@@ -13,7 +13,24 @@ st.set_page_config(page_title="AI Assistant", page_icon="🤖", layout="wide")
 
 def main():
     st.title("AI Finance Assistant 🤖")
-    ai_service = AIService()
+
+    current_api_key = os.getenv("GEMINI_API_KEY")
+    if current_api_key:
+        ai_service = AIService()
+    else:
+        col1, col2 = st.columns(2)
+        with col1:
+            st.info("You are running this app on a local environment. Please enter your Gemini API Key.")
+            current_api_key = st.text_input("Gemini API Key: ", type = "password")
+
+        with col2:
+            st.write("If you don't have an API Key, you can get one for free from the link below:")
+            st.link_button("Get Gemini API Key", "https://aistudio.google.com/app/api-keys")
+
+            if not current_api_key:
+                st.stop()
+        ai_service = AIService(current_api_key)
+
     chat_vis = ChatVisualizer()
 
     if 'timeframe' not in st.session_state:

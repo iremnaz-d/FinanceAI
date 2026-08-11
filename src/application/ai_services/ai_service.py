@@ -10,8 +10,12 @@ from google.genai import types
 
 class AIService:
 
-    def __init__(self):
-        self.client = Client()
+    def __init__(self, provided_api_key = None):
+        if provided_api_key:
+            self.client = Client(provided_api_key)
+        else:
+            self.client = Client()
+
         self.financial_service = FinancialService()
         self.repo = SQLiteTransactionRepository(db=DataBaseSession())
         self.transaction_service = TransactionService(self.repo)
