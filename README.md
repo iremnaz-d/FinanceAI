@@ -212,17 +212,17 @@ This way, your data will not be lost even if you stop Docker.
 
 #### For Mac/Linux/Git Bash
 ```bash
-docker run -p 8501:8501 -v "$(pwd)/src:/app/src/data" finance_ai
+docker run -p 8501:8501 -v "$(pwd)/src:/app/src" finance_ai
 ```
 
 #### For Windows PowerShell
 ```PowerShell
-docker run -p 8501:8501 -v "${PWD}/src:/app/src/data" finance_ai
+docker run -p 8501:8501 -v "${PWD}/src:/app/src" finance_ai
 ```
 
 #### For Windows CMD
 ```DOS
-docker run -p 8501:8501 -v "%cd%/src:/app/src/data" finance_ai
+docker run -p 8501:8501 -v "%cd%/src:/app/src" finance_ai
 ```
 
 ### Step 4: Access to UI
