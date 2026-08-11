@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="66dc89d2-3075-41cb-8c59-e8ce2a2db463" name="Changes" comment="updated the Python version">
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+    <list default="true" id="66dc89d2-3075-41cb-8c59-e8ce2a2db463" name="Changes" comment="updated the file path. Testing the docker.">
       <change beforePath="$PROJECT_DIR$/src/config/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/config/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/infrastructure/data/excel_parser.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/infrastructure/data/excel_parser.py" afterDir="false" />
     </list>
@@ -470,11 +469,18 @@
       <option name="project" value="LOCAL" />
       <updated>1786466526508</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="updated the file path. Testing the docker.">
+      <option name="closed" value="true" />
+      <created>1786467207224</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1786467207224</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="I love containers. Monthly comparison and burn rate is in my HomePage now!" />
     <MESSAGE value="Top 5 expenses and a few fixes on dashboard" />
     <MESSAGE value="AI Predictions on dashboard" />
     <MESSAGE value="damn. LLM HAS BEGUN!" />
@@ -499,6 +505,7 @@
     <MESSAGE value="Dictionary place is updated. User can add and delete category names." />
     <MESSAGE value="Everything about Docker. Fixes #2" />
     <MESSAGE value="updated the Python version" />
-    <option name="LAST_COMMIT_MESSAGE" value="updated the Python version" />
+    <MESSAGE value="updated the file path. Testing the docker." />
+    <option name="LAST_COMMIT_MESSAGE" value="updated the file path. Testing the docker." />
   </component>
 </project>
