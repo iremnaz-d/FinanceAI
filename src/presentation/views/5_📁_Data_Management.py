@@ -17,8 +17,11 @@ with st.container(border = True):
 
     if uploaded_file is not None:
         save_path = "src/data/Transaction_History.xlsx"
+        save_dir = os.path.dirname(save_path)
 
         try:
+            os.makedirs(save_dir, exist_ok = True)
+
             with open(save_path, "wb") as f:
                 f.write(uploaded_file.getbuffer())
 
