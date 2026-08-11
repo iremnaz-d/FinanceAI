@@ -185,7 +185,57 @@ U[User] --> UI[AI Assistant]
 
 ## HOW IT WORKS
 
-## INSTALLATION
+## QUICK INSTALLATION WITH DOCKER
+
+You can use Docker to run the project on your local machine in an isolated
+environment without dealing with any Python dependencies.
+
+### Step 1: Clone the Project
+```bash
+git clone https://github.com/iremnaz-d/FinanceAI.git
+cd FinanceAI
+```
+
+### Step 2: Build The Docker Image
+```bash
+docker build -t finance_ai .
+```
+
+### Step 3: Run App
+
+Use the following command to start the application.
+
+Important Note: When the application runs, the database will be automatically created
+under the `src` folder. The `-v` (volume) parameter in the command below ensures that
+the database inside Docker is synchronized with your local machine. 
+This way, your data will not be lost even if you stop Docker.
+
+#### For Mac/Linux/Git Bash
+```bash
+docker run -p 8501:8501 -v "$(pwd)/src:/app/src/data" finance_ai
+```
+
+#### For Windows PowerShell
+```PowerShell
+docker run -p 8501:8501 -v "${PWD}/src:/app/src/data" finance_ai
+```
+
+#### For Windows CMD
+```DOS
+docker run -p 8501:8501 -v "%cd%/src:/app/src/data" finance_ai
+```
+
+### Step 4: Access to UI
+
+Once the container is running successfully, 
+open your web browser and go to the following address:
+```text
+http://localhost:8501
+```
+
+
+
+
 
 ## CONFIGURATION
 

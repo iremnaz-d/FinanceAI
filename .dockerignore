@@ -1,0 +1,17 @@
+#Python cache files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+#Virtual Environment
+.venv/
+venv/
+env/
+
+#Git Files
+.git/
+.gitignore
+
+#Secret Files
+.env

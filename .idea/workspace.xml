@@ -4,13 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="66dc89d2-3075-41cb-8c59-e8ce2a2db463" name="Changes" comment="update readme">
-      <change afterPath="$PROJECT_DIR$/src/config/category_mappings.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/infrastructure/database/category_repository.py" afterDir="false" />
+    <list default="true" id="66dc89d2-3075-41cb-8c59-e8ce2a2db463" name="Changes" comment="Dictionary place is updated. User can add and delete category names.">
+      <change afterPath="$PROJECT_DIR$/.dockerignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/application/categorization_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/categorization_service.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/infrastructure/ml/text_classifier.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/infrastructure/ml/text_classifier.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/presentation/components/dashboard.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/components/dashboard.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,6 +20,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Python Script" />
+        <option value="Dockerfile" />
       </list>
     </option>
   </component>
@@ -53,22 +53,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;Python.app.executor&quot;: &quot;Run&quot;,
-    &quot;Python.charts.executor&quot;: &quot;Run&quot;,
-    &quot;Python.data_pipeline.executor&quot;: &quot;Run&quot;,
-    &quot;Python.excel_parser.executor&quot;: &quot;Run&quot;,
-    &quot;Python.main.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/irem naz/Desktop/FinanceAI/src/presentation/components&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Python.app.executor": "Run",
+    "Python.charts.executor": "Run",
+    "Python.data_pipeline.executor": "Run",
+    "Python.excel_parser.executor": "Run",
+    "Python.main.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "C:/Users/irem naz/Desktop/FinanceAI/src/presentation/components",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\irem naz\Desktop\FinanceAI\src\presentation\components" />
@@ -447,11 +448,18 @@
       <option name="project" value="LOCAL" />
       <updated>1786301883622</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="Dictionary place is updated. User can add and delete category names.">
+      <option name="closed" value="true" />
+      <created>1786309409534</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1786309409534</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="category prediction is finished but thinking of switching to another model. MultinomialNB does not evaluate negative values" />
     <MESSAGE value="Now I can see the pie chart with and without predictions" />
     <MESSAGE value="they said kpi card is great. NO IT IS NOT" />
     <MESSAGE value="I love containers. Monthly comparison and burn rate is in my HomePage now!" />
@@ -476,6 +484,7 @@
     <MESSAGE value="Transactions with the same ID's are in the database with different generated ID's." />
     <MESSAGE value="Transactions are deletable. Fixes #3 . But turns out i couldn't put transactions with same id's. Need to work on it. Last thing to do:)" />
     <MESSAGE value="update readme" />
-    <option name="LAST_COMMIT_MESSAGE" value="update readme" />
+    <MESSAGE value="Dictionary place is updated. User can add and delete category names." />
+    <option name="LAST_COMMIT_MESSAGE" value="Dictionary place is updated. User can add and delete category names." />
   </component>
 </project>
