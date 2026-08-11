@@ -252,6 +252,10 @@ http://localhost:8501
 ## EXAMPLE QUERIES FOR CHATBOT
 
 ## KNOWN LIMITATIONS
+excel dosyasında yazı olmayan yerleri temizlemek gerekiyo
+excel boş olunca dosya yüklemeye yönlendirmesi lazım
+bana da göüzüküyo api key isteği?????????? almasa da çalışıyo ama
+dockerdan kullanana her ai asistana girip çıktığında bi daha api key istiyo ama sohbet geçmişi duruyo
 
 ## FUTURE IMPROVEMENTS
 login 

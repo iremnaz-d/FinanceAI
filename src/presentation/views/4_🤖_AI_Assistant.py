@@ -8,11 +8,14 @@ from src.application.ai_services.ai_service import AIService
 from src.presentation.components.chat_interface import ChatVisualizer
 import streamlit as st
 from google.genai.errors import ServerError, ClientError
+from dotenv import load_dotenv
 
 st.set_page_config(page_title="AI Assistant", page_icon="🤖", layout="wide")
 
 def main():
     st.title("AI Finance Assistant 🤖")
+
+    load_dotenv()
 
     current_api_key = os.getenv("GEMINI_API_KEY")
     if current_api_key:
@@ -25,8 +28,9 @@ def main():
             current_api_key = st.text_input("Your Gemini API Key: ", type = "password")
 
         with col2:
-            st.warning("If you don't have an API Key, you can get one for free from the link below:")
-            st.link_button("Get Gemini API Key", "https://aistudio.google.com/app/api-keys")
+            with st.container(border=False):
+                st.warning("If you don't have an API Key, you can get one for free from the link below:")
+                st.link_button("🔑 Get Gemini API Key", "https://aistudio.google.com/app/api-keys", use_container_width = True)
 
             if not current_api_key:
                 st.stop()
@@ -70,7 +74,7 @@ def main():
                     error_message = "Too many request! This Assistant is tired. Please wait a while and try again later."
 
             else:
-                error_message = "Unexpected client error."
+                error_message = "Unexpected client error. Did you enter your API Key?"
             st.session_state.messages.append({'role': 'assistant', 'content': error_message})
             with st.chat_message('assistant'):
                 st.markdown(error_message)
