@@ -4,7 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="66dc89d2-3075-41cb-8c59-e8ce2a2db463" name="Changes" comment="Fixed problems in previous commit subjects. If file is not uploaded, system shows only needed pages. Installation with Docker finally works flawless.">
+    <list default="true" id="66dc89d2-3075-41cb-8c59-e8ce2a2db463" name="Changes" comment="update readme. Structure updated, Local Installation instructions, Usage, Known Limitations">
+      <change afterPath="$PROJECT_DIR$/assets/homepage_gif.gif" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
@@ -50,28 +51,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_MARK_IGNORED_FILES_AS_EXCLUDED&quot;: &quot;true&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;Python.app.executor&quot;: &quot;Run&quot;,
-    &quot;Python.charts.executor&quot;: &quot;Run&quot;,
-    &quot;Python.data_pipeline.executor&quot;: &quot;Run&quot;,
-    &quot;Python.excel_parser.executor&quot;: &quot;Run&quot;,
-    &quot;Python.main.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/irem naz/Desktop/FinanceAI/src/data&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Python.app.executor": "Run",
+    "Python.charts.executor": "Run",
+    "Python.data_pipeline.executor": "Run",
+    "Python.excel_parser.executor": "Run",
+    "Python.main.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "C:/Users/irem naz/Desktop/FinanceAI/assets",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\irem naz\Desktop\FinanceAI\assets" />
       <recent name="C:\Users\irem naz\Desktop\FinanceAI\src\data" />
       <recent name="C:\Users\irem naz\Desktop\FinanceAI\src\presentation\components" />
-      <recent name="C:\Users\irem naz\Desktop\FinanceAI\assets" />
       <recent name="C:\Users\irem naz\Desktop\FinanceAI\src\assets" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -92,14 +93,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1783460452394</updated>
-    </task>
-    <task id="LOCAL-00008" summary="Visuals will have to wait, i had to add and change 282497897 features first">
-      <option name="closed" value="true" />
-      <created>1784295936979</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1784295936979</updated>
     </task>
     <task id="LOCAL-00009" summary="thanks to my universal spirit fairies something goes right">
       <option name="closed" value="true" />
@@ -485,11 +478,18 @@
       <option name="project" value="LOCAL" />
       <updated>1786557181931</updated>
     </task>
-    <option name="localTasksCounter" value="57" />
+    <task id="LOCAL-00057" summary="update readme. Structure updated, Local Installation instructions, Usage, Known Limitations">
+      <option name="closed" value="true" />
+      <created>1786565571406</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1786565571406</updated>
+    </task>
+    <option name="localTasksCounter" value="58" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Improvements on My Transactions tab, played a little with the services" />
     <MESSAGE value="Took user feedback about ML predictions and a lot of other stuff. THAT WAS HARD" />
     <MESSAGE value="changed some folders on presentation layer. Tabs are prettier" />
     <MESSAGE value="logo" />
@@ -514,6 +514,7 @@
     <MESSAGE value="Docker guy can upload file" />
     <MESSAGE value="User is directed to Data Management tab if file is not uploaded. Docker guy's and my api_key is held with session_state" />
     <MESSAGE value="Fixed problems in previous commit subjects. If file is not uploaded, system shows only needed pages. Installation with Docker finally works flawless." />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed problems in previous commit subjects. If file is not uploaded, system shows only needed pages. Installation with Docker finally works flawless." />
+    <MESSAGE value="update readme. Structure updated, Local Installation instructions, Usage, Known Limitations" />
+    <option name="LAST_COMMIT_MESSAGE" value="update readme. Structure updated, Local Installation instructions, Usage, Known Limitations" />
   </component>
 </project>

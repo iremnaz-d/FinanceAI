@@ -316,6 +316,8 @@ You can go to the ``🤖 AI Assistant`` tab and ask any questions you like. Here
 
 ### 🏠 Homepage
 
+![FinanceAI Demo](assets/homepage_gif.gif)
+
 ### 💳 My Transactions
 
 ### 📊 Chart Analysis
@@ -346,6 +348,8 @@ search bar for my transactions descriptions
 ## AUTHOR
 
 **İrem Naz Durgut**
+
+
 Computer Engineering Student @ Dokuz Eylül University
 
 - **e-mail**: iremnazdurgut4@gmail.com
