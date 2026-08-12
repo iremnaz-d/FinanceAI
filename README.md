@@ -88,7 +88,7 @@ src/
 
 ## ARCHITECTURE
 
-### Clean Architecture
+### 🕋 Clean Architecture
 
 ```mermaid
 flowchart TD
@@ -165,11 +165,11 @@ ml ve database de burda
 session_state şeyleri. dosya yokken napıyorum, gemini api key nasıl istiyorum...
 
 ## LOCAL INSTALLATION (WITHOUT DOCKER)
-### Prerequisites
+### 🎟️ Prerequisites
 - Python 3.9 or higher
 - Git
 
-### Step 1: Clone the Repository
+### Step 1: 👯 Clone the Repository
 Open your terminal and run the following commands to clone the project and navigate into the directory:
 ```bash
 git clone https://github.com/iremnaz-d/FinanceAI.git
@@ -178,7 +178,7 @@ git clone https://github.com/iremnaz-d/FinanceAI.git
 cd FinanceAI
 ```
 
-### Step 2: Create and activate a virtual environment (Recommended)
+### Step 2: 🏕️ Create and activate a virtual environment (Recommended)
 It is highly recommended to use a virtual environment to avoid conflicts with other packages.
 
 #### For Windows
@@ -199,14 +199,14 @@ python3 -m venv venv
 source venv/bin/activate
 ```
 
-### Step 3: Install Dependencies
+### Step 3: ⬆️ Install Dependencies
 Install the required Python packages using ``pip``:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### Step 4: Run the Application
+### Step 4: 🏃🏻‍♂️ Run the Application 🏃🏼‍♀️‍➡️
 Start the Streamlit server by running the main application file:
 
 ```bash
@@ -221,7 +221,7 @@ streamlit run src/presentation/run_app.py
 You can use Docker to run the project on your local machine in an isolated
 environment without dealing with any Python dependencies.
 
-### Step 1: Clone the Project
+### Step 1: 👥 Clone the Project
 ```bash
 git clone https://github.com/iremnaz-d/FinanceAI.git
 ```
@@ -229,7 +229,7 @@ git clone https://github.com/iremnaz-d/FinanceAI.git
 cd FinanceAI
 ```
 
-### Step 2: Build The Docker Image
+### Step 2: 🏗️ Build The Docker Image
 
 Build the application's Docker image by running the following command in the project's 
 root directory(where the Dockerfile is located). 
@@ -238,7 +238,7 @@ root directory(where the Dockerfile is located).
 docker build -t finance_ai .
 ```
 
-### Step 3: Run App
+### Step 3: 🏃🏻‍♀️‍➡️ Run App 🏃🏻‍♂️
 
 Use the following command to start the application.
 
@@ -262,7 +262,7 @@ docker run -p 8501:8501 -v "${PWD}/src:/app/src" finance_ai
 docker run -p 8501:8501 -v "%cd%/src:/app/src" finance_ai
 ```
 
-### Step 4: Access to UI
+### Step 4: 👀 Access to UI
 
 Once the container is running successfully, 
 open your web browser and go to the following address:
@@ -277,23 +277,23 @@ the user interface will guide you through the process so you'll know exactly wha
 
 But if you'd still like some suggestions:
 
-### Load & Prepare Your Data (Optional)
+### 🗃️ Load & Prepare Your Data (Optional)
 The app will open with a **sample dataset already loaded** (I’m sharing all the transactions I’ve made with my Ziraat 
-card with you; whoever is reading this, I trust you’re a good person—please don’t let me down).
+card with you; whoever is reading this, I trust you’re a good person—please don’t let me down 🤝).
 
 If you want to upload your own data (I think only data from Ziraat will work),
 make sure the file is in ``.xlsx`` format and **doesn’t contain any formatting**, such as images.
 You can upload your file from the ``📁 Data Management`` tab.
 
-### Explore the Analysis
+### 🔍 Explore the Analysis
 - From the ``🏠 Homepage`` tab, you can **select a month** and view that month's summary:
 
-    + A graphical and percentage-based **comparison of last month** and the month you selected
+    + 📈 A graphical and percentage-based **comparison of last month** and the month you selected
   
-    + **Top 5 expenses** of that month
+    + ⚽5️⃣ **Top 5 expenses** of that month
   
-    + You can **view the AI's predictions** for uncategorized expenses for that month:
-        * You can **correct predictions** you think are wrong with the correct answers—my ``ML model``
+    + 🧠 You can **view the AI's predictions** for uncategorized expenses for that month:
+        * 👩🏻‍🏫 You can **correct predictions** you think are wrong with the correct answers—my ``ML model``
           will be retrained based on your feedback!
         * If you'd like, you can **add a new category** or **delete an existing one**.
       
@@ -305,7 +305,7 @@ in each category; if you’d like, you can have my ML model **predict** the *“
 - On the ``💳 My Transactions`` tab, you can view all your transactions, filter them by month and category, 
 and delete a transaction if you wish.
 
-### Ask Questions
+### 🤔 Ask Questions
 
 You can go to the ``🤖 AI Assistant`` tab and ask any questions you like. Here are a few questions you can ask:
 - Where have I been drinking coffee the most over the past 6 months?
@@ -330,7 +330,9 @@ If you don't have one, don't worry—you'll be redirected to a website where you
 
 ### 🏠 Homepage
 
-![FinanceAI Demo](assets/homepage_gif.gif)
+<p align="center">
+  <img src="assets/homepage_gif.gif" width="900">
+</p>
 
 ### 💳 My Transactions
 
