@@ -4,14 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="66dc89d2-3075-41cb-8c59-e8ce2a2db463" name="Changes" comment="User is directed to Data Management tab if file is not uploaded. Docker guy's and my api_key is held with session_state">
+    <list default="true" id="66dc89d2-3075-41cb-8c59-e8ce2a2db463" name="Changes" comment="Fixed problems in previous commit subjects. If file is not uploaded, system shows only needed pages. Installation with Docker finally works flawless.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/application/ai_services/ai_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/ai_services/ai_service.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/presentation/run_app.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/run_app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/presentation/views/1__Homepage.py" beforePathEscaped="$PROJECT_DIR$/src/presentation/views/1_🏠_Homepage.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/views/1__Homepage.py" afterPathEscaped="$PROJECT_DIR$/src/presentation/views/1_🏠_Homepage.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/presentation/views/4__AI_Assistant.py" beforePathEscaped="$PROJECT_DIR$/src/presentation/views/4_🤖_AI_Assistant.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/views/4__AI_Assistant.py" afterPathEscaped="$PROJECT_DIR$/src/presentation/views/4_🤖_AI_Assistant.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/presentation/views/5__Data_Management.py" beforePathEscaped="$PROJECT_DIR$/src/presentation/views/5_📁_Data_Management.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/views/5__Data_Management.py" afterPathEscaped="$PROJECT_DIR$/src/presentation/views/5_📁_Data_Management.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,14 +92,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1783460452394</updated>
-    </task>
-    <task id="LOCAL-00007" summary="infrastructure/database is done. planning to dig into visualization with Plotly Express and Streamlit">
-      <option name="closed" value="true" />
-      <created>1784152104399</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1784152104399</updated>
     </task>
     <task id="LOCAL-00008" summary="Visuals will have to wait, i had to add and change 282497897 features first">
       <option name="closed" value="true" />
@@ -490,11 +477,18 @@
       <option name="project" value="LOCAL" />
       <updated>1786540800304</updated>
     </task>
-    <option name="localTasksCounter" value="56" />
+    <task id="LOCAL-00056" summary="Fixed problems in previous commit subjects. If file is not uploaded, system shows only needed pages. Installation with Docker finally works flawless.">
+      <option name="closed" value="true" />
+      <created>1786557181931</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1786557181931</updated>
+    </task>
+    <option name="localTasksCounter" value="57" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="AI can take timeframe interval and little categorization fix" />
     <MESSAGE value="Improvements on My Transactions tab, played a little with the services" />
     <MESSAGE value="Took user feedback about ML predictions and a lot of other stuff. THAT WAS HARD" />
     <MESSAGE value="changed some folders on presentation layer. Tabs are prettier" />
@@ -519,6 +513,7 @@
     <MESSAGE value="Now, outside users should be able to enter their own Gemini API Key!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!" />
     <MESSAGE value="Docker guy can upload file" />
     <MESSAGE value="User is directed to Data Management tab if file is not uploaded. Docker guy's and my api_key is held with session_state" />
-    <option name="LAST_COMMIT_MESSAGE" value="User is directed to Data Management tab if file is not uploaded. Docker guy's and my api_key is held with session_state" />
+    <MESSAGE value="Fixed problems in previous commit subjects. If file is not uploaded, system shows only needed pages. Installation with Docker finally works flawless." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed problems in previous commit subjects. If file is not uploaded, system shows only needed pages. Installation with Docker finally works flawless." />
   </component>
 </project>

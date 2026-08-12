@@ -15,19 +15,20 @@
 
 ## CONTENTS
 
-1. [About The Project](#about-the-project)
+1. [About This Project](#about-this-project)
 2. [Features](#features)
 3. [Tech Stack](#tech-stack)
 4. [Project Structure](#project-structure)
 5. [Architecture](#architecture)
 6. [How It Works](#how-it-works)
-7. [Installation](#installation)
+7. [Local Installation (without Docker)](#local-installation-without-docker)
+7. [Quick Installation with Docker](#quick-installation-with-docker)
 8. [Configuration](#configuration)
 9. [Usage](#usage)
 10. [Known Limitations](#known-limitations)
 11. [Author](#author)
 
-## ABOUT THE PROJECT
+## ABOUT THIS PROJECT
 This project began entirely for my own personal interests,
 and as it progressed, I kept adding new features with growing enthusiasm until
 it finally reached a point where I could present it here. 
@@ -62,59 +63,26 @@ and I still enjoy using it today.
 | 📈 Data Visualization | Plotly             |
 | 📦 Database           | SQLite, SQLAlchemy |
 | 🔧 Version Control    | Git                |
+| 🐋 Containerization   | Docker             |
 
 
 ## PROJECT STRUCTURE
 
 ```text
 src/
-├── finance_app.db                               
-├── main.py                                      
-├── application/                                 # Business logic and application services
-│   ├── ai_services.py                             # AIService
-│   ├── categorization_service.py                  # Categorizer
-│   ├── financial_services.py                      # DashboardService, FinancialService
-│   ├── ml_services.py                             # TransactionPredictor
-│   └── transaction_service.py                     # TransactionService
-│                                                
-├── config/                                      # Application configuration
-│   └── settings.py                              
-│                                                
-├── data/                                        # Source dataset
-│   └── Transaction_History.xlsx                 
-│                                                
-├── domain/                                      # Entities and interfaces
-│   ├── entities.py                                # Transaction
-│   └── interfaces.py                              # TransactionRepository
-│                                                
-├── infrastructure/                              
-│   ├── data/                                    # Data ingestion
-│   │   ├── data_pipeline.py                       # DataCleaner
-│   │   └── excel_parser.py                        # ExcelReader
-│   ├── database/                                # SQLite & SQLAlchemy
-│   │   ├── db_connection.py                       # DatabaseSession
-│   │   ├── db_models.py                           # SQLAlchemyTransaction
-│   │   ├── migration.py                           # DatabaseMigrator
-│   │   └── repository.py                          # SQLiteTransactionRepository
-│   ├── llm/                                     # Gemini client
-│   │   └── client.py                            
-│   ├── ml/                                      # ML classifier
-│   │   └── text_classifier.py                   
-│   └── nlp/                                     # Text vectorization
-│       └── text_vectorizer.py                   
-│                                                
-└── presentation/                                
-    ├── run_app.py                               
-    ├── components/                              # Reusable Streamlit components
-    │   ├── charts.py                              # FinancialVisualizer
-    │   ├── chat_interface.py                      # ChatVisualizer
-    │   ├── computer_image.png                   
-    │   └── dashboard.py                           # DashboardFeatures
-    └── views/                                   # Application pages
-        ├── 1_🏠_Homepage.py                     
-        ├── 2_💳_My_Transactions.py              
-        ├── 3_📊_Chart_Analysis.py               
-        └── 4_🤖_AI_Assistant.py                           
+├── application/      # Business logic and application services
+├── config/           # Application configuration
+├── data/             # Source datasets
+├── domain/           # Entities and interfaces
+├── infrastructure/
+│   ├── data/         # Data ingestion pipeline
+│   ├── database/     # SQLite & SQLAlchemy
+│   ├── llm/          # Gemini client
+│   ├── ml/           # ML classifier
+│   └── nlp/          # Text vectorization
+└── presentation/
+    ├── components/   # Reusable Streamlit components
+    └── views/        # Application pages              
 ```
 
 ## ARCHITECTURE
@@ -185,6 +153,58 @@ U[User] --> UI[AI Assistant]
 
 ## HOW IT WORKS
 
+## LOCAL INSTALLATION (WITHOUT DOCKER)
+### Prerequisites
+- Python 3.9 or higher
+- Git
+
+### Step 1: Clone the Repository
+Open your terminal and run the following commands to clone the project and navigate into the directory:
+```bash
+git clone https://github.com/iremnaz-d/FinanceAI.git
+```
+```bash
+cd FinanceAI
+```
+
+### Step 2: Create and activate a virtual environment (Recommended)
+It is highly recommended to use a virtual environment to avoid conflicts with other packages.
+
+#### For Windows
+```bash
+python -m venv venv
+```
+
+```bash
+venv\Scripts\activate
+```
+
+#### For macOS/Linux
+```bash
+python3 -m venv venv
+```
+
+```bash
+source venv/bin/activate
+```
+
+### Step 3: Install Dependencies
+Install the required Python packages using ``pip``:
+
+```bash
+pip install -r requirements.txt
+```
+
+### Step 4: Run the Application
+Start the Streamlit server by running the main application file:
+
+```bash
+streamlit run src/presentation/run_app.py
+```
+
+
+
+
 ## QUICK INSTALLATION WITH DOCKER
 
 You can use Docker to run the project on your local machine in an isolated
@@ -239,24 +259,97 @@ open your web browser and go to the following address:
 http://localhost:8501
 ```
 
-
-
-
-
-## CONFIGURATION
-
 ## USAGE
 
+After installing and launching the application as described in the [Installation](#local-installation-without-docker) section, 
+the user interface will guide you through the process so you'll know exactly what to do.
+
+But if you'd still like some suggestions:
+
+### Load & Prepare Your Data (Optional)
+The app will open with a **sample dataset already loaded** (I’m sharing all the transactions I’ve made with my Ziraat 
+card with you; whoever is reading this, I trust you’re a good person—please don’t let me down).
+
+If you want to upload your own data (I think only data from Ziraat will work),
+make sure the file is in ``.xlsx`` format and **doesn’t contain any formatting**, such as images.
+You can upload your file from the ``📁 Data Management`` tab.
+
+### Explore the Analysis
+- From the ``🏠 Homepage`` tab, you can **select a month** and view that month's summary:
+
+    + A graphical and percentage-based **comparison of last month** and the month you selected
+  
+    + **Top 5 expenses** of that month
+  
+    + You can **view the AI's predictions** for uncategorized expenses for that month:
+        * You can **correct predictions** you think are wrong with the correct answers—my ``ML model``
+          will be retrained based on your feedback!
+        * If you'd like, you can **add a new category** or **delete an existing one**.
+      
+
+- In the ``📊 Chart Analysis`` tab, you can see the ups and downs of your annual spending and how much you’ve spent 
+in each category; if you’d like, you can have my ML model **predict** the *“Other”* category.
+
+
+- On the ``💳 My Transactions`` tab, you can view all your transactions, filter them by month and category, 
+and delete a transaction if you wish.
+
+### Ask Questions
+
+You can go to the ``🤖 AI Assistant`` tab and ask any questions you like. Here are a few questions you can ask:
+- Where have I been drinking coffee the most over the past 6 months?
+
+
+- Final exams ended toward the end of June—can you tell from my spending?
+
+
+- What do you think were my excessive expenses this past March?
+
+
+- Why are you so funny? The developer must be a really nice person.
+
+
+- Could you compare my spending this April with my spending before April? I kind of lost track of things back then...
+
+
 ## USER INTERFACE
+
+### 🏠 Homepage
+
+### 💳 My Transactions
+
+### 📊 Chart Analysis
+
+### 🤖 AI Assistant
+
+### 📁 Data Management
 
 ## EXAMPLE QUERIES FOR CHATBOT
 
 ## KNOWN LIMITATIONS
-excel dosyasında yazı olmayan yerleri temizlemek gerekiyo
+
+- **File Type**: Only accepts ``.xlsx`` files as datasets. I didn’t expand this restriction because
+I would need a different dataset to do so. Additionally, due to limitations in the `pandas` library, 
+the file must not contain any formatting (e.g., images) —it should consist solely of text.
+
+
+- **Same IDs**: Only when sending money to another person, the data that appears in the bank account is in 
+sets of two or three entries (one for the amount sent, the others for the amounts withdrawn to send the money),
+all under the same IDs. I had trouble importing all of these account transactions with the same IDs into the
+database. Fortunately, this issue doesn’t cause major problems during data analysis.
+
 
 ## FUTURE IMPROVEMENTS
 login 
 search bar for my transactions descriptions
 
 ## AUTHOR
+
+**İrem Naz Durgut**
+Computer Engineering Student @ Dokuz Eylül University
+
+- **e-mail**: iremnazdurgut4@gmail.com
+- [GitHub](https://github.com/iremnaz-d)
+- [LinkedIn](https://www.linkedin.com/in/iremnazdurgut)
+
 
