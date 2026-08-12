@@ -12,7 +12,7 @@ class AIService:
 
     def __init__(self, provided_api_key = None):
         if provided_api_key:
-            self.client = Client(provided_api_key)
+            self.client = Client(provided_api_key = provided_api_key)
         else:
             self.client = Client()
 

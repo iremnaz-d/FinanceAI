@@ -33,5 +33,12 @@ data = st.Page(
     icon = "📁"
 )
 
-pg = st.navigation({"": [homepage, transactions, charts, assistant, data]})
+if "system_ready" not in st.session_state:
+    st.session_state.system_ready = False
+
+if not st.session_state.system_ready:
+    pg = st.navigation({"": [homepage, data]})
+else:
+    pg = st.navigation({"": [homepage, transactions, charts, assistant, data]})
+
 pg.run()

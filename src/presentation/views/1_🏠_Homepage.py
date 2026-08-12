@@ -20,6 +20,9 @@ def init_database():
     try:
         migrator.run_migration()
         st.session_state.is_file_uploaded = True
+        if not st.session_state.system_ready:
+            st.session_state.system_ready = True
+            st.rerun()
     except Exception:
         st.session_state.is_file_uploaded = False
         st.error("Please upload your transaction file from '📁 Data Management'.")

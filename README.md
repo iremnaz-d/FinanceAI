@@ -253,8 +253,6 @@ http://localhost:8501
 
 ## KNOWN LIMITATIONS
 excel dosyasında yazı olmayan yerleri temizlemek gerekiyo
-excel dockercıya en başta boş geliyo
-dockercı asistana bişi sorunca gemini api key not found diyo inf/clienttan gelen raise ile
 
 ## FUTURE IMPROVEMENTS
 login 
