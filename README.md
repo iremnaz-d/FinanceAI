@@ -22,11 +22,12 @@
 5. [Architecture](#architecture)
 6. [How It Works](#how-it-works)
 7. [Local Installation (without Docker)](#local-installation-without-docker)
-7. [Quick Installation with Docker](#quick-installation-with-docker)
-8. [Configuration](#configuration)
+8. [Quick Installation with Docker](#quick-installation-with-docker)
 9. [Usage](#usage)
-10. [Known Limitations](#known-limitations)
-11. [Author](#author)
+10. [User Interface](#user-interface)
+11. [Known Limitations](#known-limitations)
+12. [Future Improvements](#future-improvements)
+13. [Author](#author)
 
 ## ABOUT THIS PROJECT
 This project began entirely for my own personal interests,
@@ -152,6 +153,16 @@ U[User] --> UI[AI Assistant]
 ```
 
 ## HOW IT WORKS
+
+### Data Pipeline
+ml ve database de burda
+
+### AI Assistant Flow
+
+### Transaction Categorization / ML Pipeline
+
+### State Management & Dynamic UI
+session_state şeyleri. dosya yokken napıyorum, gemini api key nasıl istiyorum...
 
 ## LOCAL INSTALLATION (WITHOUT DOCKER)
 ### Prerequisites
@@ -311,6 +322,9 @@ You can go to the ``🤖 AI Assistant`` tab and ask any questions you like. Here
 
 - Could you compare my spending this April with my spending before April? I kind of lost track of things back then...
 
+❗ Since you'll be running the project externally, the system will ask you for your own Gemini API key.
+If you don't have one, don't worry—you'll be redirected to a website where you can get one for free!
+
 
 ## USER INTERFACE
 
@@ -326,7 +340,6 @@ You can go to the ``🤖 AI Assistant`` tab and ask any questions you like. Here
 
 ### 📁 Data Management
 
-## EXAMPLE QUERIES FOR CHATBOT
 
 ## KNOWN LIMITATIONS
 

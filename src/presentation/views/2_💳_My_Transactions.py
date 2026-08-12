@@ -42,7 +42,7 @@ def main():
     event = st.dataframe(df1,
                          on_select = "rerun",
                          selection_mode = "single-row",
-                         height = 700)
+                         height = 600)
 
 
     selected_rows = event.selection.rows
