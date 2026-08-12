@@ -20,6 +20,10 @@ def choice_data():
 def main():
     st.title("Chart Analysis 📊")
 
+    if not st.session_state.is_file_uploaded:
+        st.error("Please upload your transaction file from '📁 Data Management'.")
+        st.stop()
+
     vis = FinancialVisualizer() # Plotly visualizer on charts.py
 
     chart_type= choice_chart()

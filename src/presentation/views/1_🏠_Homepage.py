@@ -17,16 +17,21 @@ st.set_page_config(page_title="Homepage", page_icon="🏠", layout="wide")
 
 def init_database():
     migrator = DataBaseMigrator()
-    migrator.run_migration()
+    try:
+        migrator.run_migration()
+        st.session_state.is_file_uploaded = True
+    except Exception:
+        st.session_state.is_file_uploaded = False
+        st.error("Please upload your transaction file from '📁 Data Management'.")
+        st.stop()
 
     repo = SQLiteTransactionRepository(db=DataBaseSession())
+
     transaction_list = repo.get_all_transactions()
     df = pd.DataFrame([asdict(data) for data in transaction_list])
 
 def main():
 
-    # current_dir = os.path.dirname(__file__)
-    # image_path = os.path.join(current_dir, "logo_text.png")
     image_path = "src/presentation/components/logo_text.png"
     st.image(image_path, width=400)
     st.write("")

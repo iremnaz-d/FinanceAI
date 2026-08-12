@@ -14,27 +14,39 @@ st.set_page_config(page_title="AI Assistant", page_icon="🤖", layout="wide")
 
 def main():
     st.title("AI Finance Assistant 🤖")
+    if not st.session_state.is_file_uploaded:
+        st.error("Please upload your transaction file from '📁 Data Management'.")
+        st.stop()
 
     load_dotenv()
 
-    current_api_key = os.getenv("GEMINI_API_KEY")
-    if current_api_key:
-        ai_service = AIService()
+    if "api_key" not in st.session_state:
+        current_api_key = os.getenv("GEMINI_API_KEY")
+        if current_api_key:
+            st.session_state.api_key = current_api_key
+            ai_service = AIService()
+        else:
+            col1, col2 = st.columns(2)
+            with col1:
+                st.info("You are running this app on a local environment."
+                        " Please enter your Gemini API Key.")
+                current_api_key = st.text_input("Your Gemini API Key: ", type="password")
+                st.session_state.api_key = current_api_key
+
+            with col2:
+                with st.container(border=False):
+                    st.warning("If you don't have an API Key, you can get one for free from the link below:")
+                    st.link_button("🔑 Get Gemini API Key", "https://aistudio.google.com/app/api-keys",
+                                   use_container_width=True)
+
+                if not current_api_key:
+                    st.stop()
+            ai_service = AIService(current_api_key)
     else:
-        col1, col2 = st.columns(2)
-        with col1:
-            st.info("You are running this app on a local environment."
-                    " Please enter your Gemini API Key.")
-            current_api_key = st.text_input("Your Gemini API Key: ", type = "password")
-
-        with col2:
-            with st.container(border=False):
-                st.warning("If you don't have an API Key, you can get one for free from the link below:")
-                st.link_button("🔑 Get Gemini API Key", "https://aistudio.google.com/app/api-keys", use_container_width = True)
-
-            if not current_api_key:
-                st.stop()
-        ai_service = AIService(current_api_key)
+        if st.session_state.api_key == os.getenv("GEMINI_API_KEY"):
+            ai_service = AIService()
+        else:
+            ai_service = AIService(st.session_state.api_key)
 
     chat_vis = ChatVisualizer()
 

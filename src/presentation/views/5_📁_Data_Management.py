@@ -27,6 +27,7 @@ with st.container(border = True):
 
             migrator = DataBaseMigrator()
             migrator.run_migration()
+            st.cache_data.clear()
 
             st.success("✅ File successfully uploaded and system data is updated.")
         except Exception as e:

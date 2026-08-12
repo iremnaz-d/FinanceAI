@@ -13,7 +13,12 @@ class ExcelReader:
         self.path = path # r"src/data/Transaction_History.xlsx"
 
     def read(self):
-        df = pd.read_excel(self.path)
+        try:
+            df = pd.read_excel(self.path)
+        except Exception as e:
+            return str(e)
+
+
         df.drop(index=df.index[:11], inplace=True)
         df.columns = ['date', 'id', 'description', 'amount', 'balance']
 

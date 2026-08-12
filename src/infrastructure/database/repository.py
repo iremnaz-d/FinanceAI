@@ -111,5 +111,15 @@ class SQLiteTransactionRepository(TransactionRepository):
         finally:
             session.close()
 
+    def is_empty(self):
+        session = self.db.get_session()
+        try:
+            statement = select(SQLAlchemyTransaction).limit(1)
+            first_record = session.scalars(statement).first()
+            return first_record is None
+        finally:
+            session.close()
+
+
 
 

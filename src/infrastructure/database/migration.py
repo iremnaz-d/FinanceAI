@@ -15,7 +15,10 @@ class DataBaseMigrator:
         self.excell_reader = ExcelReader(Settings.FILE_PATH)
 
     def run_migration(self):
-        transaction_list = self.excell_reader.read()
+        try:
+            transaction_list = self.excell_reader.read()
+        except Exception as e:
+            return e
 
         categorizer = Categorizer(transaction_list)
         new_transaction_list = categorizer.categorize()

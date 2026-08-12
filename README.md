@@ -253,9 +253,8 @@ http://localhost:8501
 
 ## KNOWN LIMITATIONS
 excel dosyasında yazı olmayan yerleri temizlemek gerekiyo
-excel boş olunca dosya yüklemeye yönlendirmesi lazım, dockercıya en başta boş geliyo
-bana da göüzüküyo api key isteği?????????? almasa da çalışıyo ama
-dockerdan kullanana her ai asistana girip çıktığında bi daha api key istiyo ama sohbet geçmişi duruyo
+excel dockercıya en başta boş geliyo
+dockercı asistana bişi sorunca gemini api key not found diyo inf/clienttan gelen raise ile
 
 ## FUTURE IMPROVEMENTS
 login 
