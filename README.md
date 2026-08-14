@@ -479,6 +479,18 @@ history of which months they successfully stayed on budget.
 Adding a feature to download the monthly financial summaries and interactive charts 
 as PDF or CSV files for external use or printing.
 
+#### Support for More File Types:
+Expanding the file uploader to accept other common data formats (like .csv),
+removing the strict limitation of only allowing ``.xlsx`` files.
+
+#### Multi-Bank Compatibility:
+Currently, the data cleaning process is specifically tailored for **Ziraat Bank**'s statement format.
+This limitation exists simply because **I don't have access to datasets from other banks**.
+
+
+If you use a different bank and would like it to be supported, feel free to share an anonymized 
+sample of your bank statement with me! (please 🥺) With the right dataset, adapting the pipeline 
+to work for any bank is a very quick and easy process.
 
 
 ## AUTHOR
