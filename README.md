@@ -120,9 +120,47 @@ I --> ML
 
 ```
 
-### AI Assistant Flow
+## HOW IT WORKS
 
-This diagram illustrates the end-to-end workflow of the AI Assistant. When a user submits a question, the request is processed by the application layer, which retrieves the necessary financial data from the database according to the function call collected from Gemini API. When Gemini API creates the final response after making the call, the generated response is returned to the Streamlit interface and presented to the user.
+### Data Pipeline
+The data pipeline is responsible for transforming raw bank statements into structured, 
+analyzable data. When a user uploads a ``.xlsx`` file, the ``ExcelReader`` and ``DataCleaner`` components
+(powered by Pandas) immediately strip away irrelevant header rows, normalize date formats, 
+and handle missing values. Once the data is cleaned, it is passed through the ``Categorizer`` class and then the
+``ML Categorization model`` to assign appropriate expense tags. Finally, the ``DataBaseMigrator`` securely saves the
+processed records into a local ``SQLite`` database using ``SQLAlchemy``, ensuring that all user data 
+remains private and local.
+
+```mermaid
+flowchart TD
+
+migrator[Database Migrator] -.-> reader
+file[.xlsx File] --> reader[ExcelReader]
+reader -.-> cleaner[DataCleaner]
+cleaner --> |Cleaned Data| reader
+reader --> |Raw Transaction List| migrator
+
+migrator -.-> categorizer[Categorizer]
+categorizer --> |Categorized List| migrator
+
+migrator -.-> predictor[Predictor] 
+predictor --> |List with Unknown Categories Predicted| migrator
+
+migrator --> |Add Transaction List| repo[SQLiteTransactionRepository]
+repo -.- |uses| session[Database Session]
+repo -.- |maps to| sqlalchemy[SQLAlchemyTransaction]
+
+repo ===>|Saves to| db[(finance_app.db / SQLite)]
+```
+
+### 🤖 AI Assistant Flow
+The AI Assistant acts as a bridge between natural language and SQL data, powered by the
+``Gemini 3.6 Flash`` model. Instead of relying on static prompts, it uses ``Function Calling``.
+When a user asks a question (e.g., "How much did I spend on food last month?"), the AI
+decides which internal Python tool to trigger from the ``tools.json`` configuration. 
+The backend executes the corresponding query via ``financial_service.py``, retrieves the
+exact metrics from the ``SQLite`` database, and feeds the factual data back to Gemini. 
+The model then synthesizes this raw data into a clear, conversational Markdown response.
 
 ```mermaid
 flowchart TD
@@ -152,17 +190,48 @@ U[User] --> UI[AI Assistant]
     UI --> U
 ```
 
-## HOW IT WORKS
+### 📊 Data Visualization & Chart Analysis
+The ``📊 Chart Analysis`` module provides interactive financial insights through a clean, 
+decoupled architecture. Instead of generating charts directly within the presentation layer, 
+the system delegates this responsibility to the ``FinancialVisualizer`` component. When the UI 
+requests a specific view, the visualizer leverages ``Pandas`` to aggregate, group, and filter 
+the raw SQLite data. It then uses ``Plotly Express`` to render interactive figures (such as
+spending trends, category breakdowns) and seamlessly returns them to the frontend. This
+modular approach ensures the UI remains lightweight while delivering highly responsive, 
+zoomable, and interactive visual data to the user.
 
-### Data Pipeline
-ml ve database de burda
+```mermaid
+flowchart TD
+    ui[Chart Analysis Page] -->|1. Requests Specific Chart| vis[FinancialVisualizer]
+    
+    subgraph components/charts.py
+        vis -.->|2. Filters & Aggregates Data| pd[Pandas]
+        pd -.->|3. Processed DataFrame| px[Plotly Express]
+        px -.->|4. Generates Interactive Figure| vis
+    end
+    
+    vis ===>|5. Returns Rendered Figure| ui
+    
+```
 
-### AI Assistant Flow
 
-### Transaction Categorization / ML Pipeline
+### 🕹️ State Management & Dynamic UI
 
-### State Management & Dynamic UI
-session_state şeyleri. dosya yokken napıyorum, gemini api key nasıl istiyorum...
+The application utilizes Streamlit's ``st.session_state`` to deliver a highly dynamic
+and secure user experience. The interface intelligently adapts to the user's current setup:
+
+- **Empty Database Guard**: Upon launch, the system checks the SQLite repository. If no 
+transactions are found, it dynamically restricts the navigation menu using ``st.navigation``,
+hiding the AI and Analysis pages and guiding the user directly to the ``📁 Data Management`` tab.
+
+
+- **Secure API Key Handling**: If the app is **deployed via Docker** or the **.env file is missing**,
+the system intercepts the AI initialization. It presents a secure ``st.text_input`` field to collect
+the ``Gemini API Key`` on the fly. Using ``st.stop()`` and ``st.rerun()``, the app pauses execution 
+until a valid key is provided, instantly unlocking the AI features without ever exposing or
+hardcoding credentials.
+
+
 
 ## LOCAL INSTALLATION (WITHOUT DOCKER)
 ### 🎟️ Prerequisites
@@ -328,19 +397,55 @@ If you don't have one, don't worry—you'll be redirected to a website where you
 
 ## USER INTERFACE
 
+> **💡 Note on Dynamic Navigation:** The application features a smart routing system.
+> If your database is empty (i.e., you haven't uploaded a transaction file yet), 
+> only the **Homepage** and **Data Management** tabs will be visible to smoothly 
+> guide you toward setting up your data first.
+
 ### 🏠 Homepage
+Provides a high-level overview of your financial health with quick summaries
+and an intuitive dashboard layout.
 
 <p align="center">
   <img src="assets/homepage_gif.gif" width="900">
 </p>
 
 ### 💳 My Transactions
+Allows you to see and filter your detailed transaction history
+extracted directly from your bank statements.
+
+<p align="center">
+  <img src="assets/my_transactions_photo.png" width="900">
+</p>
 
 ### 📊 Chart Analysis
+Visualizes your income and spending habits over time through 
+interactive and easy-to-read charts.
+
+<p align="center">
+  <img src="assets/chart_analysis_gif.gif" width="900">
+</p>
 
 ### 🤖 AI Assistant
+Acts as your personal financial advisor, allowing you to ask questions 
+about your spending in natural language. 
+
+
+*(**Note**: When running the app in a ``local environment`` or via ``Docker``, 
+this page will securely prompt you to enter your Gemini API Key before
+unlocking the chat interface.)*
+
+<p align="center">
+  <img src="assets/ai_assistant_photo.png" width="900">
+</p>
 
 ### 📁 Data Management
+The dedicated space where you can securely upload your bank statement `.xlsx` 
+files to initialize or update your local database.
+
+<p align="center">
+  <img src="assets/data_management_photo.png" width="900">
+</p>
 
 
 ## KNOWN LIMITATIONS
