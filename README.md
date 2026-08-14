@@ -462,8 +462,24 @@ database. Fortunately, this issue doesn’t cause major problems during data ana
 
 
 ## FUTURE IMPROVEMENTS
-login 
-search bar for my transactions descriptions
+#### User Authentication (Login System):
+Implementing a secure login mechanism. This will allow multiple users to use the application 
+safely on the same environment while keeping their financial records completely private.
+
+#### Transaction Search Bar:
+Adding a dynamic search bar to the "My Transactions" page. This will help users easily find 
+specific past expenses by simply typing keywords from the transaction descriptions.
+
+#### Budget Limits and Alerts:
+Allowing users to set custom monthly spending limits for their overall budget or specific categories.
+The system will send notifications when the user is getting close to their limit and provide a 
+history of which months they successfully stayed on budget.
+
+#### Export Reports:
+Adding a feature to download the monthly financial summaries and interactive charts 
+as PDF or CSV files for external use or printing.
+
+
 
 ## AUTHOR
 
@@ -472,7 +488,7 @@ search bar for my transactions descriptions
 
 Computer Engineering Student @ Dokuz Eylül University
 
-- **e-mail**: iremnazdurgut4@gmail.com
+- iremnazdurgut4@gmail.com
 - [GitHub](https://github.com/iremnaz-d)
 - [LinkedIn](https://www.linkedin.com/in/iremnazdurgut)
 
