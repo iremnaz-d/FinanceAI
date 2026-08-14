@@ -1,7 +1,4 @@
 from src.application.financial_services import FinancialService
-from src.application.transaction_service import TransactionService
-from src.infrastructure.database.db_connection import DataBaseSession
-from src.infrastructure.database.repository import SQLiteTransactionRepository
 from src.infrastructure.llm.client import Client
 from datetime import datetime
 import json
@@ -14,15 +11,19 @@ class AIService:
         if provided_api_key:
             self.client = Client(provided_api_key = provided_api_key)
         else:
-            self.client = Client()
+            self.client = Client() #if provided_api_key does not exist, initiating Client with the api key from .env
 
         self.financial_service = FinancialService()
-        self.repo = SQLiteTransactionRepository(db=DataBaseSession())
-        self.transaction_service = TransactionService(self.repo)
+
 
     def get_financial_insight(self, user_question, init_timeframe):
+        """
+        The main method that receives a response from artificial intelligence
+        :param user_question: user's question
+        :param init_timeframe: recently asked timeframe
+        :return: Gemini's response, last asked timeframe
+        """
         current_date = datetime.now().strftime('%B %Y')
-
 
         with open("src/application/ai_services/prompts/system_prompt.txt", "r", encoding = "utf-8") as f: #system prompt
             raw_system_prompt = f.read()
@@ -42,10 +43,10 @@ class AIService:
 
         new_timeframe = init_timeframe
 
-        if response.function_calls:
+        if response.function_calls: # if there is a function call
             f_call = response.function_calls[0]
             f_name = f_call.name
-            args = f_call.args if f_call.args else {}
+            args = f_call.args if f_call.args else {} # arguments of the required function
             result = ""
 
             if f_name == "get_expenses_by_month_markdown":
@@ -71,29 +72,8 @@ class AIService:
             function_response = raw_function_response.format(result=result)
             conversation_history = [system_prompt]
 
+            # getting the main response by sending system prompt with the function call result
             response = self.client.generate_response(tools, function_response, conversation_history)
             return response.text, new_timeframe
 
         return response.text ,new_timeframe
-
-
-    def _get_timeframe(self, user_query, init_timeframe): #router for timeframe
-        current_date = datetime.now().strftime('%B %Y')
-
-        with open("src/application/ai_services/prompts/tools.json", "r", encoding = "utf-8") as f: #tool descriptions
-            raw_tools = json.load(f)
-        tools = [types.Tool(**t) for t in raw_tools]
-
-        with open("src/application/ai_services/prompts/router_prompt.txt", "r", encoding = "utf-8") as f: #router prompt
-            raw_router_prompt = f.read()
-
-
-
-        router_prompt = raw_router_prompt.format(
-            current_date = current_date,
-            init_timeframe = init_timeframe,
-            user_query = user_query
-        )
-
-        response = self.client.generate_response(tools, router_prompt)
-        return response.text

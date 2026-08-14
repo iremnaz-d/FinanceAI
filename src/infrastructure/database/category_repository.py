@@ -1,8 +1,13 @@
 import json
 
 class CategoryRepository:
+    """
+    This class is a direct controller for the config/category_mappings.json which contains a
+    dictionary for the categories and their keywords.
+    """
 
-    def get_category_dict(self):
+    @staticmethod
+    def get_category_dict():
         with open("src/config/category_mappings.json", "r", encoding = "utf-8") as f:
             return json.load(f)
 

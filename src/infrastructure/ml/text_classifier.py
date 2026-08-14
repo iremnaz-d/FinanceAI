@@ -1,11 +1,12 @@
 from sklearn.naive_bayes import MultinomialNB
 from sklearn.compose import ColumnTransformer
 from sklearn.pipeline import Pipeline
-import pandas as pd
 from src.infrastructure.nlp.text_vectorizer import TextVectorizer
 
-
 class TextClassifier:
+    """
+    The main ML class that performs training and prediction using the MultinomialNB model
+    """
 
     def __init__(self):
         self.model_pipeline = None
@@ -15,7 +16,7 @@ class TextClassifier:
             return
 
         train_x = train_x.copy()
-        train_x['amount'] = train_x['amount'].abs()
+        train_x['amount'] = train_x['amount'].abs() # Since the MultinomialNB does not handle negative numbers, the absolute value is taken.
 
         preprocessor = ColumnTransformer(
             transformers = [
@@ -34,10 +35,11 @@ class TextClassifier:
     def predict(self, test_x):
         if self.model_pipeline is None:
             return ['Other'] * len(test_x)
+
         if test_x is None or len(test_x) == 0:
             return []
+
         test_x = test_x.copy()
         test_x['amount'] = test_x['amount'].abs()
+
         return self.model_pipeline.predict(test_x)
-
-

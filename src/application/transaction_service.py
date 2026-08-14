@@ -4,7 +4,8 @@ import streamlit as st
 
 class TransactionService:
     """
-    This class gets transaction lists from repository, filters and returns the needed dataframe
+    This class gets transaction lists from repository, filters and returns the needed dataframe.
+    It includes only basic and simple requests
     """
 
     def __init__(self, repo):

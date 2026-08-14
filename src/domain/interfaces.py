@@ -1,25 +1,28 @@
 from abc import ABC, abstractmethod
 from datetime import datetime
+from src.domain.entities import Transaction
 
 
 class TransactionRepository(ABC):
     """
-    TransactionRepository(ABC): Veritabanı işlemlerinin (kaydetme, listeleme) altyapıdan
-    bağımsız şekilde tanımlandığı soyut sınıf (Interface).
+    An abstract class (interface) in which database operations (insertion, retrieval) are
+    defined independently of the underlying infrastructure.
     """
 
     @abstractmethod
     def get_all_transactions(self):
         pass
 
-    def get_transactions_by_date(self, date: datetime):
+    @abstractmethod
+    def add_transaction(self, transaction: Transaction):
         pass
 
-    def get_transaction_by_id(self, id: str):
+    @abstractmethod
+    def delete_transaction(self, _id):
         pass
 
-class PredictiveModel(ABC):
-    """
-    PredictiveModel(ABC): ML modellerinin uyması gereken
-    train ve predict metotlarını dikte eden soyut altyapı.
-    """
+
+    @abstractmethod
+    def get_transaction_by_id(self, _id: str):
+        pass
+

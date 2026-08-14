@@ -17,8 +17,3 @@ class DataBaseSession:
 
  def get_session(self):
   return self.Session()
-
- # def close_session(self):
- #  self.session.close()
-
- #session.commit(), session.close(), session.rollback()

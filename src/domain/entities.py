@@ -26,10 +26,6 @@ class Transaction:
         self.balance = balance
         self.category = category
 
-    def set_id(self,_id):
-        self.id = _id
-
-
     @classmethod
     def from_db_model(cls, db_model):
         """
@@ -54,21 +50,7 @@ class Transaction:
         :return: Transaction list
         """
 
-
         _list = []
         for model in db_model_list:
             _list.append(cls.from_db_model(db_model = model))
         return _list
-
-
-
-
-
-"""@dataclass
-class Category:
-    
-    Holds Transaction's category names and/or budget limits (basically category features)
-    
-    name : str
-    budget_limit : Optional[float] = None"""
-

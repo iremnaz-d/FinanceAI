@@ -4,9 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="66dc89d2-3075-41cb-8c59-e8ce2a2db463" name="Changes" comment="update readme.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="66dc89d2-3075-41cb-8c59-e8ce2a2db463" name="Changes" comment="update readme. future improvements addition">
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/application/ai_services/ai_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/ai_services/ai_service.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/application/categorization_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/categorization_service.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/application/financial_services.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/financial_services.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/application/ml_services.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/ml_services.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/application/transaction_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/transaction_service.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/config/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/config/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/domain/entities.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/entities.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/domain/interfaces.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/interfaces.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/infrastructure/data/data_pipeline.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/infrastructure/data/data_pipeline.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/infrastructure/data/excel_parser.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/infrastructure/data/excel_parser.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/infrastructure/database/category_repository.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/infrastructure/database/category_repository.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/infrastructure/database/db_connection.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/infrastructure/database/db_connection.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/infrastructure/database/db_models.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/infrastructure/database/db_models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/infrastructure/database/migration.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/infrastructure/database/migration.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/infrastructure/database/repository.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/infrastructure/database/repository.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/infrastructure/llm/client.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/infrastructure/llm/client.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/infrastructure/ml/text_classifier.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/infrastructure/ml/text_classifier.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,30 +108,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1783460452394</updated>
-    </task>
-    <task id="LOCAL-00012" summary="cleaned descriptions to be interpreted in categorizer">
-      <option name="closed" value="true" />
-      <created>1784486882781</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1784486882781</updated>
-    </task>
-    <task id="LOCAL-00013" summary="they are categorized now. i can not do anything else before i visualize them. yeah, ziraat bankası don't have these kinda features">
-      <option name="closed" value="true" />
-      <created>1784493600973</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1784493600973</updated>
-    </task>
-    <task id="LOCAL-00014" summary="seems like I spend %27.8 of my money in markets. time to categorize the &quot;others&quot;. I am saying NLP guys">
-      <option name="closed" value="true" />
-      <created>1784495723641</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1784495723641</updated>
     </task>
     <task id="LOCAL-00015" summary="category prediction is finished but thinking of switching to another model. MultinomialNB does not evaluate negative values">
       <option name="closed" value="true" />
@@ -485,13 +477,34 @@
       <option name="project" value="LOCAL" />
       <updated>1786570910276</updated>
     </task>
-    <option name="localTasksCounter" value="61" />
+    <task id="LOCAL-00061" summary="update readme. User Interface and How It Works">
+      <option name="closed" value="true" />
+      <created>1786715258489</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1786715258489</updated>
+    </task>
+    <task id="LOCAL-00062" summary="update readme. future improvements">
+      <option name="closed" value="true" />
+      <created>1786715965264</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1786715965264</updated>
+    </task>
+    <task id="LOCAL-00063" summary="update readme. future improvements addition">
+      <option name="closed" value="true" />
+      <created>1786716472978</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1786716472978</updated>
+    </task>
+    <option name="localTasksCounter" value="64" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="logo" />
-    <MESSAGE value="logo in readme" />
-    <MESSAGE value="separated the string prompts" />
     <MESSAGE value="wrote tool descriptions for function calling, added methods in financial services" />
     <MESSAGE value="llm can call functions now. but lost the timeframe memory through messages" />
     <MESSAGE value="timeframe problem fixed" />
@@ -514,6 +527,9 @@
     <MESSAGE value="update readme. Structure updated, Local Installation instructions, Usage, Known Limitations" />
     <MESSAGE value="update readme. Trying to put GIF" />
     <MESSAGE value="update readme." />
-    <option name="LAST_COMMIT_MESSAGE" value="update readme." />
+    <MESSAGE value="update readme. User Interface and How It Works" />
+    <MESSAGE value="update readme. future improvements" />
+    <MESSAGE value="update readme. future improvements addition" />
+    <option name="LAST_COMMIT_MESSAGE" value="update readme. future improvements addition" />
   </component>
 </project>

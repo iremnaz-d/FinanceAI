@@ -1,4 +1,3 @@
-from datetime import datetime
 from src.domain.entities import Transaction
 from src.domain.interfaces import TransactionRepository
 from src.infrastructure.database.db_connection import DataBaseSession
@@ -77,23 +76,6 @@ class SQLiteTransactionRepository(TransactionRepository):
         finally:
             session.close()
 
-    def get_transactions_by_date(self, date: datetime):
-        """
-        :param date: Transaction date (datetime)
-        :return: Transaction list
-        """
-        session = self.db.get_session()
-        try:
-            statement = select(SQLAlchemyTransaction).where(SQLAlchemyTransaction.date == date)
-            _list = session.scalars(statement).all()
-            return Transaction.from_db_model_plural(_list)
-
-        finally:
-            session.close()
-            
-    def check_if_exists(self, _id: str):
-        return self.get_transaction_by_id(_id) is not None
-
     def update_transaction_category(self, _id, new_category):
         session = self.db.get_session()
 
@@ -110,16 +92,3 @@ class SQLiteTransactionRepository(TransactionRepository):
             raise e
         finally:
             session.close()
-
-    def is_empty(self):
-        session = self.db.get_session()
-        try:
-            statement = select(SQLAlchemyTransaction).limit(1)
-            first_record = session.scalars(statement).first()
-            return first_record is None
-        finally:
-            session.close()
-
-
-
-

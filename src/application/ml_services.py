@@ -1,36 +1,18 @@
 import pandas as pd
-
 from src.infrastructure.ml.text_classifier import TextClassifier
 
-
 class TransactionPredictor:
+    """
+    This class connects to TextClassifier, which contains the ML model, and returns unknown categories with predicted values.
+    """
 
     def __init__(self, transaction_list):
         self.transaction_list = transaction_list
 
-    def list_to_dataframe(self):
-        column_names = ['date', 'id', 'description', 'amount', 'balance', 'category']
-        df = pd.DataFrame(self.transaction_list, columns = column_names)
-        df1 = df[df['category'] != 'Income'] #dropping incomes, no need prediction
-        return df1
-
-    def split_data(self):
-        df = self.list_to_dataframe()
-
-        df_test = df[df['category'] == 'Other']
-        df_train = df[df['category'] != 'Other']
-
-        train_x = df_train[['amount', 'description']]
-        train_y = df_train['category']
-        train_ids = df_train['id']
-
-        test_x = df_test[['amount', 'description']]
-        test_y = df_test['category']
-        test_ids = df_test['id']
-
-        return train_x, train_y,train_ids, test_x, test_y, test_ids
-
     def predict_category(self):
+        """
+        :return: Transaction List with Predicted Categories
+        """
         train_x, train_y,train_ids, test_x, test_y ,test_ids= self.split_data()
         classifier = TextClassifier()
 
@@ -43,3 +25,26 @@ class TransactionPredictor:
                 transaction.category = f"{predicted_categories[transaction.id]} (Predicted)"
 
         return self.transaction_list
+
+    def split_data(self):
+        df = self.list_to_dataframe()
+
+        # Training is made through expenditures in known categories
+        df_test = df[df['category'] == 'Other']
+        df_train = df[df['category'] != 'Other']
+
+        train_x = df_train[['amount', 'description']] # Features are 'amount' and 'description'
+        train_y = df_train['category']
+        train_ids = df_train['id']
+
+        test_x = df_test[['amount', 'description']]
+        test_y = df_test['category']
+        test_ids = df_test['id']
+
+        return train_x, train_y, train_ids, test_x, test_y, test_ids
+
+    def list_to_dataframe(self):
+        column_names = ['date', 'id', 'description', 'amount', 'balance', 'category']
+        df = pd.DataFrame(self.transaction_list, columns = column_names)
+        df1 = df[df['category'] != 'Income'] #dropping incomes, no need prediction
+        return df1

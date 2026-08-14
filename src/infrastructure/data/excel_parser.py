@@ -2,11 +2,9 @@ import pandas as pd
 from src.infrastructure.data.data_pipeline import DataCleaner
 from src.domain.entities import Transaction
 
-
 class ExcelReader:
     """
-    Bankalardan gelen farklı CSV formatlarını okuyan ve
-     ham veriyi standart veri sözlüklerine dönüştüren yardımcı sınıf.
+    This class reads the raw data file, cleans the data, and returns a cleaned Transaction List
     """
 
     def __init__ (self, path):
@@ -18,15 +16,13 @@ class ExcelReader:
         except Exception as e:
             return str(e)
 
-
+        # I'm specifically omitting the first 11 lines of raw data, this may vary from bank to bank
         df.drop(index=df.index[:11], inplace=True)
         df.columns = ['date', 'id', 'description', 'amount', 'balance']
 
         cleaner = DataCleaner(df=df)
-        cleaner.arrange_dates()
-        cleaner.fill_null_values()
-        cleaner.clean_descriptions()
-        df1 =  cleaner.df
+        df1 =  cleaner.clean()
+
         transaction_list = [Transaction(
             date = row['date'],
             _id = row['id'],
@@ -35,8 +31,5 @@ class ExcelReader:
             balance = row['balance'],
             category = ""
         ) for index, row in df1.iterrows()]
-        return transaction_list
 
-"""
-with pd.option_context('display.max_columns', None):
- print(df.head(15))"""
+        return transaction_list

@@ -8,6 +8,9 @@ import streamlit as st
 
 
 class DashboardService:
+    """
+    This class contains only the specific methods required for the Dashboard on the Homepage
+    """
 
     def __init__(self):
         self.repo = SQLiteTransactionRepository(db=DataBaseSession())
@@ -16,8 +19,8 @@ class DashboardService:
     @st.cache_data
     def get_monthly_comparison(_self, current_month, current_year):
         """
-        :param current_month: wanted month as string
-        :param current_year: current year as string
+        :param current_month: wanted month as string (e.g., March)
+        :param current_year: current year as string (e.g., 2026)
         :return: wanted month's spending, spending difference as percentage
         """
         current_date = pd.to_datetime(f"{current_year}-{current_month}", format='%Y-%B')
@@ -45,6 +48,12 @@ class DashboardService:
 
     @st.cache_data
     def get_burn_rate_data(_self, month, year):
+        """
+        For the Burn Rate graphic which will be visualized with Plotly Express later
+        :param month: wanted month
+        :param year: wanted year
+        :return: A DataFrame containing the cumulative expenditures for the desired month and the previous month
+        """
 
         df = _self.service.get_expenses()
         current_date = pd.to_datetime(f"{year}-{month}", format='%Y-%B')
@@ -63,6 +72,11 @@ class DashboardService:
 
     @st.cache_data
     def get_top_expenses(_self, month, year):
+        """
+        :param month: selected month
+        :param year: selected year
+        :return: A dataframe containing the Top 5 expenses for the selected month
+        """
         df = _self.service.get_expenses()
         date = pd.to_datetime(f"{year}-{month}", format='%Y-%B')
         month = date.strftime('%B %Y')
@@ -78,6 +92,11 @@ class DashboardService:
 
     @st.cache_data
     def get_predicted_expenses(_self, month, year):
+        """
+        :param month: selected month
+        :param year: selected year
+        :return: A dataframe containing only the expenses for which the category was predicted by the model
+        """
         df = _self.service.get_expenses()
         date = pd.to_datetime(f"{year}-{month}", format='%Y-%B')
         month = date.strftime('%B %Y')
@@ -92,93 +111,126 @@ class DashboardService:
         return df3
 
 class FinancialService:
-        def __init__(self):
-            self.repo = SQLiteTransactionRepository(db=DataBaseSession())
-            self.service = TransactionService(self.repo)
+    """
+    This class establishes a connection with TransactionService and returns more specific financial requests.
+    """
 
-        @st.cache_data
-        def get_expenses_by_month(_self, month, year):
-            df = _self.service.get_expenses()
-            current_month = f"{month} {year}"
-            df['month'] = df['date'].dt.strftime('%B %Y')
+    def __init__(self):
+        self.repo = SQLiteTransactionRepository(db=DataBaseSession())
+        self.service = TransactionService(self.repo)
 
-            return df[df['month'] == current_month]
+    # TRANSACTION SERVICE BRIDGE METHODS
 
-        @st.cache_data
-        def get_expenses_by_month_interval(_self, first_month, first_year, second_month, second_year):
-            df = _self.service.get_expenses()
-            df['month'] = df['date'].dt.strftime('%B %Y')
+    @st.cache_data
+    def get_expenses(_self):
+        return _self.service.get_expenses()
 
-            first_date = pd.to_datetime(f"{first_month} {first_year}", format = '%B %Y')
-            second_date = pd.to_datetime(f"{second_month} {second_year}", format = '%B %Y')
-            if first_date > second_date:
-                temp = first_date
-                first_date = second_date
-                second_date = temp
+    @st.cache_data
+    def get_all_transactions(_self):
+        return _self.service.get_all_transactions()
 
-            current_date = first_date
+    # GENERAL USAGE METHODS
 
-            months_list = []
-            while current_date <= second_date:
-                months_list.append(current_date.strftime('%B %Y'))
-                current_date = current_date + relativedelta(months = 1)
+    @st.cache_data
+    def get_expenses_by_month(_self, month, year):
+        """
+        :param month: wanted month as string (e.g., March)
+        :param year: wanted year as string (e.g., 2026)
+        :return: Expense dataframe with only the wanted month
+        """
+        df = _self.service.get_expenses()
+        current_month = f"{month} {year}"
+        df['month'] = df['date'].dt.strftime('%B %Y')
 
-            df1 = df[df['month'].isin(months_list)]
+        return df[df['month'] == current_month]
+
+    @st.cache_data
+    def get_expenses_by_month_interval(_self, first_month, first_year, second_month, second_year):
+        """
+        :param first_month: first month of the time interval
+        :param first_year: first year of the time interval
+        :param second_month: last month of the time interval
+        :param second_year: last year of the time interval
+        :return: A DataFrame containing the expenses for the specified time period
+        """
+        df = _self.service.get_expenses()
+        df['month'] = df['date'].dt.strftime('%B %Y')
+
+        first_date = pd.to_datetime(f"{first_month} {first_year}", format='%B %Y')
+        second_date = pd.to_datetime(f"{second_month} {second_year}", format='%B %Y')
+        if first_date > second_date:
+            temp = first_date
+            first_date = second_date
+            second_date = temp
+
+        current_date = first_date
+
+        months_list = []
+        while current_date <= second_date:
+            months_list.append(current_date.strftime('%B %Y'))
+            current_date = current_date + relativedelta(months=1)
+
+        df1 = df[df['month'].isin(months_list)]
+        return df1
+
+    @st.cache_data
+    def get_category_list(_self):
+        """
+        :return: Existing category list from the Category Repository
+        """
+        transaction_list = _self.repo.get_all_transactions()
+        category_service = Categorizer(transaction_list)
+        return list(category_service.dict.keys())
+
+    @staticmethod
+    def get_transactions_by_category(_df, category):
+        """
+        :param _df: Dataframe to be filtered with a specific category
+        :param category: Wanted category
+        :return:
+        """
+        if category == 'ALL':
+            return _df
+        else:
+            df1 = _df[_df['category'] == category]
             return df1
 
-        def get_expenses(_self):
-            return _self.service.get_expenses()
+    @st.cache_data
+    def get_all_transactions_by_month(_self, month, year):
+        df = _self.service.get_all_transactions()
+        current_month = f"{month} {year}"
+        df['month'] = df['date'].dt.strftime('%B %Y')
 
-        @st.cache_data
-        def get_category_list(_self):
-            transaction_list = _self.repo.get_all_transactions()
-            category_service = Categorizer(transaction_list)
-            return list(category_service.dict.keys())
+        return df[df['month'] == current_month]
 
-        def get_transactions_by_category(_self, _df, category):
-            """
-            :param _df: Dataframe to be filtered with a specific category
-            :param category: Wanted category
-            :return:
-            """
-            if category == 'ALL':
-                return _df
-            else:
-                df1 = _df[_df['category'] == category]
-                return df1
+    # METHODS FOR LLM
 
-        def get_all_transactions(_self):
-            return _self.service.get_all_transactions()
+    @st.cache_data
+    def get_expenses_by_month_markdown(_self, month, year):
+        df = _self.get_expenses_by_month(month, year)
+        return df.to_markdown(index=False)
 
-        @st.cache_data
-        def get_all_transactions_by_month(_self, month, year):
-            df = _self.service.get_all_transactions()
-            current_month = f"{month} {year}"
-            df['month'] = df['date'].dt.strftime('%B %Y')
+    @st.cache_data
+    def get_expenses_by_month_interval_markdown(_self, first_month, first_year, second_month, second_year):
+        df = _self.get_expenses_by_month_interval(first_month, first_year, second_month, second_year)
+        return df.to_markdown(index=False)
 
-            return df[df['month'] == current_month]
+    @st.cache_data
+    def get_expenses_markdown(_self):
+        df = _self.get_expenses()
+        return df.to_markdown(index=False)
 
-        def update_transaction_category(self, edited_df):
-            for index, row in edited_df.iterrows():
-                _id = row['id']
-                new_category = row['category']
-                self.repo.update_transaction_category(_id, new_category)
+    # REPO BRIDGE METHODS
 
-        @st.cache_data
-        def get_expenses_by_month_markdown(_self, month, year):
-            df = _self.get_expenses_by_month(month, year)
-            return df.to_markdown(index = False)
+    def delete_transaction(self, _id):
+        self.repo.delete_transaction(_id)
 
-        @st.cache_data
-        def get_expenses_by_month_interval_markdown(_self, first_month, first_year, second_month, second_year):
-            df = _self.get_expenses_by_month_interval(first_month, first_year, second_month, second_year)
-            return df.to_markdown(index = False)
-
-        @st.cache_data
-        def get_expenses_markdown(_self):
-            df = _self.get_expenses()
-            return df.to_markdown(index = False)
-
-        def delete_transaction(self,_id):
-            self.repo.delete_transaction(_id)
-
+    def update_transaction_category(self, edited_df):
+        """
+        Allows the user to change categories
+        :param edited_df: A DataFrame containing the expenses for which the user changed the category via the interface
+        """
+        for index, row in edited_df.iterrows():
+            _id = row['id']
+            new_category = row['category']
+            self.repo.update_transaction_category(_id, new_category)

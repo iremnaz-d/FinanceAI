@@ -4,10 +4,12 @@ from src.config.settings import Settings
 from src.infrastructure.data.excel_parser import ExcelReader
 from src.infrastructure.database.db_connection import DataBaseSession
 from src.infrastructure.database.repository import SQLiteTransactionRepository
-import random
-import string
 
 class DataBaseMigrator:
+    """
+    This class is where all tasks —including reading files, cleaning data, categorizing,
+     making ML predictions, and adding the final data to the database— come together.
+    """
 
     def __init__(self):
         self.db = DataBaseSession()
@@ -33,32 +35,5 @@ class DataBaseMigrator:
                self.repo.add_transaction(transaction)
                count += 1
 
-
-            # else:
-            #     if other_transaction.amount != transaction.amount:
-            #         random_id = self.generate_random_id()
-            #         transaction.set_id(random_id)
-            #         self.repo.add_transaction(transaction)
-            #         count += 1
-
-
-
-            # if not self.repo.check_if_exists(transaction.id):
-            #     self.repo.add_transaction(transaction)
-            #     count += 1
-
         print(f"Migration is complete. {count} new transaction is added to the database.")
-
-    def generate_random_id(self):
-        """
-        There are some transactions which have the same IDs.
-        This method is used for generating a new ID for these kind of transactions.
-        :return: string id
-        """
-        length = 8
-        chars = string.ascii_letters + string.digits
-        return "".join(random.choices(chars, k = length))
-
-
-
-
+        return None

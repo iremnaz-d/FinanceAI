@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/logo.png" alt="FinanceAI Logo" width="180">
+  <img src="assets/logo.png" alt="FinanceAI Logo" width="300" height="180">
 </p>
 
 
@@ -122,11 +122,13 @@ I --> ML
 
 ## HOW IT WORKS
 
-### Data Pipeline
+### 🛣️ Data Pipeline
 The data pipeline is responsible for transforming raw bank statements into structured, 
 analyzable data. When a user uploads a ``.xlsx`` file, the ``ExcelReader`` and ``DataCleaner`` components
 (powered by Pandas) immediately strip away irrelevant header rows, normalize date formats, 
-and handle missing values. Once the data is cleaned, it is passed through the ``Categorizer`` class and then the
+and handle missing values.
+
+Once the data is cleaned, it is passed through the ``Categorizer`` class and then the
 ``ML Categorization model`` to assign appropriate expense tags. Finally, the ``DataBaseMigrator`` securely saves the
 processed records into a local ``SQLite`` database using ``SQLAlchemy``, ensuring that all user data 
 remains private and local.
@@ -158,6 +160,8 @@ The AI Assistant acts as a bridge between natural language and SQL data, powered
 ``Gemini 3.6 Flash`` model. Instead of relying on static prompts, it uses ``Function Calling``.
 When a user asks a question (e.g., "How much did I spend on food last month?"), the AI
 decides which internal Python tool to trigger from the ``tools.json`` configuration. 
+
+
 The backend executes the corresponding query via ``financial_service.py``, retrieves the
 exact metrics from the ``SQLite`` database, and feeds the factual data back to Gemini. 
 The model then synthesizes this raw data into a clear, conversational Markdown response.
@@ -462,28 +466,29 @@ database. Fortunately, this issue doesn’t cause major problems during data ana
 
 
 ## FUTURE IMPROVEMENTS
-#### User Authentication (Login System):
+
+### User Authentication (Login System):
 Implementing a secure login mechanism. This will allow multiple users to use the application 
 safely on the same environment while keeping their financial records completely private.
 
-#### Transaction Search Bar:
+### Transaction Search Bar:
 Adding a dynamic search bar to the "My Transactions" page. This will help users easily find 
 specific past expenses by simply typing keywords from the transaction descriptions.
 
-#### Budget Limits and Alerts:
+### Budget Limits and Alerts:
 Allowing users to set custom monthly spending limits for their overall budget or specific categories.
 The system will send notifications when the user is getting close to their limit and provide a 
 history of which months they successfully stayed on budget.
 
-#### Export Reports:
+### Export Reports:
 Adding a feature to download the monthly financial summaries and interactive charts 
 as PDF or CSV files for external use or printing.
 
-#### Support for More File Types:
+### Support for More File Types:
 Expanding the file uploader to accept other common data formats (like .csv),
 removing the strict limitation of only allowing ``.xlsx`` files.
 
-#### Multi-Bank Compatibility:
+### Multi-Bank Compatibility:
 Currently, the data cleaning process is specifically tailored for **Ziraat Bank**'s statement format.
 This limitation exists simply because **I don't have access to datasets from other banks**.
 
