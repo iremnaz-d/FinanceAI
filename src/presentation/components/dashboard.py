@@ -1,13 +1,9 @@
 import os
-
 import streamlit as st
-
-from src.application.categorization_service import Categorizer, CategoryService
+from src.application.categorization_service import CategoryService
 from src.application.financial_services import DashboardService, FinancialService
 import datetime
-
 from src.presentation.components.charts import FinancialVisualizer
-
 
 class DashboardFeatures:
     def __init__(self):
@@ -18,6 +14,8 @@ class DashboardFeatures:
     def monthly_view(self):
         today = datetime.date.today()
 
+        ## Here, a list of months is created that the user can later select from the selectbox.
+        ## It starts two years prior to the current month.
         months = []
         for i in range(24):
             date = today - datetime.timedelta(days = i*30)
@@ -28,30 +26,27 @@ class DashboardFeatures:
 
         with st.container(border = True):
             col1,col2 = st.columns([2,3])
-            with col1:
+            with col1: ##General Brief Comparative Analysis
+
+                # User selects a month
                 period = st.selectbox('Choose month: ', months)
                 current_month, current_year = period.split()
                 current_amount, dif = self.service.get_monthly_comparison(current_month, current_year)
 
-                delta_dif = ""
-                value_str = ""
+
                 label_str = f"💸 This month's spending: \n{current_amount} TL"
 
                 if dif >= 0:
-                    delta_dif = "-" + str(dif) + "%"
                     value_str = f"You spent :red[%{dif}] more than last month"
                 else:
                     dif = abs(dif)
-                    delta_dif = "+" + str(dif) + "%"
                     value_str = f"You spent :green[%{dif}] less than last month"
 
-                """st.markdown(f":gray-background[### {label_str}\n## {value_str}]")
-                st.metric(label="", value="", delta=delta_dif)"""
                 with st.container(border=True):
                     st.info(label_str)
                     st.subheader(value_str)
 
-            with col2:
+            with col2: ##Top 5 Expenses
                 st.text("")
                 st.subheader(f"Top 5 Expenses in {current_month} {current_year}", text_alignment='center')
 
@@ -64,30 +59,29 @@ class DashboardFeatures:
                         'category': 'Category'
                     })
 
+            ##Burn Rate Chart
             vis = FinancialVisualizer()
             fig = vis.line_burn_rate(current_month, current_year)
             st.plotly_chart(fig, use_container_width=True)
 
-        with st.container(border = True):
+        with st.container(border = True): ## This is Where AI Predictions Are Displayed
             df = self.service.get_predicted_expenses(current_month, current_year)
             df['category'] = df['category'].str.removesuffix(" (Predicted)")
             st.subheader(f"AI automatically categorized {len(df)} transactions this month", text_alignment='center')
             st.divider()
 
             col3, col4 ,col5, col6= st.columns([1,1,3,1])
+            ## A Little Visualization
             with col4:
                 current_dir = os.path.dirname(__file__)
-                image_path = os.path.join(current_dir, "computer_image.png")
+                image_path = os.path.join(current_dir, "images/computer_image.png")
                 st.image(image_path, width = 100)
             with col5:
                 st.write("")
                 st.warning("💡 You can help me improve my prediction skills by correcting my mistakes in the category column below!")
 
-            # st.dataframe(df, hide_index=True, column_config={
-            #     'description': 'Description',
-            #     'amount': st.column_config.NumberColumn('Amount Spent (TL)', format="%.2f ₺"),
-            #     'category': 'Category'
-            # })
+
+            ## The Editable DataFrame is displayed
             category_list = self.category_service.get_category_list()
             edited_df = st.data_editor(df, hide_index = True, disabled = ['amount', 'description'], column_config = {
                 'id':None,
@@ -101,7 +95,7 @@ class DashboardFeatures:
             })
 
             col7, col8, col9 = st.columns([2,3,1])
-            with col9:
+            with col9: ## The changes made here are confirmed and updated in the database
                 if st.button("Approve corrections", type = 'primary', use_container_width = True):
                     changed_df = edited_df[df['category'] != edited_df['category']]
 
@@ -112,7 +106,7 @@ class DashboardFeatures:
 
             col10, col11, col12 = st.columns([2,3,1])
 
-            with col10:
+            with col10: ## A new category can be added here
                 category = st.text_input("Create a new Category name:")
                 if st.button("➕ Add Category", type="secondary"):
                     if category.strip():
@@ -125,7 +119,7 @@ class DashboardFeatures:
                     else:
                         st.error("Please enter a category name.")
 
-            with col11:
+            with col11: ## Here, an existing category can be deleted
                 category_list = self.category_service.get_category_list()
                 category = st.selectbox("Delete a Category: ", category_list)
 
@@ -136,15 +130,3 @@ class DashboardFeatures:
                         st.rerun()
                     else:
                         st.error("This category does not exist.")
-
-
-
-
-
-
-
-
-
-
-
-

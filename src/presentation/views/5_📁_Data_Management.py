@@ -16,12 +16,12 @@ with st.container(border = True):
 
     uploaded_file = st.file_uploader("Transaction History (Excel)", type=["xlsx"])
 
-    if uploaded_file is not None:
+    if uploaded_file is not None: ## If the user has uploaded a file
         st.write("Please wait for the upload...")
         save_path = "src/data/Transaction_History.xlsx"
         save_dir = os.path.dirname(save_path)
 
-        try:
+        try: ## Saving the newly uploaded file to the database
             os.makedirs(save_dir, exist_ok = True)
 
             with open(save_path, "wb") as f:
@@ -39,5 +39,3 @@ with st.container(border = True):
 
         except Exception as e:
             st.error(f"An error occurred during file upload: {e}")
-
-

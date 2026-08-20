@@ -20,18 +20,17 @@ def main():
 
     load_dotenv()
 
-    if "api_key" not in st.session_state:
+    ## Since the process for obtaining an API key varies depending on the environment, it is stored using `session_state`.
+    if "api_key" not in st.session_state: ## This condition means that the AI Assistant tab is being opened for the first time (regardless of the environment)
         current_api_key = os.getenv("GEMINI_API_KEY")
-        if current_api_key:
+        if current_api_key: ## If an API key is found in the .env file, the process continues without any issues
             st.session_state.api_key = current_api_key
-            #ai_service = AIService()
-        else:
+        else: ## If it cannot be found, you will be prompted to enter the API key manually
             col1, col2 = st.columns(2)
             with col1:
                 st.info("You are running this app on a local environment."
                         " Please enter your Gemini API Key.")
                 current_api_key = st.text_input("Your Gemini API Key: ", type="password")
-
 
             with col2:
                 with st.container(border=False):
@@ -45,13 +44,13 @@ def main():
                 st.session_state.api_key = current_api_key
                 st.rerun()
 
-            #ai_service = AIService(provided_api_key = current_api_key)
-    else:
+    else: ## If this is not the first time accessing the AI Assistant tab (if the API key is stored in session_state)
         if st.session_state.api_key == os.getenv("GEMINI_API_KEY"):
             ai_service = AIService()
         else:
             ai_service = AIService(provided_api_key = st.session_state.api_key)
 
+    ## Chat history is displayed here
     chat_vis = ChatVisualizer()
 
     if 'timeframe' not in st.session_state:
@@ -62,17 +61,21 @@ def main():
 
     chat_vis.render_chat_history(st.session_state.messages)
 
+    ## User query is received and displayed here
     if user_query := st.chat_input("Ask something"):
         st.session_state.messages.append({'role':'user', 'content': user_query})
         with st.chat_message('user'):
             st.markdown(user_query)
 
-        try:
+        try: ## LLM response is received and displayed here
             response, timeframe = ai_service.get_financial_insight(user_query, st.session_state.timeframe)
             st.session_state.timeframe = timeframe
             st.session_state.messages.append({'role': 'assistant', 'content': response})
             with st.chat_message('assistant'):
                 st.markdown(response)
+
+        ## Various error checks are performed here.
+        ## Since the source of the error is not always the user, accurate error messages are important.
         except ServerError:
             error_message = "AI Assistant is not available at this moment. Please try again a few minutes later."
             st.session_state.messages.append({'role': 'assistant', 'content': error_message})
@@ -94,7 +97,5 @@ def main():
             st.session_state.messages.append({'role': 'assistant', 'content': error_message})
             with st.chat_message('assistant'):
                 st.markdown(error_message)
-
-
 
 main()

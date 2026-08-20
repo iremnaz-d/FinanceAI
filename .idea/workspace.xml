@@ -4,25 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="66dc89d2-3075-41cb-8c59-e8ce2a2db463" name="Changes" comment="update readme. future improvements addition">
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/application/ai_services/ai_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/ai_services/ai_service.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/application/categorization_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/categorization_service.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/application/financial_services.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/financial_services.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/application/ml_services.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/ml_services.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/application/transaction_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/transaction_service.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/config/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/config/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/domain/entities.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/entities.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/domain/interfaces.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/interfaces.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/infrastructure/data/data_pipeline.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/infrastructure/data/data_pipeline.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/infrastructure/data/excel_parser.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/infrastructure/data/excel_parser.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/infrastructure/database/category_repository.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/infrastructure/database/category_repository.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/infrastructure/database/db_connection.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/infrastructure/database/db_connection.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/infrastructure/database/db_models.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/infrastructure/database/db_models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/infrastructure/database/migration.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/infrastructure/database/migration.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/infrastructure/database/repository.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/infrastructure/database/repository.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/infrastructure/llm/client.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/infrastructure/llm/client.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/infrastructure/ml/text_classifier.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/infrastructure/ml/text_classifier.py" afterDir="false" />
+    <list default="true" id="66dc89d2-3075-41cb-8c59-e8ce2a2db463" name="Changes" comment="style and chore: Everything except Presentation Layer">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/presentation/components/charts.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/components/charts.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/presentation/components/chat_interface.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/components/chat_interface.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/presentation/components/computer_image.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/components/images/computer_image.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/presentation/components/dashboard.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/components/dashboard.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/presentation/components/logo_text.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/components/images/logo_text.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/presentation/views/1__Homepage.py" beforePathEscaped="$PROJECT_DIR$/src/presentation/views/1_🏠_Homepage.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/views/1__Homepage.py" afterPathEscaped="$PROJECT_DIR$/src/presentation/views/1_🏠_Homepage.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/presentation/views/2__My_Transactions.py" beforePathEscaped="$PROJECT_DIR$/src/presentation/views/2_💳_My_Transactions.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/views/2__My_Transactions.py" afterPathEscaped="$PROJECT_DIR$/src/presentation/views/2_💳_My_Transactions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/presentation/views/3__Chart_Analysis.py" beforePathEscaped="$PROJECT_DIR$/src/presentation/views/3_📊_Chart_Analysis.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/views/3__Chart_Analysis.py" afterPathEscaped="$PROJECT_DIR$/src/presentation/views/3_📊_Chart_Analysis.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/presentation/views/4__AI_Assistant.py" beforePathEscaped="$PROJECT_DIR$/src/presentation/views/4_🤖_AI_Assistant.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/views/4__AI_Assistant.py" afterPathEscaped="$PROJECT_DIR$/src/presentation/views/4_🤖_AI_Assistant.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/presentation/views/5__Data_Management.py" beforePathEscaped="$PROJECT_DIR$/src/presentation/views/5_📁_Data_Management.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/views/5__Data_Management.py" afterPathEscaped="$PROJECT_DIR$/src/presentation/views/5_📁_Data_Management.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,23 +60,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_MARK_IGNORED_FILES_AS_EXCLUDED&quot;: &quot;true&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;Python.app.executor&quot;: &quot;Run&quot;,
-    &quot;Python.charts.executor&quot;: &quot;Run&quot;,
-    &quot;Python.data_pipeline.executor&quot;: &quot;Run&quot;,
-    &quot;Python.excel_parser.executor&quot;: &quot;Run&quot;,
-    &quot;Python.main.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/irem naz/Desktop/FinanceAI/assets&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Python.app.executor": "Run",
+    "Python.charts.executor": "Run",
+    "Python.data_pipeline.executor": "Run",
+    "Python.excel_parser.executor": "Run",
+    "Python.main.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "C:/Users/irem naz/Desktop/FinanceAI/assets",
+    "settings.editor.selected.configurable": "preferences.toDoOptions"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\irem naz\Desktop\FinanceAI\assets" />
@@ -91,6 +85,7 @@
       <recent name="C:\Users\irem naz\Desktop\FinanceAI\src\assets" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\irem naz\Desktop\FinanceAI\src\presentation\components\images" />
       <recent name="C:\Users\irem naz\Desktop\FinanceAI\src\application\ai_services" />
     </key>
   </component>
@@ -108,14 +103,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1783460452394</updated>
-    </task>
-    <task id="LOCAL-00015" summary="category prediction is finished but thinking of switching to another model. MultinomialNB does not evaluate negative values">
-      <option name="closed" value="true" />
-      <created>1784581975889</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1784581975889</updated>
     </task>
     <task id="LOCAL-00016" summary="Now I can see the pie chart with and without predictions">
       <option name="closed" value="true" />
@@ -501,11 +488,18 @@
       <option name="project" value="LOCAL" />
       <updated>1786716472978</updated>
     </task>
-    <option name="localTasksCounter" value="64" />
+    <task id="LOCAL-00064" summary="style and chore: Everything except Presentation Layer">
+      <option name="closed" value="true" />
+      <created>1786733299757</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1786733299757</updated>
+    </task>
+    <option name="localTasksCounter" value="65" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="wrote tool descriptions for function calling, added methods in financial services" />
     <MESSAGE value="llm can call functions now. but lost the timeframe memory through messages" />
     <MESSAGE value="timeframe problem fixed" />
     <MESSAGE value="Data Management tab is added. User can upload their transaction history .xlsx file" />
@@ -530,6 +524,7 @@
     <MESSAGE value="update readme. User Interface and How It Works" />
     <MESSAGE value="update readme. future improvements" />
     <MESSAGE value="update readme. future improvements addition" />
-    <option name="LAST_COMMIT_MESSAGE" value="update readme. future improvements addition" />
+    <MESSAGE value="style and chore: Everything except Presentation Layer" />
+    <option name="LAST_COMMIT_MESSAGE" value="style and chore: Everything except Presentation Layer" />
   </component>
 </project>

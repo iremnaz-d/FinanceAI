@@ -24,7 +24,7 @@ def main():
         st.error("Please upload your transaction file from '📁 Data Management'.")
         st.stop()
 
-    vis = FinancialVisualizer() # Plotly visualizer on charts.py
+    vis = FinancialVisualizer() ## Plotly visualizer on charts.py
 
     chart_type= choice_chart()
 

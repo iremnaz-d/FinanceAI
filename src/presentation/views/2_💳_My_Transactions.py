@@ -1,7 +1,6 @@
 import sys
 import os
 
-
 project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), '../../../'))
 sys.path.insert(0, project_root)
 
@@ -16,6 +15,8 @@ def main():
     financial_service = FinancialService()
 
     today = datetime.date.today()
+    ## Here, a list of months is created that the user can later select from the selectbox.
+    ## It starts two years prior to the current month.
     months = ['ALL']
     for i in range(24):
         date = today - datetime.timedelta(days=i * 30)
@@ -25,7 +26,7 @@ def main():
 
     col1, col2 = st.columns(2)
 
-    with col1:
+    with col1: ## User selects a month
         period = st.selectbox('Choose month: ', months)
         if period == 'ALL':
             df = financial_service.get_all_transactions()
@@ -33,12 +34,13 @@ def main():
             current_month, current_year = period.split()
             df = financial_service.get_all_transactions_by_month(current_month, current_year)
 
-    with col2:
+    with col2: ## User selects a category
         category_list = financial_service.get_category_list()
         category_list.insert(0, 'ALL')
         category = st.selectbox('Choose category:', category_list)
         df1 = financial_service.get_transactions_by_category(df,category)
 
+    ## The Transaction Dataframe that meets the filter criteria is displayed. A row can be selected
     event = st.dataframe(df1,
                          on_select = "rerun",
                          selection_mode = "single-row",
@@ -52,13 +54,11 @@ def main():
         _id = df1.iloc[index]['id']
 
         col3,col4 = st.columns([5,1])
-        with col4:
+        with col4: ## The selected transaction can be deleted
             if st.button("🗑️ Delete Selected Transaction", type = "primary"):
                 financial_service.delete_transaction(_id)
                 st.cache_data.clear()
                 st.success("Transaction Removed!")
                 st.rerun()
-
-
 
 main()
