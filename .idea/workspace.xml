@@ -4,19 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="66dc89d2-3075-41cb-8c59-e8ce2a2db463" name="Changes" comment="style and chore: Everything except Presentation Layer">
+    <list default="true" id="66dc89d2-3075-41cb-8c59-e8ce2a2db463" name="Changes" comment="style, comment and chore: Presentation Layer">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/presentation/components/charts.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/components/charts.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/presentation/components/chat_interface.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/components/chat_interface.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/presentation/components/computer_image.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/components/images/computer_image.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/presentation/components/dashboard.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/components/dashboard.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/presentation/components/logo_text.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/components/images/logo_text.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/presentation/views/1__Homepage.py" beforePathEscaped="$PROJECT_DIR$/src/presentation/views/1_🏠_Homepage.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/views/1__Homepage.py" afterPathEscaped="$PROJECT_DIR$/src/presentation/views/1_🏠_Homepage.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/presentation/views/2__My_Transactions.py" beforePathEscaped="$PROJECT_DIR$/src/presentation/views/2_💳_My_Transactions.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/views/2__My_Transactions.py" afterPathEscaped="$PROJECT_DIR$/src/presentation/views/2_💳_My_Transactions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/presentation/views/3__Chart_Analysis.py" beforePathEscaped="$PROJECT_DIR$/src/presentation/views/3_📊_Chart_Analysis.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/views/3__Chart_Analysis.py" afterPathEscaped="$PROJECT_DIR$/src/presentation/views/3_📊_Chart_Analysis.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/presentation/views/4__AI_Assistant.py" beforePathEscaped="$PROJECT_DIR$/src/presentation/views/4_🤖_AI_Assistant.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/views/4__AI_Assistant.py" afterPathEscaped="$PROJECT_DIR$/src/presentation/views/4_🤖_AI_Assistant.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/presentation/views/5__Data_Management.py" beforePathEscaped="$PROJECT_DIR$/src/presentation/views/5_📁_Data_Management.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/views/5__Data_Management.py" afterPathEscaped="$PROJECT_DIR$/src/presentation/views/5_📁_Data_Management.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/presentation/run_app.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/run_app.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,14 +93,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1783460452394</updated>
-    </task>
-    <task id="LOCAL-00016" summary="Now I can see the pie chart with and without predictions">
-      <option name="closed" value="true" />
-      <created>1784588821710</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1784588821710</updated>
     </task>
     <task id="LOCAL-00017" summary="they said kpi card is great. NO IT IS NOT">
       <option name="closed" value="true" />
@@ -496,11 +478,18 @@
       <option name="project" value="LOCAL" />
       <updated>1786733299757</updated>
     </task>
-    <option name="localTasksCounter" value="65" />
+    <task id="LOCAL-00065" summary="style, comment and chore: Presentation Layer">
+      <option name="closed" value="true" />
+      <created>1787231335568</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1787231335568</updated>
+    </task>
+    <option name="localTasksCounter" value="66" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="llm can call functions now. but lost the timeframe memory through messages" />
     <MESSAGE value="timeframe problem fixed" />
     <MESSAGE value="Data Management tab is added. User can upload their transaction history .xlsx file" />
     <MESSAGE value="logo and presentation updates" />
@@ -525,6 +514,7 @@
     <MESSAGE value="update readme. future improvements" />
     <MESSAGE value="update readme. future improvements addition" />
     <MESSAGE value="style and chore: Everything except Presentation Layer" />
-    <option name="LAST_COMMIT_MESSAGE" value="style and chore: Everything except Presentation Layer" />
+    <MESSAGE value="style, comment and chore: Presentation Layer" />
+    <option name="LAST_COMMIT_MESSAGE" value="style, comment and chore: Presentation Layer" />
   </component>
 </project>

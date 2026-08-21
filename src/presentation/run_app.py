@@ -1,9 +1,5 @@
 import streamlit as st
 
-"""
-This is where all pages are managed collectively, and the application is run through this module.
-"""
-
 st.set_page_config(page_title="FinanceAI", page_icon="🏠", layout="wide")
 
 homepage = st.Page(
